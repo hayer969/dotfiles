@@ -1,0 +1,1 @@
+/home/hayer/.local/share/omf/themes/bobthefish/fish_prompt.fish
