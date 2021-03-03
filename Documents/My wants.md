@@ -17,6 +17,7 @@
 + **terminal** - `Alacritty`: <https://github.com/alacritty/alacritty/blob/master/INSTALL.md>
 + **features** - `bobthefish` try not install, just edit fish.config: <https://github.com/oh-my-fish/theme-bobthefish>
 + **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
++ **features** - `bat`: <https://github.com/sharkdp/bat>
 + **features** - `broot`: <https://dystroy.org/broot/install>
 + **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 + **features** - `tlp` (not with **Clear Linux**): <https://linrunner.de/tlp>  
@@ -79,14 +80,15 @@
 
 + BTRFS - mount option for long lifetime ssd, trim and noatime:  
 `noatime, discard=async, subvolumeid=ID`  
-use `btrfs subvolume list /` for ID and set this for /home partition
-+ BTRFS - subvolume operations, create subvolume for /home partition:  
+use `btrfs subvolume list /` for **ID** and set this for `/home` partition  
+
++ BTRFS - subvolume operations, create subvolume for `/home` partition:  
 
       btrfs subvolume create /sub1
       btrfs subvolume list /
 
 + BTRFS - snapshots:  
-  Create snapshot for root volume in dir /snapshot  
+  Create snapshot for root volume in dir `/snapshot`  
 
       sudo btrfs subvolume snapshot / /snapshot/root-{maybe_date}
 
@@ -97,6 +99,11 @@ use `btrfs subvolume list /` for ID and set this for /home partition
   Suppose you make a big mess and you want to roll back to a known good state. It’s a good thing you made a snapshot before the mess happened. First unmount the mangled subvolume, then mount the snapshot in its place. If you decide you don’t need the mangled subvolume anymore you can delete it and rename the snapshot with the same name as the mangled subvolume, so you don’t have to change configuration files like /etc/fstab. Use our old friend the mv command for renaming:
 
       mv {path to snap} {path to subvolume}
+
++ BTRFS - disk usage:  
+
+      btrfs filesystem du /{path}
+      btrfs filesystem usage /{path}
 
 + Pacman & paru:  
   paru install: <https://aur.archlinux.org/packages/paru/>  
