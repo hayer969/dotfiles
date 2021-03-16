@@ -7,7 +7,8 @@ SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_file:nautilus\x20\x28pwd\x29\x20\x26
 SETUVAR _fish_abbr_fn:find\x20\x2e/\x20\x2diname
 SETUVAR _fish_abbr_ga:git\x20add
-SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gc:git\x20checkout
+SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gl:git\x20log
 SETUVAR _fish_abbr_gp:git\x20pull
 SETUVAR _fish_abbr_grev:git\x20rev\x2dlist\x20\x2d\x2dcount\x20HEAD
