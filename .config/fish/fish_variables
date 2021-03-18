@@ -4,7 +4,7 @@ SETUVAR --export EDITOR:/usr/bin/nvim
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_cat:bat
-SETUVAR _fish_abbr_file:nautilus\x20\x28pwd\x29\x20\x26
+SETUVAR _fish_abbr_file:nautilus\x20\x28pwd\x29\x20\x26\x3b\x20disown
 SETUVAR _fish_abbr_fn:find\x20\x2e/\x20\x2diname
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gc:git\x20checkout
@@ -15,7 +15,7 @@ SETUVAR _fish_abbr_grev:git\x20rev\x2dlist\x20\x2d\x2dcount\x20HEAD
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_gsu:git\x20status\x20\x2duno
 SETUVAR _fish_abbr_ls1:ls\x20\x2d1
-SETUVAR _fish_abbr_term:alacritty\x20\x2de\x20fish\x26
+SETUVAR _fish_abbr_term:alacritty\x20\x2de\x20fish\x26\x3b\x20disown
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR fish_color_autosuggestion:555
