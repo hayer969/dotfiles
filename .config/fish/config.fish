@@ -1,4 +1,8 @@
 #set -x PATH $PATH
+
+#For case insensitive search in less
+set -x LESS "-RFi"
+
 set -x EDITOR /usr/bin/nvim
 set -x LANG en_US.UTF-8
 set -x FZF_DEFAULT_OPTS "--multi"
