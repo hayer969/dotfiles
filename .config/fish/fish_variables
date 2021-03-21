@@ -12,7 +12,7 @@ SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gl:git\x20log\x20\x2d\x2dgraph\x20\x2d\x2dpretty\x3dmedium\x20\x2d\x2dname\x2dstatus
 SETUVAR _fish_abbr_gp:git\x20pull
 SETUVAR _fish_abbr_grev:git\x20rev\x2dlist\x20\x2d\x2dcount\x20HEAD
-SETUVAR _fish_abbr_gs:git\x20status
+SETUVAR _fish_abbr_gs:git\x20show
 SETUVAR _fish_abbr_gsu:git\x20status\x20\x2duno
 SETUVAR _fish_abbr_ls1:ls\x20\x2d1
 SETUVAR _fish_abbr_term:alacritty\x20\x2de\x20fish\x26\x3b\x20disown
