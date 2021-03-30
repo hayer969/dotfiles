@@ -30,8 +30,9 @@ default_flags = "h"
 # If some paths must be handled specially, uncomment (and change
 # this section as per the examples
 #
-# [special-paths]
-# "/media/slow-backup-disk" = "no-enter"
+[special-paths]
+"/snapshot" = "no-enter"
+"*/.snapshot" = "no-enter"
 # "/home/dys/useless" = "hide"
 # "/home/dys/my-link-I-want-to-explore" = "enter"
 
