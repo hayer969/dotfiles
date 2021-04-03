@@ -1,6 +1,6 @@
 // notes@maestroschan.fr/menus.js
 // GPL v3
-// Copyright 2018-2020 Romain F. T.
+// Copyright 2018-2021 Romain F. T.
 
 const { Clutter, St } = imports.gi;
 const Main = imports.ui.main;
@@ -49,7 +49,7 @@ class NoteOptionsMenu {
 		});
 		source.actor.connect('destroy', this.super_menu.destroy.bind(this.super_menu));
 
-		Main.uiGroup.add_actor(this.super_menu.actor);
+		Main.uiGroup.add_child(this.super_menu.actor);
 	}
 
 	_redisplay () {
