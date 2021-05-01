@@ -35,10 +35,16 @@
   + change shortcuts for preferable. For example `Switch Windows` to `alt+tab` for preventing grouping windows.
   + alter blanck screen timing
 
++ `gnome40` extensions:
+  + Clipboard Indicator: <https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator>
+  + Tiling Assistant: <https://github.com/Leleat/Tiling-Assist>
+
 + Firefox:
   + Search engine - DuckDuckGo
   + Extension - Privacy Badger
   + Extension - uBlock Origin
+  + Extension - GNOME Shell integration
+  + Extension - KeePassHelper Password Manager
 
 + For remote control:
   + SSH Tunneling on client side:
