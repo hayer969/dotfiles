@@ -4,10 +4,7 @@
 
 + **Linux** - minimal distribution `ArchLinux`
   + **FS** - `btrfs`  
-  + **DE** - something light, like `xfce`
-    + **WM** - tiling window manager. `qtile` *? because a python ?* : <http://docs.qtile.org/en/latest/manual/install/index.html>
-  + **DE** - or just `gnome 3` for specific **WM**  
-    + **Theme** - `mojave` theme for `gnome3` for additional user account: <https://github.com/vinceliuice/Mojave-gtk-theme>  ?? need GTK2 myabe it's not so good like vanilla gnome
+  + **DE** - `gnome 40`
 
 ****  
 
@@ -22,29 +19,32 @@
 + **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 + **features** - `tlp` (not with **Clear Linux**): <https://linrunner.de/tlp>  
 
-+ **terminal text editor** - `vis` *? cause vim-like and multicursor setting ?* : <https://github.com/martanne/vis>
++ **terminal text editor** - `neovim`: <https://github.com/neovim/neovim>
 
 ****
 
 ## Maintenance Arch
 
-+ `gnome3` settings, use `gnome-tweaks` too:
++ `gnome40` settings, use `gnome-tweaks` too:
   + add `ru` keyboard layot
   + set locale
   + set time
-  + change shortcuts for preferable. For example `Switch Windows` to `alt+tab` for preventing grouping windows.
+  + change shortcuts for preferable
   + alter blanck screen timing
+
++ Restrict log size
 
 + `gnome40` extensions:
   + Clipboard Indicator: <https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator>
   + Tiling Assistant: <https://github.com/Leleat/Tiling-Assist>
 
 + Firefox:
-  + Search engine - DuckDuckGo
+  + Search engine - DuckDuckGo or Brave search
   + Extension - Privacy Badger
   + Extension - uBlock Origin
   + Extension - GNOME Shell integration
   + Extension - KeePassHelper Password Manager
+  + Extension - Vimium-FF
 
 + For remote control:
   + SSH Tunneling on client side:

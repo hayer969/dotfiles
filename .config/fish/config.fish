@@ -22,4 +22,10 @@ set -g fish_color_autosuggestion 9c9c9c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-neofetch
+#neofetch
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/hayer/Applications/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+

@@ -1,4 +1,4 @@
-adobe-source-sans-pro-fonts
+adobe-source-sans-fonts
 alacritty
 alsa-firmware
 alsa-plugins
@@ -24,7 +24,6 @@ broadcom-wl
 broot
 btrfs-progs
 cheese
-chrome-gnome-shell
 clonezilla
 crda
 cups
@@ -40,6 +39,7 @@ dnsmasq
 dos2unix
 edk2-shell
 efibootmgr
+eog
 ethtool
 evolution
 exfatprogs
@@ -72,7 +72,6 @@ gnome-devel-docs
 gnome-disk-utility
 gnome-keyring
 gnome-menus
-gnome-mplayer
 gnome-multi-writer
 gnome-nettool
 gnome-screenshot
@@ -126,7 +125,6 @@ lib32-libva
 lib32-libxcomposite
 lib32-libxinerama
 lib32-libxslt
-lib32-llvm
 lib32-mpg123
 lib32-ocl-icd
 lib32-openal
@@ -149,7 +147,6 @@ m4
 make
 man-db
 man-pages
-mc
 memtest86+
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
@@ -218,6 +215,7 @@ terminus-font
 testdisk
 tldr
 tmux
+totem
 ttf-dejavu
 ttf-droid
 ttf-fira-code
