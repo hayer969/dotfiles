@@ -4,6 +4,7 @@ SETUVAR --export EDITOR:/usr/bin/nvim
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_cat:bat
+SETUVAR _fish_abbr_cdf:cd\x20\x28fd\x20\x2d\x2dtype\x20d\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20\x2esnapshot\x20\x2d\x2dexclude\x20dosdevices\x20\x2d\x2dhidden\x20\x2e\x20\x7c\x20fzf\x29
 SETUVAR _fish_abbr_file:nautilus\x20\x28pwd\x29\x20\x26\x3b\x20disown
 SETUVAR _fish_abbr_fn:find\x20\x2e/\x20\x2diname
 SETUVAR _fish_abbr_ga:git\x20add

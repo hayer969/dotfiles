@@ -5,7 +5,7 @@ set -x LESS "-RFi"
 
 set -x EDITOR /usr/bin/nvim
 set -x LANG en_US.UTF-8
-set -x FZF_DEFAULT_OPTS "--multi"
+set -x FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_display_git_master_branch yes
