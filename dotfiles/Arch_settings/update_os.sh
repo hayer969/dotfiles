@@ -12,8 +12,12 @@ read -p "Proceed with update? [Y/n] " -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]] 
 then
-  sudo btrfs subvolume snapshot / /snapshot/root-$(date +%b-%d-%Y)
-  sudo btrfs subvolume snapshot /home/ ~/.snapshot/home-$(date +%b-%d-%Y)
+  sudo mount /mnt/rootfs
+  sudo btrfs subvolume snapshot /mnt/rootfs/rootfs /mnt/rootfs/snapshots/root-$(date +%b-%d-%Y)
+  sudo umount /mnt/rootfs
+  sudo mount /mnt/homefs
+  sudo btrfs subvolume snapshot /mnt/homefs/homefs/ /mnt/homefs/snapshots/home-$(date +%b-%d-%Y)
+  sudo umount /mnt/homefs
   sudo pacman -Syu
   paru -Sau
 else
