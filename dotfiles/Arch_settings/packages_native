@@ -45,6 +45,7 @@ evolution
 exfatprogs
 f2fs-tools
 fakeroot
+fd
 feh
 ffmpegthumbnailer
 file-roller
@@ -74,6 +75,7 @@ gnome-keyring
 gnome-menus
 gnome-multi-writer
 gnome-nettool
+gnome-notes
 gnome-screenshot
 gnome-session
 gnome-settings-daemon
@@ -207,6 +209,7 @@ speedtest-cli
 splix
 steam
 sudo
+sushi
 syslinux
 system-config-printer
 tcpdump
@@ -240,6 +243,7 @@ wireless_tools
 wmctrl
 wpa_supplicant
 wvdial
+xclip
 xdg-desktop-portal-gtk
 xdg-user-dirs
 xdo

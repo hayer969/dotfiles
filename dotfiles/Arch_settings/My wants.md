@@ -14,8 +14,10 @@
 + **terminal** - `Alacritty`: <https://github.com/alacritty/alacritty/blob/master/INSTALL.md>
 + **features** - `bobthefish` try not install, just edit fish.config: <https://github.com/oh-my-fish/theme-bobthefish>
 + **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
++ **features** - `fd`: <https://github.com/sharkdp/fd>
 + **features** - `bat`: <https://github.com/sharkdp/bat>
 + **features** - `broot`: <https://dystroy.org/broot/install>
++ **features** - `lf`: <https://github.com/gokcehan/lf>
 + **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 + **features** - `tlp` (not with **Clear Linux**): <https://linrunner.de/tlp>  
 

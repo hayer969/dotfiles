@@ -22,6 +22,5 @@ then
   paru -Sau
 else
   echo Update Cancelled. If space is low, perform:
-  echo sudo btrfs balance start -dusage=50 /
-  echo sudo btrfs balance start -musage=50 /
+  echo sudo btrfs balance start -dusage=50 -musage=50 /
 fi
