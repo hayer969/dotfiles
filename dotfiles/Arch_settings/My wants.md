@@ -153,7 +153,7 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
         pacman -Sc
 
-## OS tweaks
+## OS tweaking
 
 + auto-cpufreq: https://github.com/AdnanHodzic/auto-cpufreq
 + zram: https://fedoraproject.org/wiki/Changes/SwapOnZRAM
