@@ -19,7 +19,6 @@
 + **features** - `broot`: <https://dystroy.org/broot/install>
 + **features** - `lf`: <https://github.com/gokcehan/lf>
 + **features** - `tldr`: <https://github.com/tldr-pages/tldr>
-+ **features** - `tlp` (not with **Clear Linux**): <https://linrunner.de/tlp>  
 
 + **terminal text editor** - `neovim`: <https://github.com/neovim/neovim>
 
@@ -113,6 +112,11 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
       btrfs filesystem du /{path}
       btrfs filesystem usage /{path}
 
++ BTRFS - fstab example:
+
+      UUID={your uuid} /mnt/rootfs btrfs noauto,rw,noatime,discard=async,ssd,space_cache,compress=zstd:1,subvolid=5,subvol=/     0 0
+      UUID={your uuid} /           btrfs rw,noatime,discard=async,ssd,space_cache,compress=zstd:1,subvol=/rootfs                 0 0
+
 + Pacman & paru:  
   paru install: <https://aur.archlinux.org/packages/paru/>  
   + update system  
@@ -148,6 +152,12 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
   + clear package cache  
 
         pacman -Sc
+
+## OS tweaks
+
++ auto-cpufreq: https://github.com/AdnanHodzic/auto-cpufreq
++ zram: https://fedoraproject.org/wiki/Changes/SwapOnZRAM
++ systemd-oomd: https://fedoraproject.org/wiki/Changes/EnableSystemdOomd#Enable_systemd-oomd_by_default_for_all_variants
 
 ## Windows 10
 

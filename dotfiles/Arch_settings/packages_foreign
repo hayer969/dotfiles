@@ -1,4 +1,5 @@
 appimagelauncher
+auto-cpufreq
 chrome-gnome-shell
 kooha
 lf
@@ -7,4 +8,4 @@ nerd-fonts-dejavu-complete
 nerd-fonts-fira-code
 paru
 visual-studio-code-bin
-zoom
+zram-generator-defaults
