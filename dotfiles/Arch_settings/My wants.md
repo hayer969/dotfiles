@@ -36,8 +36,10 @@
 + Restrict log size
 
 + `gnome40` extensions:
+  + Gnome Shell Extensions: <https://gitlab.gnome.org/GNOME/gnome-shell-extensions>
   + Clipboard Indicator: <https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator>
   + Tiling Assistant: <https://github.com/Leleat/Tiling-Assist>
+  + Blur my Shell: <https://github.com/aunetx/gnome-shell-extension-blur-my-shell>
 
 + Firefox:
   + Search engine - DuckDuckGo or Brave search
@@ -162,6 +164,37 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 ## Windows 10
 
 + X11-Server `VcXsrv`: <https://sourceforge.net/p/vcxsrv/wiki/Home/>
+
+## Transition from Windows to Fedora
+
+### Before transition I need to resolve some questions  
+
++ [ ] Hunt Showdown & Crossout should to be patched to work with proton/wine.  
++ [ ] Could I activate windows code on virtual machine repeatedly?  
++ [ ] Gnome Boxes or VMware? Where it stores virtual disks?  
++ [ ] Could I do flat layout of btrfs snapshots as on my arch?  
+     What could be with grub after kernel updates?  
++ [x] How can I do snapshots before system updating?
+     Should I use shell script or somehow connect GUI updater and timeshift for example?  
+     Answer:  
+     The easiest way, replace pacman command to dnf in existing script update_os.sh
++ [x] Is BTRFS perfomance on HDD good?  
+     Answer:  
+     Good enough. Overall performance closest to ext4. But app start time maybe very poor with write/read opertaions on the background.  
++ [ ] Could I minimize applications to gnome tray?
+     Autorun keyboard led managment app for Bloody hardware and minimize it.
+     https://github.com/MartinPL/Tray-Icons-Reloaded
++ [ ] How much space I need during transition process?  
++ [ ] XBOX controller with headphones, does it work?
++ [x] OBS and Wayland, does it work?  
+     Answer:  
+     Yes, OBS Studio starts from version 27. It has rpm package in RPM Fusion Free Updates x86_64  
++ [-] Tekken 7 should work with proton/wine.  
+     Answer:
+     Maybe doesn't work with XEON proccessors.
++ [ ] PUBG, Rainbow Six Siege should work with proton/wine.  
++ [x] Witcher 3, Assasins Creed, Wolfenstein should work with proton/wine.  
++ [ ] Blizzard Games should work with proton/wine.  
 
 ****
 
