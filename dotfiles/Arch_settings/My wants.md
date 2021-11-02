@@ -189,7 +189,7 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 + [x] OBS and Wayland, does it work?  
      Answer:  
      Yes, OBS Studio starts from version 27. It has rpm package in RPM Fusion Free Updates x86_64  
-+ [-] Tekken 7 should work with proton/wine.  
++ [ ] Tekken 7 should work with proton/wine.  
      Answer:
      Maybe doesn't work with XEON proccessors.
 + [ ] PUBG, Rainbow Six Siege should work with proton/wine.  
