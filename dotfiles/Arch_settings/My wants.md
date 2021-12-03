@@ -2,7 +2,7 @@
   
 ## Distro
 
-+ **Linux** - minimal distribution `ArchLinux`
++ **Linux** - `Fedora`
   + **FS** - `btrfs`  
   + **DE** - `gnome 40`
 
@@ -171,9 +171,14 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
 + [ ] Hunt Showdown & Crossout should to be patched to work with proton/wine.  
 + [ ] Could I activate windows code on virtual machine repeatedly?  
-+ [ ] Gnome Boxes or VMware? Where it stores virtual disks?  
-+ [ ] Could I do flat layout of btrfs snapshots as on my arch?  
++ [x] Gnome Boxes or VMware? Where it stores virtual disks?  
+     Answer:  
+     VMware, we have more settings for pci passthrough. And don't forgot to set `chattr +c` for images folder  
+     or just check it with `lsattr`, fedora should do it automatically  
++ [x] Could I do flat layout of btrfs snapshots as on my arch?  
      What could be with grub after kernel updates?  
+     Answer:  
+     Yes, I can. If `/boot` and `/root` on the same subvolume it works as on arch.
 + [x] How can I do snapshots before system updating?
      Should I use shell script or somehow connect GUI updater and timeshift for example?  
      Answer:  
