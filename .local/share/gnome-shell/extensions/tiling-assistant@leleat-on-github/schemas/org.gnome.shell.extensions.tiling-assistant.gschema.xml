@@ -24,6 +24,9 @@
 		<key name="enable-raise-tile-group" type="b">
 			<default>true</default>
 		</key>
+		<key name="tilegroups-in-app-switcher" type="b">
+			<default>true</default>
+		</key>
 		<key name="dynamic-keybinding-behaviour" type="s">
 			<default>"Disabled"</default>
 		</key>
@@ -83,14 +86,17 @@
 		<key name="import-layout-examples" type="b">
 			<default>true</default>
 		</key>
-		<key name="search-popup-layout" type="as">
-			<default>[]</default>
+		<key name="show-layout-panel-indicator" type="b">
+			<default>false</default>
 		</key>
-		<key name="change-favorite-layout" type="as">
+		<key name="search-popup-layout" type="as">
 			<default>[]</default>
 		</key>
 		<key name="favorite-layout" type="i">
 			<default>-1</default>
+		</key>
+		<key name="favorite-layouts" type="as">
+			<default>[]</default>
 		</key>
 		<key name="activate-layout0" type="as">
 			<default>[]</default>
@@ -165,13 +171,16 @@
 			<default>true</default>
 		</key>
 		<key name="changelog-version" type="i">
-			<default>26</default>
+			<default>-1</default>
 		</key>
 		<key name="show-changelog-on-update" type="b">
 			<default>true</default>
 		</key>
 		<key name="default-move-mode" type="s">
 			<default>"Edge Tiling"</default>
+		</key>
+		<key name="adapt-edge-tiling-to-favorite-layout" type="b">
+			<default>true</default>
 		</key>
 		<key name="move-split-tiles-mod" enum="org.gnome.shell.extensions.tiling-assistant.move-modes-mods">
 			<default>"Ctrl"</default>

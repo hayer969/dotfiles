@@ -4,7 +4,7 @@ else
     " ordinary neovim
 	set nocompatible
 	filetype plugin on
-	set relativenumber
+	set number relativenumber
 
 	"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	" => Remap Keys
