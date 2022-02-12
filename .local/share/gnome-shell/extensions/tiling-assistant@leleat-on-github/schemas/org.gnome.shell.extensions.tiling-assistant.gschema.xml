@@ -25,6 +25,12 @@
 			<default>true</default>
 		</key>
 		<key name="tilegroups-in-app-switcher" type="b">
+			<default>false</default>
+		</key>
+		<key name="use-window-switcher" type="b">
+			<default>false</default>
+		</key>
+		<key name="window-switcher-group-by-apps" type="b">
 			<default>true</default>
 		</key>
 		<key name="dynamic-keybinding-behaviour" type="s">
@@ -51,8 +57,23 @@
 		<key name="auto-tile" type="as">
 			<default>[]</default>
 		</key>
+		<key name="toggle-always-on-top" type="as">
+			<default>[]</default>
+		</key>
 		<key name="tile-maximize" type="as">
-			<default><![CDATA[['<Super>KP_5']]]></default>
+			<default><![CDATA[['<Super>Up','<Super>KP_5']]]></default>
+		</key>
+		<key name="tile-maximize-vertically" type="as">
+			<default>[]</default>
+		</key>
+		<key name="tile-maximize-horizontally" type="as">
+			<default>[]</default>
+		</key>
+		<key name="restore-window" type="as">
+			<default><![CDATA[['<Super>Down']]]></default>
+		</key>
+		<key name="center-window" type="as">
+			<default>[]</default>
 		</key>
 		<key name="tile-top-half" type="as">
 			<default><![CDATA[['<Super>KP_8']]]></default>
@@ -61,10 +82,10 @@
 			<default><![CDATA[['<Super>KP_2']]]></default>
 		</key>
 		<key name="tile-left-half" type="as">
-			<default><![CDATA[['<Super>KP_4']]]></default>
+			<default><![CDATA[['<Super>Left','<Super>KP_4']]]></default>
 		</key>
 		<key name="tile-right-half" type="as">
-			<default><![CDATA[['<Super>KP_6']]]></default>
+			<default><![CDATA[['<Super>Right','<Super>KP_6']]]></default>
 		</key>
 		<key name="tile-topleft-quarter" type="as">
 			<default><![CDATA[['<Super>KP_7']]]></default>
@@ -182,7 +203,7 @@
 		<key name="adapt-edge-tiling-to-favorite-layout" type="b">
 			<default>true</default>
 		</key>
-		<key name="move-split-tiles-mod" enum="org.gnome.shell.extensions.tiling-assistant.move-modes-mods">
+		<key name="move-adaptive-tiling-mod" enum="org.gnome.shell.extensions.tiling-assistant.move-modes-mods">
 			<default>"Ctrl"</default>
 		</key>
 		<key name="move-favorite-layout-mod" enum="org.gnome.shell.extensions.tiling-assistant.move-modes-mods">

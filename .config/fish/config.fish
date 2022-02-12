@@ -1,4 +1,6 @@
 #set -x PATH $PATH
+#For Alacritty title bar working properly
+#set WAYLAND_DISPLAY alacritty
 
 #For case insensitive search in less
 set -x LESS "-RFi"
