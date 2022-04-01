@@ -1,12 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:/usr/bin/nvim
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_cdf:cd\x20\x28fd\x20\x2d\x2dtype\x20d\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20\x2esnapshot\x20\x2d\x2dexclude\x20dosdevices\x20\x2d\x2dhidden\x20\x2e\x20\x7c\x20fzf\x29
 SETUVAR _fish_abbr_cdh:cd\x20\x28string\x20trim\x20\x28dirh\x20\x7c\x20cut\x20\x2df2\x2d\x20\x2dd\x27\x29\x27\x20\x7c\x20sort\x20\x2du\x20\x7c\x20fzf\x29\x29
 SETUVAR _fish_abbr_cdhorig:cdh
+SETUVAR _fish_abbr_duf:du\x20\x2dhsc\x20\x28ls\x20\x2dl\x20\x7c\x20fzf\x20\x7c\x20rev\x20\x7c\x20cut\x20\x2dd\x27\x20\x27\x20\x2df1\x20\x7c\x20rev\x29
 SETUVAR _fish_abbr_file:nautilus\x20\x28pwd\x29\x20\x26\x3b\x20disown
 SETUVAR _fish_abbr_fn:find\x20\x2e/\x20\x2diname
 SETUVAR _fish_abbr_ga:git\x20add
@@ -60,3 +61,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
