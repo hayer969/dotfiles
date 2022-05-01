@@ -29,6 +29,6 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /home/Applications/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+#eval /home/Applications/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
