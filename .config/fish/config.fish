@@ -1,6 +1,8 @@
 #set -x PATH $PATH
 #For Alacritty title bar working properly
 #set WAYLAND_DISPLAY alacritty
+#For VAAPI support
+set -x LIBVA_DRIVER_NAME radeonsi
 
 #For case insensitive search in less
 set -x LESS "-RFi"
