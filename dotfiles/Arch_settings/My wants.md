@@ -160,6 +160,14 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 + auto-cpufreq: https://github.com/AdnanHodzic/auto-cpufreq
 + zram: https://fedoraproject.org/wiki/Changes/SwapOnZRAM
 + systemd-oomd: https://fedoraproject.org/wiki/Changes/EnableSystemdOomd#Enable_systemd-oomd_by_default_for_all_variants
++ vaapi (Video Acceleration API): https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
+
+  ### btrfs layots
+
+  + root /
+  + home /home
+  + var /var
+  + snapshots noauto-mount
 
 ## Windows 10
 
