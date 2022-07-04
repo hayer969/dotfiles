@@ -24,6 +24,7 @@ set -g fish_color_autosuggestion 9c9c9c
 
 ### "bat" as manpager
 set -x BAT_THEME "Coldark-Dark"
+set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
