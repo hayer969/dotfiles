@@ -536,11 +536,11 @@ colors:
 #
 # - `mods` (see key bindings)
 mouse_bindings:
-  - { mouse: Middle,                action: Copy }
-  - { mouse: Middle,                action: Paste }
-#  - { mouse: Right,                 action: ExpandSelection }
-#  - { mouse: Right,  mods: Control, action: ExpandSelection }
-#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
+  - { mouse: Right,                action: Copy }
+  - { mouse: Right, mods: Control, action: Paste }
+  - { mouse: Middle,                 action: ExpandSelection }
+# - { mouse: Middle,  mods: Control, action: ExpandSelection }
+# - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
 # Key bindings
 #
@@ -760,8 +760,8 @@ key_bindings:
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
   # Vi Mode
-  - { key: Space,  mods: Control, mode: Vi, action: ScrollToBottom          }
-  - { key: Space,  mods: Control,           action: ToggleViMode            }
+  - { key: Space,  mods: Super|Control, mode: Vi, action: ScrollToBottom          }
+  - { key: Space,  mods: Super|Control,           action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }

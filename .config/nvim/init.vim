@@ -5,6 +5,7 @@ else
     set nocompatible
     filetype plugin on
     set number relativenumber
+    set ignorecase
     set smartcase
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
