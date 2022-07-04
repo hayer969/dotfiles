@@ -3,6 +3,7 @@ if exists('g:vscode')
 else
     " ordinary neovim
     set nocompatible
+    set mouse=a
     filetype plugin on
     set number relativenumber
     set ignorecase

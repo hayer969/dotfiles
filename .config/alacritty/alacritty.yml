@@ -536,9 +536,9 @@ colors:
 #
 # - `mods` (see key bindings)
 mouse_bindings:
-  - { mouse: Right,                action: Copy }
-  - { mouse: Right, mods: Control, action: Paste }
-  - { mouse: Middle,                 action: ExpandSelection }
+  - { mouse: Middle,                action: Copy }
+  - { mouse: Middle, mods: Control, action: Paste }
+  - { mouse: Right,                 action: ExpandSelection }
 # - { mouse: Middle,  mods: Control, action: ExpandSelection }
 # - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
