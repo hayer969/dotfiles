@@ -40,6 +40,7 @@
   + Clipboard Indicator: <https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator>
   + Tiling Assistant: <https://github.com/Leleat/Tiling-Assist>
   + Blur my Shell: <https://github.com/aunetx/gnome-shell-extension-blur-my-shell>
+  + GSConnect: <https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki>
 
 + Firefox:
   + Search engine - DuckDuckGo or Brave search

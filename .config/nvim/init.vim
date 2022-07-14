@@ -2,12 +2,50 @@ if exists('g:vscode')
     " VSCode extension
 else
     " ordinary neovim
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => VimPlug For Managing Plugins
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+    call plug#begin()
+    " The default plugin directory will be as follows:
+    "   - Vim (Linux/macOS): '~/.vim/plugged'
+    "   - Vim (Windows): '~/vimfiles/plugged'
+    "   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+    " You can specify a custom plugin directory by passing it as the argument
+    "   - e.g. `call plug#begin('~/.vim/plugged')`
+    "   - Avoid using standard Vim directory names like 'plugin'
+    
+    " Make sure you use single quotes
+
+    Plug 'tanvirtin/monokai.nvim'
+
+    " Initialize plugin system
+    call plug#end()
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
     set nocompatible
     set mouse=a
     filetype plugin on
     set number relativenumber
     set ignorecase
     set smartcase
+    set termguicolors
+    syntax enable
+    colorscheme monokai
+
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Custom Colors
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+    lua << EOL
+    local monokai = require('monokai')
+    local palette = monokai.classic
+    monokai.setup {
+        palette = {
+            base4 = '#838383',
+        }
+    }
+EOL
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Remap Keys
@@ -45,7 +83,22 @@ else
     :nnoremap <Leader>D "+D
     "Change word and find next match
     :nnoremap <Leader>c *``gnc
-    
+
+     "Run ipython cell like in VSCode
+     "function Runcell()
+         "" execute "normal mj$? *# %% *$\<CR>:.+1,/ *# %% *$/-1yank +\<CR>:sl 200m\<CR>"
+         "" execute "normal :b ipython\<CR>i"
+         "" let l:nmbr=bufnr("ipython")
+         "" call chansend(l:nmbr, ["i", ""])
+         "" call chansend(l:nmbr, ["%paste", ""])
+         "" execute "normal \<Esc>\<Esc>:b #\<CR>"
+         "let l:r="mj$? *# %% *$\<CR>:.+1,/ *# %% *$/-1yank +\<CR>:sl 200m\<CR>:b ipython\<CR>i%paste\<CR>\<Esc>\<Esc>:b #\<CR>"
+         "execute "normal ".l:r
+     "endfunction
+     ":nnoremap <Leader>r  :call Runcell()<CR>
+     let @r="mj$? *# %% *$\<CR>:.+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>:b #\<CR>'j"
+     :nnoremap <Leader>r  @r
+
     "Visual Mode
     
     "Set cursor to the end of selection after yanking
@@ -86,7 +139,7 @@ else
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Text, tab and indent related
-    " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Use spaces instead of tabs
     set expandtab
     
@@ -99,7 +152,7 @@ else
 
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Splits and Tabbed Files
-    " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     set splitbelow splitright
     
     " Make adjusting split sizes a bit more friendly

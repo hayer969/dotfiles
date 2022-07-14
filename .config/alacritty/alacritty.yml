@@ -760,8 +760,8 @@ key_bindings:
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
   # Vi Mode
-  - { key: Space,  mods: Super|Control, mode: Vi, action: ScrollToBottom          }
-  - { key: Space,  mods: Super|Control,           action: ToggleViMode            }
+  #- { key: Space,  mods: Super|Control, mode: Vi, action: ScrollToBottom          }
+  #- { key: Space,  mods: Super|Control,           action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }
