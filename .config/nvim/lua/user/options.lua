@@ -1,0 +1,13 @@
+vim.opt.mouse = "a"               -- allow the mouse to be used in neovim
+vim.opt.number = true             -- set relative numbered lines
+vim.opt.relativenumber = true     -- set relative numbered lines
+vim.opt.ignorecase = true         -- ignore case in search patterns
+vim.opt.smartcase = true          -- smart case
+vim.opt.termguicolors = true      -- set term gui colors (most terminals support this)
+vim.opt.syntax = "enable"         -- syntax highlight
+vim.opt.expandtab = true          -- use spaces instead of tabs
+vim.opt.smarttab = true           -- be smart when using tabs ;)
+vim.opt.shiftwidth = 4            -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 4               -- insert 4 spaces for a tab
+vim.opt.splitbelow = true         -- force all horizontal splits to go below current window
+vim.opt.splitright = true         -- force all vertical splits to go to the right of current window
