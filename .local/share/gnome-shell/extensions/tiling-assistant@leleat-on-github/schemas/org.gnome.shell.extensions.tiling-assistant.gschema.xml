@@ -38,6 +38,9 @@
 		<key name="maximize-with-gap" type="b">
 			<default>false</default>
 		</key>
+		<key name="monitor-switch-grace-period" type="b">
+			<default>true</default>
+		</key>
 
 		<!-- Keybindings Page -->
 
@@ -184,18 +187,15 @@
 		<key name="enable-untile-animations" type="b">
 			<default>true</default>
 		</key>
-		<key name="changelog-version" type="i">
-			<default>-1</default>
-		</key>
-		<key name="show-changelog-on-update" type="b">
-			<default>false</default>
-		</key>
 		<key name="disable-tile-groups" type="b">
 			<default>false</default>
 		</key>
 		<key name="default-move-mode" type="i">
 			<!-- 0: Edge Tiling, 1: Adaptive Tiling, 2: Favorite Layout -->
 			<default>0</default>
+		</key>
+		<key name="low-performance-move-mode" type="b">
+			<default>false</default>
 		</key>
 		<key name="adapt-edge-tiling-to-favorite-layout" type="b">
 			<default>false</default>
