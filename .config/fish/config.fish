@@ -17,7 +17,9 @@ set -g theme_display_git_ahead_verbose yes
 set -g theme_show_exit_status yes
 set -g theme_date_timezone Europe/Moscow
 set -g theme_date_format "+%a %H:%M:%S"
+set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
+set -g fish_color_command 0087ff
 set -g bobthefish_color_prompt d3b260
 set -g bobthefish_color_path d3b260
 set -g fish_color_autosuggestion 9c9c9c
