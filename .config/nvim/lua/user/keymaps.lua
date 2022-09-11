@@ -18,26 +18,28 @@ vim.g.mapleader = " "
 -- Normal --
 -- Yank to end of Line
 keymap("n", "Y", "y$", opts)
+
+-- Open explorer
+keymap("n", "<Leader>e", "<cmd>Lex 45<CR>", opts)
+
 -- Multiline navigation
 keymap("n", "j", "gj", opts)
+
 -- Multiline navigation
 keymap("n", "k", "gk", opts)
--- Open new tab
-keymap("n", "<Leader>t", "<cmd>tabnew<CR>", opts)
--- Yank to the OS buffer
-keymap("n", "<Leader>y", '"+y', opts)
--- Paste from the OS buffer
-keymap("n", "<Leader>p", '"+p', opts)
-keymap("n", "<Leader>P", '"+P', opts)
--- Delete to the OS buffer
-keymap("n", "<Leader>d", '"+d', opts)
-keymap("n", "<Leader>D", '"+D', opts)
+
+-- Open buffer in new tab
+keymap("n", "<Leader>t", "<cmd>tab split<CR>", opts)
+
 -- Change word and find next match
-keymap("n", "<Leader>c", "*``gnc", opts)
+keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
+
 -- Clear highlights
 keymap("n", "<Leader>h", "<cmd>nohlsearch<CR>", opts)
+
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", "<cmd>bdelet!<CR>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
 keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
@@ -46,24 +48,22 @@ keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 -- Remap ESC to ii
 keymap("i", "jk", "<Esc>", opts)
 keymap("i", "kj", "<Esc>", opts)
--- Move right
--- keymap("i", "<C-l>", "<Right>", opts)
--- Move left
--- keymap("i", "<C-h>", "<Left>", opts)
 
 -- Visual Mode --
 -- Set cursor to the end of selection after yanking
 keymap("v", "y", "ygv<Esc>", opts)
--- Yank to the OS buffer and set cursor to the end of selection
-keymap("v", "<Leader>y", '"+ygv<Esc>', opts)
--- Paste from the OS buffer
-keymap("", "<Leader>p", '"+p', opts)
--- Delete to the OS buffer
-keymap("", "<Leader>d", '"+d', opts)
+
+-- Better paste
+keymap("v", "p", '"_dP', opts)
+
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
 -- Put in the search buffer
-keymap("", "<Leader>f", "y/<C-r>0<CR>", opts)
+keymap("v", "<Leader>f", "\"*y:let @/=\"<C-r>*\"<CR>gv<Esc>", opts)
 -- Change selection and find next match
-keymap("", "<Leader>c", "y/<C-r>0<CR>gvc", opts)
+keymap("v", "<Leader>c", "\"*y:let @/=\"<C-r>*\"<CR>gvc", opts)
 
 -- Command Mode --
 keymap("c", "q1", "q!<CR>", opts)
@@ -107,4 +107,34 @@ keymap("n", "<C-Down>", "<cmd>resize -3 <CR>", opts)
 -- nnoremap <Leader>r  :call Runcell()<CR>
 
 vim.cmd([[let @r="mj$? *# %% *$\<CR>:.+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>:b #\<CR>'j"]])
-keymap("n", "<Leader>r", " @r", opts)
+keymap("n", "<Leader>r", "@r", opts)
+
+
+-- Plugins --
+
+-- NvimTree
+-- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>ft", "<cmd>Telescope live_grep<CR>", opts)
+-- keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+
+-- Git
+-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- Comment
+-- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+-- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+
+-- DAP
+-- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+-- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+-- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+-- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
+-- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+-- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
+-- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+-- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+-- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)

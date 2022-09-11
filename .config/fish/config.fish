@@ -7,6 +7,9 @@ set -x LIBVA_DRIVER_NAME radeonsi
 #For case insensitive search in less
 set -x LESS "-RFi"
 
+#Path to ripgrep configuration file 
+set -x RIPGREP_CONFIG_PATH $HOME/.config/ripgreprc
+
 set -x EDITOR /usr/bin/nvim
 set -x LANG en_US.UTF-8
 set -x FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
