@@ -49,6 +49,9 @@ keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 keymap("i", "jk", "<Esc>", opts)
 keymap("i", "kj", "<Esc>", opts)
 
+-- More convenient move over the parentheses and so on
+keymap("i", "<C-l>", "<Right>", opts)
+
 -- Visual Mode --
 -- Set cursor to the end of selection after yanking
 keymap("v", "y", "ygv<Esc>", opts)
@@ -118,6 +121,7 @@ keymap("n", "<Leader>r", "@r", opts)
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope command_history<CR>", opts)
 -- keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 
