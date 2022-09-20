@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 keymap("n", "Y", "y$", opts)
 
 -- Open explorer
-keymap("n", "<Leader>e", "<cmd>Lex 45<CR>", opts)
+keymap("n", "<Leader>e", "<CMD>Lex 45<CR>", opts)
 
 -- Multiline navigation
 keymap("n", "j", "gj", opts)
@@ -29,20 +29,20 @@ keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)
 
 -- Open buffer in new tab
-keymap("n", "<Leader>t", "<cmd>tab split<CR>", opts)
+keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
 
 -- Change word and find next match
 keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
 
 -- Clear highlights
-keymap("n", "<Leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<Leader>h", "<CMD>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>bdelet!<CR>", opts)
+-- Close current buffer and keep windows
+keymap("n", "<S-q>", "<CMD>buffer #<CR><CMD>bdelete! #<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
-keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
+keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
 
 -- Insert Mode --
 -- Remap ESC to ii
@@ -57,6 +57,7 @@ keymap("i", "<C-l>", "<Right>", opts)
 keymap("v", "y", "ygv<Esc>", opts)
 
 -- Better paste
+-- just 'P' also should work
 keymap("v", "p", '"_dP', opts)
 
 -- Stay in indent mode
@@ -90,10 +91,10 @@ keymap("n", "<A-k>", "<C-w>k", opts)
 keymap("n", "<A-l>", "<C-w>l", opts)
 
 -- Make adjusting split sizes a bit more friendly
-keymap("n", "<C-Left>", "<cmd>vertical resize -3 <CR>", opts)
-keymap("n", "<C-Right>", "<cmd>vertical resize +3 <CR>", opts)
-keymap("n", "<C-Up>", "<cmd>resize +3 <CR>", opts)
-keymap("n", "<C-Down>", "<cmd>resize -3 <CR>", opts)
+keymap("n", "<C-Left>", "<CMD>vertical resize -3 <CR>", opts)
+keymap("n", "<C-Right>", "<CMD>vertical resize +3 <CR>", opts)
+keymap("n", "<C-Up>", "<CMD>resize +3 <CR>", opts)
+keymap("n", "<C-Down>", "<CMD>resize -3 <CR>", opts)
 
 -- Run ipython cell like in VSCode
 -- Doesn't work but want to use local buffers instead global r
@@ -119,26 +120,27 @@ keymap("n", "<Leader>r", "@r", opts)
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope command_history<CR>", opts)
--- keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
+keymap("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fh", "<CMD>Telescope command_history<CR>", opts)
+-- keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", opts)
 
 -- Git
--- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
--- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
--- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
+keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
 
 -- DAP
--- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
--- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
--- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
--- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
--- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
--- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
--- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
--- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
--- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+-- keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<cr>", opts)
+-- keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<cr>", opts)
+-- keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<cr>", opts)
+-- keymap("n", "<leader>do", "<CMD>lua require'dap'.step_over()<cr>", opts)
+-- keymap("n", "<leader>dO", "<CMD>lua require'dap'.step_out()<cr>", opts)
+-- keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.toggle()<cr>", opts)
+-- keymap("n", "<leader>dl", "<CMD>lua require'dap'.run_last()<cr>", opts)
+-- keymap("n", "<leader>du", "<CMD>lua require'dapui'.toggle()<cr>", opts)
+-- keymap("n", "<leader>dt", "<CMD>lua require'dap'.terminate()<cr>", opts)
