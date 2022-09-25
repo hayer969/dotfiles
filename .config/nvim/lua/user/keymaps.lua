@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 keymap("n", "Y", "y$", opts)
 
 -- Open explorer
-keymap("n", "<Leader>e", "<CMD>Lex 45<CR>", opts)
+-- keymap("n", "<Leader>e", "<CMD>Lex 45<CR>", opts)
 
 -- Multiline navigation
 keymap("n", "j", "gj", opts)
@@ -38,11 +38,19 @@ keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
 keymap("n", "<Leader>h", "<CMD>nohlsearch<CR>", opts)
 
 -- Close current buffer and keep windows
-keymap("n", "<S-q>", "<CMD>buffer #<CR><CMD>bdelete! #<CR>", opts)
+keymap("n", "<S-q>", "<CMD>buffer #<CR><CMD>Bdelete! #<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
 keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
+
+-- Don't touch unnamed register by X
+keymap("n", "x", '"_x', opts)
+keymap("n", "X", '"_X', opts)
+
+-- Don't touch unnamed register by C
+keymap("n", "c", '"_c', opts)
+keymap("n", "C", '"_C', opts)
 
 -- Insert Mode --
 -- Remap ESC to ii
@@ -68,6 +76,14 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<Leader>f", "\"*y:let @/=\"<C-r>*\"<CR>gv<Esc>", opts)
 -- Change selection and find next match
 keymap("v", "<Leader>c", "\"*y:let @/=\"<C-r>*\"<CR>gvc", opts)
+
+-- Don't touch unnamed register by X
+keymap("v", "x", '"_x', opts)
+keymap("v", "X", '"_X', opts)
+
+-- Don't touch unnamed register by C
+keymap("v", "c", '"_c', opts)
+keymap("v", "C", '"_C', opts)
 
 -- Command Mode --
 keymap("c", "q1", "q!<CR>", opts)
@@ -110,14 +126,13 @@ keymap("n", "<C-Down>", "<CMD>resize -3 <CR>", opts)
 -- endfunction
 -- nnoremap <Leader>r  :call Runcell()<CR>
 
-vim.cmd([[let @r="mj$? *# %% *$\<CR>:.+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>:b #\<CR>'j"]])
+vim.cmd([[let @r="mJ$? *# %% *$\<CR>:+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>`J"]])
 keymap("n", "<Leader>r", "@r", opts)
-
 
 -- Plugins --
 
 -- NvimTree
--- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
