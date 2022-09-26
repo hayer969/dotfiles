@@ -17,15 +17,10 @@
     require "user.bufferline"
     require "user.lualine"
     require "user.toggleterm"
-    -- require "user.project"
-    -- require "user.impatient"
-    -- require "user.indentline"
-    -- require "user.alpha"
+    require "user.project"
+    require "user.impatient"
+    require "user.indentline"
+    require "user.alpha"
     -- require "user.whichkey"
     require "user.autocommands"
-
-    -- local A = vim.api
-    -- A.nvim_command('filetype plugin on')
-
-    -- set path+=**                  -- Searches current directory recursively.
 -- end

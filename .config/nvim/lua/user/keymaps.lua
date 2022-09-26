@@ -138,11 +138,11 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fh", "<CMD>Telescope command_history<CR>", opts)
--- keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
+keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", opts)
 
 -- Git
--- keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
