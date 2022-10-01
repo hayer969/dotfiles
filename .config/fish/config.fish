@@ -27,10 +27,12 @@ set -g bobthefish_color_prompt d3b260
 set -g bobthefish_color_path d3b260
 set -g fish_color_autosuggestion 9c9c9c
 
-### "bat" as manpager
+# "bat" as manpager
 set -x BAT_THEME "Coldark-Dark"
 set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# Add poetry to Path
+set -x PATH "/home/hayer/.local/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 #neofetch

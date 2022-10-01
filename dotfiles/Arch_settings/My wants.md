@@ -24,6 +24,12 @@
 
 + **terminal text editor** - `neovim`: <https://github.com/neovim/neovim>
 
+****  
+
+## Developing
+
++ **python** - `poetry`: <https://python-poetry.org/>
+
 ****
 
 ## Maintenance Arch
