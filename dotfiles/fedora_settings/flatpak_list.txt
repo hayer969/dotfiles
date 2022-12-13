@@ -1,0 +1,35 @@
+Discord                                 com.discordapp.Discord
+Steam                                   com.valvesoftware.Steam
+Celluloid                               io.github.celluloid_player.Celluloid
+Fedora Platform                         org.fedoraproject.Platform
+Fedora Platform                         org.fedoraproject.Platform
+TAP-plugins                             org.freedesktop.LinuxAudio.Plugins.TAP
+SWH                                     org.freedesktop.LinuxAudio.Plugins.swh
+Freedesktop Platform                    org.freedesktop.Platform
+Freedesktop Platform                    org.freedesktop.Platform
+i386                                    org.freedesktop.Platform.Compat.i386
+i386                                    org.freedesktop.Platform.Compat.i386
+Mesa                                    org.freedesktop.Platform.GL.default
+Mesa                                    org.freedesktop.Platform.GL.default
+Mesa (Extra)                            org.freedesktop.Platform.GL.default
+default                                 org.freedesktop.Platform.GL32.default
+Mesa                                    org.freedesktop.Platform.GL32.default
+Mesa (Extra)                            org.freedesktop.Platform.GL32.default
+ffmpeg-full                             org.freedesktop.Platform.ffmpeg-full
+openh264                                org.freedesktop.Platform.openh264
+openh264                                org.freedesktop.Platform.openh264
+openh264                                org.freedesktop.Platform.openh264
+GNU Image Manipulation Program          org.gimp.GIMP
+Evolution                               org.gnome.Evolution
+Notes                                   org.gnome.Notes
+GNOME Application Platform version 42   org.gnome.Platform
+GNOME Application Platform version 43   org.gnome.Platform
+Adwaita theme                           org.kde.KStyle.Adwaita
+KDE Application Platform                org.kde.Platform
+QGnomePlatform                          org.kde.PlatformTheme.QGnomePlatform
+QtSNI                                   org.kde.PlatformTheme.QtSNI
+QGnomePlatform-decoration               org.kde.WaylandDecoration.QGnomePlatform-decoration
+Kdenlive                                org.kde.kdenlive
+Telegram Desktop                        org.telegram.desktop
+Telegram Desktop Webview Add-on         org.telegram.desktop.webview
+Zoom                                    us.zoom.Zoom
