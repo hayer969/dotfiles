@@ -19,8 +19,9 @@ vim.g.mapleader = " "
 -- Yank to end of Line
 keymap("n", "Y", "y$", opts)
 
--- Open explorer
--- keymap("n", "<Leader>e", "<CMD>Lex 45<CR>", opts)
+-- Paste from yank register 0
+keymap("n", "<Leader>p", "\"0p", opts)
+keymap("n", "<Leader>P", "\"0P", opts)
 
 -- Multiline navigation
 keymap("n", "j", "gj", opts)
@@ -38,19 +39,11 @@ keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
 keymap("n", "<Leader>h", "<CMD>nohlsearch<CR>", opts)
 
 -- Close current buffer and keep windows
-keymap("n", "<S-q>", "<CMD>buffer #<CR><CMD>Bdelete! #<CR>", opts)
+keymap("n", "<S-q>", "<CMD>Bdelete!<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
 keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
-
--- Don't touch unnamed register by X
-keymap("n", "x", '"_x', opts)
-keymap("n", "X", '"_X', opts)
-
--- Don't touch unnamed register by C
-keymap("n", "c", '"_c', opts)
-keymap("n", "C", '"_C', opts)
 
 -- Insert Mode --
 -- Remap ESC to ii
@@ -64,26 +57,19 @@ keymap("i", "<C-l>", "<Right>", opts)
 -- Set cursor to the end of selection after yanking
 keymap("v", "y", "ygv<Esc>", opts)
 
--- Better paste
--- just 'P' also should work
-keymap("v", "p", '"_dP', opts)
+-- Paste from yank register 0
+keymap("v", "<Leader>p", "\"0p", opts)
+keymap("v", "<Leader>P", "\"0P", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Put in the search buffer
-keymap("v", "<Leader>f", "\"*y:let @/=\"<C-r>*\"<CR>gv<Esc>", opts)
+keymap("v", "*", "\"*y:let @/='\\V'.substitute(escape(@*, '/\\'), '\\n', '\\\\n', 'g')<CR>gv<Esc>", opts)
+
 -- Change selection and find next match
 keymap("v", "<Leader>c", "\"*y:let @/=\"<C-r>*\"<CR>gvc", opts)
-
--- Don't touch unnamed register by X
-keymap("v", "x", '"_x', opts)
-keymap("v", "X", '"_X', opts)
-
--- Don't touch unnamed register by C
-keymap("v", "c", '"_c', opts)
-keymap("v", "C", '"_C', opts)
 
 -- Command Mode --
 keymap("c", "q1", "q!<CR>", opts)
@@ -137,6 +123,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fs", "<CMD>Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fh", "<CMD>Telescope command_history<CR>", opts)
 keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", opts)
