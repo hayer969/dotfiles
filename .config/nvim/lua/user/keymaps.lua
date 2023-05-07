@@ -66,10 +66,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Put in the search buffer
-keymap("v", "*", "\"*y:let @/='\\V'.substitute(escape(@*, '/\\'), '\\n', '\\\\n', 'g')<CR>gv<Esc>", opts)
+keymap("v", "*", "\"*ygv\"+y:let @/='\\V'.substitute(escape(@*, '/\\'), '\\n', '\\\\n', 'g')<CR>gv<Esc>", opts)
 
 -- Change selection and find next match
-keymap("v", "<Leader>c", "\"*y:let @/=\"<C-r>*\"<CR>gvc", opts)
+keymap("v", "<Leader>c", "\"*ygv\"+y:let @/='\\V'.substitute(escape(@*, '/\\'), '\\n', '\\\\n', 'g')<CR>gvc", opts)
 
 -- Command Mode --
 keymap("c", "q1", "q!<CR>", opts)
@@ -137,12 +137,16 @@ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(v
 keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
 
 -- DAP
--- keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<cr>", opts)
--- keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<cr>", opts)
--- keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<cr>", opts)
--- keymap("n", "<leader>do", "<CMD>lua require'dap'.step_over()<cr>", opts)
--- keymap("n", "<leader>dO", "<CMD>lua require'dap'.step_out()<cr>", opts)
--- keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.toggle()<cr>", opts)
--- keymap("n", "<leader>dl", "<CMD>lua require'dap'.run_last()<cr>", opts)
--- keymap("n", "<leader>du", "<CMD>lua require'dapui'.toggle()<cr>", opts)
--- keymap("n", "<leader>dt", "<CMD>lua require'dap'.terminate()<cr>", opts)
+keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F5>", "<CMD>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F2>", "<CMD>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<leader>do", "<CMD>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F3>", "<CMD>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<leader>dO", "<CMD>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<F4>", "<CMD>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.toggle()<CR>", opts)
+keymap("n", "<leader>dl", "<CMD>lua require'dap'.run_last()<CR>", opts)
+keymap("n", "<leader>du", "<CMD>lua require'dapui'.toggle()<CR>", opts)
+keymap("n", "<leader>dt", "<CMD>lua require'dap'.terminate()<CR>", opts)

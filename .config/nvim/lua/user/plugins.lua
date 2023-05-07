@@ -92,6 +92,11 @@ return packer.startup(function(use)
   -- Git
   use { "lewis6991/gitsigns.nvim" } --, commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
 
+  -- DAP
+  use { "mfussenegger/nvim-dap" } --, commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
+  use { "mfussenegger/nvim-dap-python" }
+  use { "rcarriga/nvim-dap-ui" } --, commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
