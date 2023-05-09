@@ -127,9 +127,25 @@ keymap("n", "<leader>fs", "<CMD>Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fh", "<CMD>Telescope command_history<CR>", opts)
 keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", opts)
+keymap("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>fR", "<CMD>Telescope registers<CR>", opts)
+keymap("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", opts)
+keymap("n", "<leader>fC", "<CMD>Telescope commands<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gj", "<CMD>lua require 'gitsigns'.next_hunk()<CR>", opts)
+keymap("n", "<leader>gk", "<CMD>lua require 'gitsigns'.prev_hunk()<CR>", opts)
+keymap("n", "<leader>gl", "<CMD>lua require 'gitsigns'.blame_line()<CR>", opts)
+keymap("n", "<leader>gp", "<CMD>lua require 'gitsigns'.preview_hunk()<CR>", opts)
+keymap("n", "<leader>gr", "<CMD>lua require 'gitsigns'.reset_hunk()<CR>", opts)
+keymap("n", "<leader>gR", "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", opts)
+keymap("n", "<leader>gs", "<CMD>lua require 'gitsigns'.stage_hunk()<CR>", opts)
+keymap("n", "<leader>gu", "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", opts)
+keymap("n", "<leader>go", "<CMD>Telescope git_status<CR>", opts)
+keymap("n", "<leader>gb", "<CMD>Telescope git_branches<CR>", opts)
+keymap("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", opts)
+keymap("n", "<leader>gd", "<CMD>Gitsigns diffthis HEAD<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
@@ -138,6 +154,9 @@ keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.bl
 
 -- DAP
 keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>dB", "<CMD>lua require'dap'.set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", opts)
+keymap("n", "<leader>dH", "<CMD>lua require'dap'.set_breakpoint(nil, vim.fn.input(\"Hit condition: \"))<CR>", opts)
+keymap("n", "<leader>dL", "<CMD>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", opts)
 keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F5>", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<CR>", opts)
@@ -150,3 +169,17 @@ keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.toggle()<CR>", opts)
 keymap("n", "<leader>dl", "<CMD>lua require'dap'.run_last()<CR>", opts)
 keymap("n", "<leader>du", "<CMD>lua require'dapui'.toggle()<CR>", opts)
 keymap("n", "<leader>dt", "<CMD>lua require'dap'.terminate()<CR>", opts)
+
+--Open with different codes and other staff
+-- Open with cp1251
+keymap("n", "<leader>xoc", ":e ++enc=cp1251<CR>", opts)
+-- Save in utf-8
+keymap("n", "<leader>xsu", ":set fenc=utf-8<CR>", opts)
+-- Set line endings to unix style
+keymap("n", "<leader>xeu", ":set ff=unix<CR>", opts)
+-- Display as HEX
+keymap("n", "<leader>xhh", ":%!xxd<CR>", opts)
+-- Convert from HEX
+keymap("n", "<leader>xhr", ":%!xxd -r<CR>", opts)
+-- Write with sudo, don't know how to input password
+--[[ keymap("n", "<leader>xws", ":w !sudo -S tee % > /dev/null<CR>", opts) ]]
