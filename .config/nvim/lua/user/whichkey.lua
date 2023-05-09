@@ -140,7 +140,13 @@ local mappings = {
     r = { "Toggle repl" },
     l = { "Run last" },
     u = { "Toggle UI" },
-    t = { "Terminate session" },
+    q = { "Quit (terminate) session" },
+    s = { "Debug selected" },
+    t = {
+      name = "Debug tests",
+      c = { "Class under cursor" },
+      m = { "Method under cursor" },
+    },
   },
 
   x = {

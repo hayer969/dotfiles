@@ -168,7 +168,11 @@ keymap("n", "<F4>", "<CMD>lua require'dap'.step_out()<CR>", opts)
 keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.toggle()<CR>", opts)
 keymap("n", "<leader>dl", "<CMD>lua require'dap'.run_last()<CR>", opts)
 keymap("n", "<leader>du", "<CMD>lua require'dapui'.toggle()<CR>", opts)
-keymap("n", "<leader>dt", "<CMD>lua require'dap'.terminate()<CR>", opts)
+keymap("n", "<leader>dq", "<CMD>lua require'dap'.terminate()<CR>", opts)
+keymap("n", "<leader>ds", "gv<CMD>lua require'dap-python'.debug_selection()<CR>", opts)
+keymap("v", "<leader>ds", "<CMD>lua require'dap-python'.debug_selection()<CR>", opts)
+keymap("n", "<leader>dtc", "<CMD>lua require'dap-python'.test_class()<CR>", opts)
+keymap("n", "<leader>dtm", "<CMD>lua require'dap-python'.test_method()<CR>", opts)
 
 --Open with different codes and other staff
 -- Open with cp1251
