@@ -114,9 +114,10 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
       sudo btrfs subvolume delete {path to subvolume or snapshot}
 
-  Suppose you make a big mess and you want to roll back to a known good state. It’s a good thing you made a snapshot before the mess happened. First unmount the mangled subvolume, then mount the snapshot in its place. If you decide you don’t need the mangled subvolume anymore you can delete it and rename the snapshot with the same name as the mangled subvolume, so you don’t have to change configuration files like /etc/fstab. Use our old friend the mv command for renaming:
-
-      mv {path to snap} {path to subvolume}
+  Suppose you make a big mess and you want to roll back to a known good state. It’s a good thing you made a snapshot before the mess happened. First unmount the mangled subvolume, delete mangled subvolume, create snapshot from backup one with name mangled subvolume:
+      
+      sudo btrfs subvolume delete {path to mangled subvolume}
+      sudo btrfs subvolume snapshot {path to backup snapshot} {path to mangled subvolume}
 
 + BTRFS - disk usage:  
 
@@ -186,7 +187,7 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
 ### Before transition I need to resolve some questions  
 
-+ [ ] Hunt Showdown & Crossout should to be patched to work with proton/wine.  
++ [ ] Hunt Showdown should to be patched to work with proton/wine.  
 + [ ] Could I activate windows code on virtual machine repeatedly?  
 + [x] Gnome Boxes or VMware? Where it stores virtual disks?  
      Answer:  
