@@ -1,4 +1,5 @@
 bash-language-server
+beautysh
 black
 css-lsp
 debugpy
