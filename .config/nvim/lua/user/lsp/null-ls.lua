@@ -21,5 +21,6 @@ null_ls.setup {
     formatting.beautysh,
     formatting.google_java_format,
     diagnostics.flake8.with { extra_args = { "--max-line-length=100" } },
+    diagnostics.mypy.with { extra_args = { "--disallow-untyped-defs" } },
   },
 }
