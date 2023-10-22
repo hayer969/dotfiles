@@ -45,7 +45,7 @@
 
 + `gnome40` extensions:
   + Gnome Shell Extensions: <https://gitlab.gnome.org/GNOME/gnome-shell-extensions>
-  + Clipboard Indicator: <https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator>
+  + Clipboard history: <https://github.com/SUPERCILEX/gnome-clipboard-history>
   + Tiling Assistant: <https://github.com/Leleat/Tiling-Assist>
   + Blur my Shell: <https://github.com/aunetx/gnome-shell-extension-blur-my-shell>
   + GSConnect: <https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki>
