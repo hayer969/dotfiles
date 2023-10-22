@@ -33,3 +33,34 @@ starship init fish | source
 #eval /home/Applications/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
+abbr -a -- gwr git\ worktree\ remove\ \(git\ worktree\ list\ --porcelain\ \|\ grep\ worktree\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f2-\) 
+abbr -a -- gwc git\ worktree\ add\ --guess-remote\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
+abbr -a -- gtree 'git ls-tree --name-only -r HEAD' 
+abbr -a -- cdhorig cdh 
+abbr -a -- lf lfcd 
+abbr -a -- fn 'find ./ -iname' 
+abbr -a -- gp 'git pull' 
+abbr -a -- lg lazygit 
+abbr -a -- grev 'git rev-list --count HEAD' 
+abbr -a -- gbc git\ checkout\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
+abbr -a -- file 'nautilus (pwd) &; disown' 
+abbr -a -- cat bat 
+abbr -a -- gwl 'git worktree list' 
+abbr -a -- duf du\ -hsc\ \(ls\ -l\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'\ \'\ -f1\ \|\ rev\) 
+abbr -a -- gsu 'git status -uno' 
+abbr -a -- c clear 
+abbr -a -- hsf 'commandline (history | fzf)' 
+abbr -a -- ga 'git add' 
+abbr -a -- gcom 'git commit -m' 
+abbr -a -- gaf git\ add\ \(string\ trim\ \(git\ status\ -s\ \|\ fzf\ --preview=\"bat\ --color=always\ \{2..\}\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
+abbr -a -- gwa 'git worktree add' 
+abbr -a -- ls1 'ls -1' 
+abbr -a -- gl 'git log --graph --pretty=medium --name-status' 
+abbr -a -- term 'alacritty -e fish&; disown' 
+abbr -a -- vi nvim 
+abbr -a -- vim nvim 
+abbr -a -- gs 'git show' 
+abbr -a -- cdh cd\ \(string\ trim\ \(dirh\ \|\ cut\ -f2-\ -d\'\)\'\ \|\ sort\ -u\ \|\ fzf\)\) 
+abbr -a -- gc 'git checkout' 
+abbr -a -- gad git\ add\ \(string\ trim\ \(git\ status\ -suno\ \|\ fzf\ --preview=\"git\ diff\ \{2..\}\ \|\ bat\ --color=always\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
+abbr -a -- cdf 'cd (fd --type d --no-ignore-vcs --follow --exclude .git --hidden ".*" . | fzf)'
