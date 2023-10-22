@@ -12,7 +12,7 @@
 
 + **shell** - `Fish`: <https://fishshell.com>
 + **terminal** - `Alacritty`: <https://github.com/alacritty/alacritty/blob/master/INSTALL.md>
-+ **features** - `bobthefish` try not install, just edit fish.config: <https://github.com/oh-my-fish/theme-bobthefish>
++ **features** - `starship` : <https://starship.rs/>
 + **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
 + **features** - `fd`: <https://github.com/sharkdp/fd>
 + **features** - `bat`: <https://github.com/sharkdp/bat>
@@ -167,9 +167,11 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
 ## OS tweaking
 
+### For Arch only
 + auto-cpufreq: https://github.com/AdnanHodzic/auto-cpufreq
 + zram: https://fedoraproject.org/wiki/Changes/SwapOnZRAM
 + systemd-oomd: https://fedoraproject.org/wiki/Changes/EnableSystemdOomd#Enable_systemd-oomd_by_default_for_all_variants
+### For all
 + vaapi (Video Acceleration API): https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
 
   ### btrfs layots
@@ -187,7 +189,7 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
 ### Before transition I need to resolve some questions  
 
-+ [ ] Hunt Showdown should to be patched to work with proton/wine.  
++ [x] Hunt Showdown should to be patched to work with proton/wine.  
 + [ ] Could I activate windows code on virtual machine repeatedly?  
 + [x] Gnome Boxes or VMware? Where it stores virtual disks?  
      Answer:  
@@ -212,7 +214,7 @@ use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 + [x] OBS and Wayland, does it work?  
      Answer:  
      Yes, OBS Studio starts from version 27. It has rpm package in RPM Fusion Free Updates x86_64  
-+ [ ] Tekken 7 should work with proton/wine.  
++ [x] Tekken 7 should work with proton/wine.  
      Answer:
      Maybe doesn't work with XEON proccessors.
 + [ ] PUBG, Rainbow Six Siege should work with proton/wine.  

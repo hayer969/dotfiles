@@ -14,17 +14,7 @@ set -x EDITOR /usr/bin/nvim
 set -x LANG en_US.UTF-8
 set -x FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
 set -g fish_prompt_pwd_dir_length 0
-set -g theme_newline_cursor yes
-set -g theme_display_git_master_branch yes
-set -g theme_display_git_ahead_verbose yes
-set -g theme_show_exit_status yes
-set -g theme_date_timezone Europe/Moscow
-set -g theme_date_format "+%a %H:%M:%S"
-set -g theme_powerline_fonts no
-set -g theme_nerd_fonts yes
 set -g fish_color_command 0087ff
-set -g bobthefish_color_prompt d3b260
-set -g bobthefish_color_path d3b260
 set -g fish_color_autosuggestion 9c9c9c
 
 # "bat" as manpager
@@ -35,6 +25,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x PATH "/home/hayer/.local/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+starship init fish | source
 #neofetch
 
 # >>> conda initialize >>>
