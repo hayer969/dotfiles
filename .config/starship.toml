@@ -2,6 +2,7 @@ format = """
 [](fg:blue)\
 $python\
 $conda\
+$lua\
 [](fg:blue bg:bright-black)\
 $directory\
 [](fg:bright-black bg:bright-green)\
@@ -34,6 +35,10 @@ style = "fg:white bold bg:blue"
 [conda]
 format = "[$symbol$environment]($style)"
 style = "fg:black bg:blue"
+
+[lua]
+format = "[lua ${symbol}(${version})]($style)"
+style = "fg:white bold bg:blue"
 
 [directory]
 format = "[ $path ]($style)[$read_only]($read_only_style)" 
