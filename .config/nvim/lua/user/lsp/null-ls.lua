@@ -29,7 +29,7 @@ null_ls.setup({
 				if string.match(os_type, "Windows") and os.getenv("CONDA_DEFAULT_ENV") then
 					executable = "C:/Users/user/miniconda3/envs/" .. virtual .. "/python.exe"
 				elseif string.match(os_type, "Windows") then
-					executable = "/Scripts/python.exe"
+					executable = virtual .. "/Scripts/python.exe"
 				else
 					executable = virtual .. "/bin/python3"
 				end
