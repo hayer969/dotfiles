@@ -88,6 +88,10 @@
       sudo btrfs subvolume delete {path to mangled subvolume}
       sudo btrfs subvolume snapshot {path to backup snapshot} {path to mangled subvolume}
 
+  Fedora specific, after rollback root partition it is better to clear gnome-software-center cache:
+
+      sudo pkcon refresh force -c -1
+
 - `BTRFS` - disk usage:
 
       btrfs filesystem du /{path}
