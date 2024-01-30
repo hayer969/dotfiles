@@ -3,10 +3,14 @@ Moonlight	com.moonlight_stream.Moonlight
 Steam	com.valvesoftware.Steam
 Celluloid	io.github.celluloid_player.Celluloid
 Fedora Platform	org.fedoraproject.Platform
+Fedora Platform	org.fedoraproject.Platform
 TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP
 SWH	org.freedesktop.LinuxAudio.Plugins.swh
 Freedesktop Platform	org.freedesktop.Platform
+Freedesktop Platform	org.freedesktop.Platform
 i386	org.freedesktop.Platform.Compat.i386
+Mesa	org.freedesktop.Platform.GL.default
+Mesa (Extra)	org.freedesktop.Platform.GL.default
 Mesa	org.freedesktop.Platform.GL.default
 Mesa (Extra)	org.freedesktop.Platform.GL.default
 Mesa	org.freedesktop.Platform.GL32.default
@@ -16,10 +20,11 @@ openh264	org.freedesktop.Platform.openh264
 GNU Image Manipulation Program	org.gimp.GIMP
 Evolution	org.gnome.Evolution
 Notes	org.gnome.Notes
-GNOME Application Platform version 43	org.gnome.Platform
+GNOME Application Platform version 45	org.gnome.Platform
 Adwaita theme	org.kde.KStyle.Adwaita
 KDE Application Platform	org.kde.Platform
 QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations
 QGnomePlatform-decoration	org.kde.WaylandDecoration.QGnomePlatform-decoration
 Kdenlive	org.kde.kdenlive
 Telegram Desktop	org.telegram.desktop
