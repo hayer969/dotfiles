@@ -36,7 +36,7 @@ keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
 keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
 
 -- Clear highlights
-keymap("n", "<Leader>h", "<CMD>nohlsearch<CR>", opts)
+keymap("n", "<Leader>;", "<CMD>nohlsearch<CR>", opts)
 
 -- Close current buffer and keep windows
 keymap("n", "<S-q>", "<CMD>Bdelete!<CR>", opts)
@@ -112,7 +112,8 @@ keymap("n", "<C-Down>", "<CMD>resize -3 <CR>", opts)
 -- endfunction
 -- nnoremap <Leader>r  :call Runcell()<CR>
 
-vim.cmd([[let @r="mJ$? *# %% *$\<CR>:+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>`J"]])
+vim.cmd(
+[[let @r="mJ$? *# %% *$\<CR>:+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>`J"]])
 keymap("n", "<Leader>r", "@r", opts)
 
 -- Plugins --
@@ -132,6 +133,7 @@ keymap("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", opts)
 keymap("n", "<leader>fR", "<CMD>Telescope registers<CR>", opts)
 keymap("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", opts)
 keymap("n", "<leader>fC", "<CMD>Telescope commands<CR>", opts)
+keymap("n", "<leader>fm", "<CMD>Telescope harpoon marks<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -157,7 +159,8 @@ keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.bl
 keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>dB", "<CMD>lua require'dap'.set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", opts)
 keymap("n", "<leader>dH", "<CMD>lua require'dap'.set_breakpoint(nil, vim.fn.input(\"Hit condition: \"))<CR>", opts)
-keymap("n", "<leader>dL", "<CMD>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", opts)
+keymap("n", "<leader>dL", "<CMD>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>",
+    opts)
 keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F5>", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<CR>", opts)
@@ -175,6 +178,24 @@ keymap("v", "<leader>ds", "<CMD>lua require'dap-python'.debug_selection()<CR>", 
 keymap("n", "<leader>dtc", "<CMD>lua require'dap-python'.test_class()<CR>", opts)
 keymap("n", "<leader>dtm", "<CMD>lua require'dap-python'.test_method()<CR>", opts)
 
+-- Harpoon
+keymap("n", "<leader>hm", "<CMD>lua require'harpoon.mark'.add_file()<CR>", opts)
+keymap("n", "<leader>hu", "<CMD>lua require'harpoon.ui'.toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>hc", "<CMD>lua require'harpoon.cmd-ui'.toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>hn", "<CMD>lua require'harpoon.ui'.nav_next()<CR>", opts)
+keymap("n", "<leader>hp", "<CMD>lua require'harpoon.ui'.nav_prev()<CR>", opts)
+keymap("n", "<A-1>", "<CMD>lua require'harpoon.ui'.nav_file(1)<CR>", opts)
+keymap("n", "<A-2>", "<CMD>lua require'harpoon.ui'.nav_file(2)<CR>", opts)
+keymap("n", "<A-3>", "<CMD>lua require'harpoon.ui'.nav_file(3)<CR>", opts)
+keymap("n", "<A-4>", "<CMD>lua require'harpoon.ui'.nav_file(4)<CR>", opts)
+keymap("n", "<C-F1>", "<CMD>lua require'harpoon.term'.gotoTerminal(1)<CR>", opts)
+keymap("n", "<C-F2>", "<CMD>lua require'harpoon.term'.gotoTerminal(2)<CR>", opts)
+keymap("n", "<C-F3>", "<CMD>lua require'harpoon.term'.gotoTerminal(3)<CR>", opts)
+keymap("n", "<leader>h1", "<CMD>lua require'harpoon.term'.sendCommand(1, 1)<CR>", opts)
+keymap("n", "<leader>h2", "<CMD>lua require'harpoon.term'.sendCommand(1, 2)<CR>", opts)
+keymap("n", "<leader>h3", "<CMD>lua require'harpoon.term'.sendCommand(1, 3)<CR>", opts)
+keymap("n", "<leader>h4", "<CMD>lua require'harpoon.term'.sendCommand(1, 4)<CR>", opts)
+
 --Open with different codes and other staff
 -- Open with cp1251
 keymap("n", "<leader>xoc", ":e ++enc=cp1251<CR>", opts)
@@ -182,6 +203,8 @@ keymap("n", "<leader>xoc", ":e ++enc=cp1251<CR>", opts)
 keymap("n", "<leader>xsu", ":set fenc=utf-8<CR>", opts)
 -- Set line endings to unix style
 keymap("n", "<leader>xeu", ":set ff=unix<CR>", opts)
+-- Set line endings to dos style
+keymap("n", "<leader>xed", ":set ff=dos<CR>", opts)
 -- Display as HEX
 keymap("n", "<leader>xhh", ":%!xxd<CR>", opts)
 -- Convert from HEX

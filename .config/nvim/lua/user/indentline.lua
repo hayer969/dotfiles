@@ -1,20 +1,25 @@
-local status_ok, indent_blankline = pcall(require, "ibl")
-if not status_ok then
-	return
-end
-
-local config = {
-	indent = {
-		char = "▏",
-	},
-	scope = { show_start = false, show_end = false },
-	whitespace = {
-		remove_blankline_trail = false,
-	},
-	exclude = {
-		buftypes = { "terminal", "nofile" },
-		filetypes = { "help", "packer", "NvimTree" },
-	},
+local M = {
+	"lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
+	opts = {},
+	event = "VeryLazy",
 }
 
-indent_blankline.setup(config)
+function M.config()
+	require("ibl").setup({
+
+		indent = {
+			char = "▏",
+		},
+		scope = { show_start = false, show_end = false },
+		whitespace = {
+			remove_blankline_trail = false,
+		},
+		exclude = {
+			buftypes = { "terminal", "nofile" },
+			filetypes = { "help", "packer", "NvimTree" },
+		},
+	})
+end
+
+return M
