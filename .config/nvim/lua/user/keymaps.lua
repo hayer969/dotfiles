@@ -196,11 +196,16 @@ keymap("n", "<leader>h2", "<CMD>lua require'harpoon.term'.sendCommand(1, 2)<CR>"
 keymap("n", "<leader>h3", "<CMD>lua require'harpoon.term'.sendCommand(1, 3)<CR>", opts)
 keymap("n", "<leader>h4", "<CMD>lua require'harpoon.term'.sendCommand(1, 4)<CR>", opts)
 
+-- Spelling
+keymap("n", "<leader>xse", ":setlocal spell spelllang=en<CR>", opts)
+keymap("n", "<leader>xsr", ":setlocal spell spelllang=ru<CR>", opts)
+keymap("n", "<leader>xsn", ":setlocal spell spelllang=<CR>", opts)
+
 --Open with different codes and other staff
 -- Open with cp1251
 keymap("n", "<leader>xoc", ":e ++enc=cp1251<CR>", opts)
 -- Save in utf-8
-keymap("n", "<leader>xsu", ":set fenc=utf-8<CR>", opts)
+keymap("n", "<leader>xcu", ":set fenc=utf-8<CR>", opts)
 -- Set line endings to unix style
 keymap("n", "<leader>xeu", ":set ff=unix<CR>", opts)
 -- Set line endings to dos style
