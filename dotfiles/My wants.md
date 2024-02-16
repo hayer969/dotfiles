@@ -20,6 +20,7 @@
 - **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 - **features** - `ripgrep`: <https://github.com/BurntSushi/ripgrep>
 - **features** - `lazygit`: <https://github.com/jesseduffield/lazygit>
+- **features** - `zoxide`: <https://github.com/ajeetdsouza/zoxide>
 
 - **terminal text editor** - `neovim`: <https://github.com/neovim/neovim>
 
