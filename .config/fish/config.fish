@@ -26,6 +26,7 @@ set -x PATH "/home/hayer/.local/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 starship init fish | source
+zoxide init fish | source
 #neofetch
 
 # >>> conda initialize >>>

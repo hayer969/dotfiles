@@ -7,10 +7,7 @@ Fedora Platform	org.fedoraproject.Platform
 TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP
 SWH	org.freedesktop.LinuxAudio.Plugins.swh
 Freedesktop Platform	org.freedesktop.Platform
-Freedesktop Platform	org.freedesktop.Platform
 i386	org.freedesktop.Platform.Compat.i386
-Mesa	org.freedesktop.Platform.GL.default
-Mesa (Extra)	org.freedesktop.Platform.GL.default
 Mesa	org.freedesktop.Platform.GL.default
 Mesa (Extra)	org.freedesktop.Platform.GL.default
 Mesa	org.freedesktop.Platform.GL32.default
