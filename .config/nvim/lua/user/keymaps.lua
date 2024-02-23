@@ -23,11 +23,12 @@ keymap("n", "Y", "y$", opts)
 keymap("n", "<Leader>p", "\"0p", opts)
 keymap("n", "<Leader>P", "\"0P", opts)
 
--- Multiline navigation
-keymap("n", "j", "gj", opts)
+-- Yank from delete reg to yank reg
+keymap("n", "<Leader>y", ":let @0=@\"<CR>", opts)
 
 -- Multiline navigation
-keymap("n", "k", "gk", opts)
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Open buffer in new tab
 keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
