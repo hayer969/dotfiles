@@ -77,6 +77,7 @@ function M.config()
 	local servers = {
 		"bashls",
 		"cssls",
+        "clangd",
 		"html",
 		"jsonls",
 		"lua_ls",

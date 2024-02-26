@@ -11,6 +11,7 @@ function M.config()
     local servers = {
         "bashls",
         "cssls",
+        "clangd",
         "html",
         "jsonls",
         "lua_ls",
@@ -20,14 +21,15 @@ function M.config()
         "yamlls",
     }
     local tools = {
-        "beautysh",
         "black",
+        "codelldb",
         "debugpy",
         "flake8",
         "js-debug-adapter",
         "mypy",
         "prettier",
         "stylua",
+        "shfmt",
     }
 
     require("mason").setup {
