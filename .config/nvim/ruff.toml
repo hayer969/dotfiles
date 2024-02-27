@@ -1,0 +1,5 @@
+# Allow lines to be as long as 100.
+line-length = 100
+
+[lint]
+select = ["E", "F"]

@@ -82,6 +82,7 @@ function M.config()
 		"jsonls",
 		"lua_ls",
 		"pyright",
+        "ruff_lsp",
 		"powershell_es",
 		"tsserver",
 		"yamlls",

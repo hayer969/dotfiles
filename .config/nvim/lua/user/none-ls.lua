@@ -14,15 +14,9 @@ function M.config()
     null_ls.setup({
         debug = false,
         sources = {
-            -- formatting.prettier.with({
-            --     extra_filetypes = { "toml" },
-            --     extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-            -- }),
-            formatting.black.with({ extra_args = { "--fast" } }),
             formatting.stylua,
             formatting.shfmt,
             formatting.google_java_format,
-            diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
             diagnostics.mypy.with({
                 extra_args = function()
                     local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
