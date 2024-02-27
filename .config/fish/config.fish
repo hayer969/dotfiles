@@ -55,7 +55,7 @@ abbr -a -- ga 'git add'
 abbr -a -- gcom 'git commit -m' 
 abbr -a -- gaf git\ add\ \(string\ trim\ \(git\ status\ -s\ \|\ fzf\ --preview=\"bat\ --color=always\ \{2..\}\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
 abbr -a -- gwa 'git worktree add' 
-abbr -a -- ls1 'ls -1' 
+abbr -a -- ls1 'ls -1F'
 abbr -a -- gl 'git log --graph --pretty=medium --name-status' 
 abbr -a -- term 'alacritty -e fish&; disown' 
 abbr -a -- vi nvim 
