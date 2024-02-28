@@ -46,6 +46,9 @@ keymap("n", "<S-q>", "<CMD>Bdelete!<CR>", opts)
 keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
 keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
 
+-- Put absolute full path
+keymap("n", "<Leader>%", "<CMD>put=expand('%:p')<CR>", opts)
+
 -- Insert Mode --
 -- Remap ESC to ii
 keymap("i", "jk", "<Esc>", opts)

@@ -85,6 +85,7 @@ function M.config()
         ["c"] = { "Change word and find next match" },
         [";"] = { "Clear highlights" },
         ["r"] = { "Run ipython cell like in VSCode" },
+        ["%"] = { "Put absolute full path" },
 
         f = {
             name = "Find",
