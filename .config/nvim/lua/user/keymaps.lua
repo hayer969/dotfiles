@@ -6,6 +6,7 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -20,21 +21,21 @@ vim.g.mapleader = " "
 keymap("n", "Y", "y$", opts)
 
 -- Paste from yank register 0
-keymap("n", "<Leader>p", "\"0p", opts)
-keymap("n", "<Leader>P", "\"0P", opts)
+keymap("n", "<Leader>p", '"0p', opts)
+keymap("n", "<Leader>P", '"0P', opts)
 
 -- Yank from delete reg to yank reg
-keymap("n", "<Leader>y", ":let @0=@\"<CR>", opts)
+keymap("n", "<Leader>y", ':let @0=@"<CR>', opts)
 
 -- Multiline navigation
-keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Open buffer in new tab
 keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
 
 -- Change word and find next match
-keymap("n", "<Leader>c", ":let @/=\"<C-r><C-w>\"<CR>gnc", opts)
+keymap("n", "<Leader>c", ':let @/="<C-r><C-w>"<CR>gnc', opts)
 
 -- Clear highlights
 keymap("n", "<Leader>;", "<CMD>nohlsearch<CR>", opts)
@@ -62,8 +63,8 @@ keymap("i", "<C-l>", "<Right>", opts)
 keymap("v", "y", "ygv<Esc>", opts)
 
 -- Paste from yank register 0
-keymap("v", "<Leader>p", "\"0p", opts)
-keymap("v", "<Leader>P", "\"0P", opts)
+keymap("v", "<Leader>p", '"0p', opts)
+keymap("v", "<Leader>P", '"0P', opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -117,7 +118,8 @@ keymap("n", "<C-Down>", "<CMD>resize -3 <CR>", opts)
 -- nnoremap <Leader>r  :call Runcell()<CR>
 
 vim.cmd(
-[[let @r="mJ$? *# %% *$\<CR>:+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>`J"]])
+	[[let @r="mJ$? *# %% *$\<CR>:+1,/ *# %% *$/-1yank +\<CR>:b ipython\<CR>i%paste\<Esc>\<Esc>:sl 200m\<CR>i\<CR>\<Esc>\<Esc>`J"]]
+)
 keymap("n", "<Leader>r", "@r", opts)
 
 -- Plugins --
@@ -163,8 +165,12 @@ keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.bl
 keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>dB", "<CMD>lua require'dap'.set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", opts)
 keymap("n", "<leader>dH", "<CMD>lua require'dap'.set_breakpoint(nil, vim.fn.input(\"Hit condition: \"))<CR>", opts)
-keymap("n", "<leader>dL", "<CMD>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>",
-    opts)
+keymap(
+	"n",
+	"<leader>dL",
+	"<CMD>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>",
+	opts
+)
 keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F5>", "<CMD>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<CR>", opts)

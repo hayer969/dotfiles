@@ -1,6 +1,7 @@
 vim.opt.backup = false -- creates a backup file
 -- vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 --[[ vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard ]]
+vim.opt.breakindent = true                      -- wrapped line repeats indent
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
@@ -31,13 +32,14 @@ vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.laststatus = 3
 vim.opt.showcmd = false
 -- vim.opt.ruler = false
-vim.opt.signcolumn =
-"yes"                             -- always show the sign column, otherwise it would shift the text each time
+vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 -- vim.opt.wrap = false                            -- display lines as one long line
-vim.opt.scrolloff = 8             -- is one of my fav
+vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,]")
 -- vim.opt.iskeyword:append("-")
+vim.opt.list = true                             -- Sets how neovim will display certain whitespace in the editor.
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
