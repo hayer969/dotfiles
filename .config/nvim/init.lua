@@ -42,11 +42,11 @@ function huniq(pattern, keep)
 			vim.cmd("g/" .. pattern .. "/d")
 		elseif keep == "first" then
 			vim.fn.setcursorcharpos(1, 1)
-			local line = vim.fn.search(pattern, "n")
+			local line = vim.fn.search(pattern, "nc")
 			vim.cmd(line + 1 .. ",$g/" .. pattern .. "/d")
 		elseif keep == "last" then
 			vim.cmd("normal G$")
-			local line = vim.fn.search(pattern, "nb")
+			local line = vim.fn.search(pattern, "nbc")
 			vim.cmd("1," .. line - 1 .. "g/" .. pattern .. "/d")
 		end
 		vim.fn.setpos(".", save_cursor)
@@ -55,7 +55,8 @@ end
 
 -- Useful macros:
 -- Macro for checking duplicates in all file line by line
--- let @f=":s/{pattern}/\\=setreg('u', submatch(0))/ne\<Enter>:lua huniq('\<C-r>u', 'None')\<Enter>j"
+-- Don't forget in the pattern use double backslash for begin and end of the pattern: \\zs \\ze
+-- let @f=":s/{pattern}/\\=setreg('u', submatch(0))/ne\<Enter>:lua huniq('\<C-r>u', 'First')\<Enter>j"
 -- Usage, set to first line and do something like: 111@f
 --
 -- Macro for increment lists or steps in file.
