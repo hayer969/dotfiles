@@ -1,6 +1,6 @@
-Discord	com.discordapp.Discord
-Moonlight	com.moonlight_stream.Moonlight
-Steam	com.valvesoftware.Steam
+Discord Inc.	com.discordapp.Discord
+Moonlight Game Streaming Team	com.moonlight_stream.Moonlight
+Valve Corporation	com.valvesoftware.Steam
 Celluloid	io.github.celluloid_player.Celluloid
 Fedora Platform	org.fedoraproject.Platform
 Fedora Platform	org.fedoraproject.Platform
@@ -19,11 +19,17 @@ Evolution	org.gnome.Evolution
 Notes	org.gnome.Notes
 GNOME Application Platform version 45	org.gnome.Platform
 Adwaita theme	org.kde.KStyle.Adwaita
+Adwaita theme	org.kde.KStyle.Adwaita
+KDE Application Platform	org.kde.Platform
 KDE Application Platform	org.kde.Platform
 QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform
+QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations
 QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations
 QGnomePlatform-decoration	org.kde.WaylandDecoration.QGnomePlatform-decoration
-Kdenlive	org.kde.kdenlive
-Telegram Desktop	org.telegram.desktop
+KDE	org.kde.kdenlive
+nomacs - Image Lounge	org.nomacs.ImageLounge
+ONLYOFFICE Desktop Editors	org.onlyoffice.desktopeditors
+John Preston	org.telegram.desktop
 Telegram Desktop Webview Add-on	org.telegram.desktop.webview
-Zoom	us.zoom.Zoom
+zoom.us	us.zoom.Zoom
