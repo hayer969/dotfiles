@@ -105,6 +105,11 @@
       UUID={your uuid} /mnt/toplevel/snapshots btrfs   noauto,rw,noatime,discard=async,ssd,space_cache,subvol=snapshots,compress=zstd:1 0 0
       UUID={your uuid} /var                    btrfs   rw,noatime,discard=async,ssd,space_cache,subvol=var,compress=zstd:1 0 0
 
+- `Clamav`:
+
+  - Install clamav in fedora: <https://www.linuxcapable.com/install-clamav-on-fedora-linux/>
+  - Config for Russian IPs: <https://redos.red-soft.ru/base/manual/redos-manual/safe-redos/clamav/>
+
 ## OS tweaking
 
 ### For all
@@ -154,7 +159,6 @@
 - [x] Tekken 7 should work with proton/wine.  
        Answer:
       Maybe doesn't work with XEON proccessors.
-- [ ] PUBG, Rainbow Six Siege should work with proton/wine.
 - [x] Witcher 3, Assasins Creed, Wolfenstein should work with proton/wine.
 - [ ] Blizzard Games should work with proton/wine.
 
