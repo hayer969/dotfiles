@@ -100,6 +100,7 @@ function M.config()
             k = { "Keymaps" },
             C = { "Commands" },
             m = { "Harpoon marks" },
+            ["@"] = { "Find lsp document symbols" },
         },
 
         h = {

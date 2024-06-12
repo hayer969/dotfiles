@@ -140,6 +140,7 @@ keymap("n", "<leader>fR", "<CMD>Telescope registers<CR>", opts)
 keymap("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", opts)
 keymap("n", "<leader>fC", "<CMD>Telescope commands<CR>", opts)
 keymap("n", "<leader>fm", "<CMD>Telescope harpoon marks<CR>", opts)
+keymap("n", "<leader>f@", "<CMD>Telescope lsp_document_symbols<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
