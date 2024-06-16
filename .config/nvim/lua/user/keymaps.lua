@@ -38,7 +38,7 @@ keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
 keymap("n", "<Leader>c", ':let @/="<C-r><C-w>"<CR>gnc', opts)
 
 -- Clear highlights
-keymap("n", "<Leader>;", "<CMD>nohlsearch<CR>", opts)
+keymap("n", "<Esc>", "<CMD>nohlsearch<CR>", opts)
 
 -- Close current buffer and keep windows
 keymap("n", "<S-q>", "<CMD>Bdelete!<CR>", opts)
@@ -130,9 +130,11 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fT", "<CMD>Telescope builtin<CR>", opts)
 keymap("n", "<leader>fs", "<CMD>Telescope grep_string<CR>", opts)
 keymap("v", "<leader>fs", "<CMD>Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fh", "<CMD>Telescope command_history<CR>", opts)
+keymap("n", "<leader>fH", "<CMD>Telescope help_tags<CR>", opts)
 keymap("n", "<leader>fp", "<CMD>Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", opts)
@@ -141,6 +143,8 @@ keymap("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", opts)
 keymap("n", "<leader>fC", "<CMD>Telescope commands<CR>", opts)
 keymap("n", "<leader>fm", "<CMD>Telescope harpoon marks<CR>", opts)
 keymap("n", "<leader>f@", "<CMD>Telescope lsp_document_symbols<CR>", opts)
+keymap("n", "<leader>fws", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
+keymap("n", "<leader>/", "<CMD>Telescope current_buffer_fuzzy_find<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -158,9 +162,9 @@ keymap("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>gd", "<CMD>Gitsigns diffthis HEAD<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
-keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
+-- keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+-- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
+-- keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
 
 -- DAP
 keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)

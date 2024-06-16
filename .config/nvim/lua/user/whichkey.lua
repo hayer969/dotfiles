@@ -90,6 +90,7 @@ function M.config()
         f = {
             name = "Find",
             t = { "Find text in files" },
+            T = { "Find Telescope builtins" },
             s = { "Find string in files" },
             b = { "Find files in buffers" },
             f = { "Find files" },
@@ -97,10 +98,16 @@ function M.config()
             p = { "Find projects" },
             R = { "Registers" },
             h = { "Find in command history" },
+            H = { "Find in HELP" },
             k = { "Keymaps" },
             C = { "Commands" },
             m = { "Harpoon marks" },
+            w = {
+                name = "Workspace features",
+                s = { "Find lsp Workspace symbols" },
+            },
             ["@"] = { "Find lsp document symbols" },
+            ["/"] = { "Fuzzily search in current buffer" },
         },
 
         h = {
