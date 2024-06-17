@@ -39,6 +39,7 @@ keymap("n", "<Leader>c", ':let @/="<C-r><C-w>"<CR>gnc', opts)
 
 -- Clear highlights
 keymap("n", "<Esc>", "<CMD>nohlsearch<CR>", opts)
+keymap("n", "<Leader>;", "<CMD>nohlsearch<CR>", opts)
 
 -- Close current buffer and keep windows
 keymap("n", "<S-q>", "<CMD>Bdelete!<CR>", opts)
