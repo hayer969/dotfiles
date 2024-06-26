@@ -17,6 +17,7 @@
 - **features** - `fd`: <https://github.com/sharkdp/fd>
 - **features** - `bat`: <https://github.com/sharkdp/bat>
 - **features** - `broot`: <https://dystroy.org/broot/install>
+- **features** - `yazi`: <https://github.com/sxyazi/yazi>
 - **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 - **features** - `ripgrep`: <https://github.com/BurntSushi/ripgrep>
 - **features** - `lazygit`: <https://github.com/jesseduffield/lazygit>
