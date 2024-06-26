@@ -220,6 +220,11 @@ keymap("n", "<leader>xsn", ":setlocal spell spelllang=<CR>", opts)
 --Open with different codes and other staff
 -- Open with cp1251
 keymap("n", "<leader>xoc", ":e ++enc=cp1251<CR>", opts)
+-- Open as binary
+keymap("n", "<leader>xob", ":e ++bin<CR>", opts)
+-- Open as text (default mode)
+keymap("n", "<leader>xot", ":e ++nobin<CR>", opts)
+
 -- Save in utf-8
 keymap("n", "<leader>xcu", ":set fenc=utf-8<CR>", opts)
 -- Set line endings to unix style

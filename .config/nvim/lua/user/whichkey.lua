@@ -173,8 +173,10 @@ function M.config()
         x = {
             name = "Encodings, endings and so on",
             o = {
-                name = "Reopen with encodings",
+                name = "Reopen with encodings or in binary mode",
                 c = { "cp1251" },
+                b = { "binary" },
+                t = { "text (default mode)" },
             },
             c = {
                 name = "Set file encoding",
