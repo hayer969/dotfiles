@@ -86,6 +86,7 @@ function M.config()
         [";"] = { "Clear highlights" },
         ["r"] = { "Run ipython cell like in VSCode" },
         ["%"] = { "Put absolute full path" },
+        ["/"] = { "Fuzzily search in current buffer" },
 
         f = {
             name = "Find",
@@ -107,7 +108,6 @@ function M.config()
                 s = { "Find lsp Workspace symbols" },
             },
             ["@"] = { "Find lsp document symbols" },
-            ["/"] = { "Fuzzily search in current buffer" },
         },
 
         h = {

@@ -20,9 +20,9 @@ function M.config()
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
         mappings = {
             -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-            basic = false,
+            basic = true,
             -- Extra mapping; `gco`, `gcO`, `gcA`
-            extra = false,
+            extra = true,
         }
     }
 end
