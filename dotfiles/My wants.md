@@ -16,7 +16,7 @@
 - **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
 - **features** - `fd`: <https://github.com/sharkdp/fd>
 - **features** - `bat`: <https://github.com/sharkdp/bat>
-- **features** - `broot`: <https://dystroy.org/broot/install>
+- **features** - `jq`: <https://github.com/jqlang/jq>
 - **features** - `yazi`: <https://github.com/sxyazi/yazi>
 - **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 - **features** - `ripgrep`: <https://github.com/BurntSushi/ripgrep>
@@ -43,7 +43,27 @@
   - change shortcuts for preferable
   - alter blanck screen timing
 
-- Restrict log size
+- Restrict log size:  
+  Add in file `/etc/systemd/journald.conf` next strings:
+
+      [Journal]
+      SystemMaxUse=248M
+
+- Create shared folders between users:
+
+  - Create folder in place where all users can reach it. Usually at `/home`:
+
+        mkdir /home/{name of shared folder}
+
+  - Create group and add users:
+
+        sudo groupadd sharedfolders
+        sudo usermod -aG sharedfolders {user name}
+
+  - Set permissions. All files will be created with particular rules and owned by the group
+
+        sudo chmod g+rwxs {path to folder}
+        setfacl -d -m group:sharedfolders:rwx {path to folder}
 
 - `gnome` extensions:
 

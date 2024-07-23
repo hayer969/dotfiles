@@ -23,6 +23,9 @@ $time\
 success_symbol = "[❯❯](fg:yellow bg:3f3f3f)"
 error_symbol = "[❯❯](fg:red bg:3f3f3f)"
 
+[status]
+disabled = false
+
 [python]
 format = """
 [${symbol}${version}${pyenv_prefix}]($style)\
