@@ -4,7 +4,7 @@ Deployments:
                   Version: 40.20240809.0 (2024-08-09T00:45:08Z)
                BaseCommit: 05fba6d25a87db003fb7d9fa261626c1bfee9af16a80f4631cc6b795513dcb1b
              GPGSignature: Valid signature by 115DF9AEF857853EE8445D0A0727707EA15B79CC
-          LayeredPackages: alacritty clamav clamav-freshclam corectrl fastfetch
+          LayeredPackages: alacritty clamav clamav-freshclam clamtk corectrl fastfetch
                            ffmpegthumbnailer firewall-config fish gnome-tweak-tool
                            gstreamer1-plugin-openh264 gstreamer1-plugins-bad-freeworld
                            gstreamer1-plugins-ugly gstreamer1-vaapi libavcodec-freeworld
@@ -15,8 +15,8 @@ Deployments:
                            rpmfusion-nonfree-release steam-devices xxd
 
   fedora:fedora/40/x86_64/silverblue
-                  Version: 40.20240806.0 (2024-08-06T00:43:47Z)
-               BaseCommit: da9bc32b3c447ece0d51770d4e01ca5c4402b4845acf63f9e5e2482c074263b5
+                  Version: 40.20240809.0 (2024-08-09T00:45:08Z)
+               BaseCommit: 05fba6d25a87db003fb7d9fa261626c1bfee9af16a80f4631cc6b795513dcb1b
              GPGSignature: Valid signature by 115DF9AEF857853EE8445D0A0727707EA15B79CC
           LayeredPackages: alacritty clamav clamav-freshclam corectrl fastfetch
                            ffmpegthumbnailer firewall-config fish gnome-tweak-tool

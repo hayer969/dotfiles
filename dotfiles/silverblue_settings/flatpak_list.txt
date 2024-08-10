@@ -1,7 +1,6 @@
 Dconf Editor	ca.desrt.dconf-editor
 Discord	com.discordapp.Discord
 Flatseal	com.github.tchx84.Flatseal
-ClamTk	com.gitlab.davem.ClamTk
 Extension Manager	com.mattjakeman.ExtensionManager
 Moonlight	com.moonlight_stream.Moonlight
 Steam	com.valvesoftware.Steam
