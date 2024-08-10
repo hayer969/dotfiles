@@ -49,33 +49,33 @@ function M.config()
         return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
 
-    local kind_icons = {
-        Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Field = "",
-        Variable = "",
-        Class = "",
-        Interface = "",
-        Module = "",
-        Property = "",
-        Unit = "",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "",
-        Event = "",
-        Operator = "",
-        TypeParameter = "",
-    }
+    -- local kind_icons = {
+    --     Text = "",
+    --     Method = "",
+    --     Function = "",
+    --     Constructor = "",
+    --     Field = "",
+    --     Variable = "",
+    --     Class = "",
+    --     Interface = "",
+    --     Module = "",
+    --     Property = "",
+    --     Unit = "",
+    --     Value = "",
+    --     Enum = "",
+    --     Keyword = "",
+    --     Snippet = "",
+    --     Color = "",
+    --     File = "",
+    --     Reference = "",
+    --     Folder = "",
+    --     EnumMember = "",
+    --     Constant = "",
+    --     Struct = "",
+    --     Event = "",
+    --     Operator = "",
+    --     TypeParameter = "",
+    -- }
 
     cmp.setup({
         snippet = {
@@ -130,7 +130,7 @@ function M.config()
         formatting = {
             fields = { "kind", "abbr", "menu" },
             format = function(entry, vim_item)
-                vim_item.kind = kind_icons[vim_item.kind]
+                -- vim_item.kind = kind_icons[vim_item.kind]
                 vim_item.menu = ({
                     nvim_lsp = "",
                     nvim_lua = "",
