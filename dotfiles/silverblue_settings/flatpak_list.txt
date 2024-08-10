@@ -1,0 +1,43 @@
+Dconf Editor	ca.desrt.dconf-editor
+Discord	com.discordapp.Discord
+Flatseal	com.github.tchx84.Flatseal
+ClamTk	com.gitlab.davem.ClamTk
+Extension Manager	com.mattjakeman.ExtensionManager
+Moonlight	com.moonlight_stream.Moonlight
+Steam	com.valvesoftware.Steam
+Sunshine	dev.lizardbyte.app.Sunshine
+Zed	dev.zed.Zed
+Celluloid	io.github.celluloid_player.Celluloid
+Lutris	net.lutris.Lutris
+Fedora Media Writer	org.fedoraproject.MediaWriter
+GNU Image Manipulation Program	org.gimp.GIMP
+Calculator	org.gnome.Calculator
+Calendar	org.gnome.Calendar
+Characters	org.gnome.Characters
+Connections	org.gnome.Connections
+Contacts	org.gnome.Contacts
+Document Viewer	org.gnome.Evince
+Evolution	org.gnome.Evolution
+Extensions	org.gnome.Extensions
+Logs	org.gnome.Logs
+Image Viewer	org.gnome.Loupe
+Maps	org.gnome.Maps
+Sushi	org.gnome.NautilusPreviewer
+GNOME Network Displays	org.gnome.NetworkDisplays
+Notes	org.gnome.Notes
+Rhythmbox	org.gnome.Rhythmbox3
+Camera	org.gnome.Snapshot
+Text Editor	org.gnome.TextEditor
+Videos	org.gnome.Totem
+Weather	org.gnome.Weather
+Disk Usage Analyzer	org.gnome.baobab
+Clocks	org.gnome.clocks
+Eye of GNOME	org.gnome.eog
+Fonts	org.gnome.font-viewer
+Kdenlive	org.kde.kdenlive
+KeePassXC	org.keepassxc.KeePassXC
+ONLYOFFICE Desktop Editors	org.onlyoffice.desktopeditors
+qBittorrent	org.qbittorrent.qBittorrent
+Remmina	org.remmina.Remmina
+Telegram Desktop	org.telegram.desktop
+VLC	org.videolan.VLC

@@ -41,9 +41,9 @@
   - set locale
   - set time
   - change shortcuts for preferable
-  - alter blanck screen timing
+  - alter blank screen timing
 
-- Restrict log size:  
+- Restrict log size:
   Add in file `/etc/systemd/journald.conf` next strings:
 
       [Journal]
@@ -71,15 +71,14 @@
   - Clipboard history: <https://github.com/SUPERCILEX/gnome-clipboard-history>
   - Blur my Shell: <https://github.com/aunetx/gnome-shell-extension-blur-my-shell>
   - GSConnect: <https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki>
+  - Tiling Shell: <https://github.com/domferr/tilingshell>
 
 - `Firefox`:
 
   - Search engine - DuckDuckGo or Brave search
   - Extension - Privacy Badger
   - Extension - uBlock Origin
-  - Extension - GNOME Shell integration
-  - Extension - KeePassHelper Password Manager
-  - Extension - Vimium-FF
+  - Extension - Vimium
 
 - For remote control:
 
@@ -87,8 +86,8 @@
 
         ssh -L {local_port}:localhost:{port on vnc server} -f -N {user_name}@{IP_address}
 
-- `BTRFS` - mount option for long lifetime ssd, trim and noatime:  
-  `noatime, discard=async, subvolumeid=ID`  
+- `BTRFS` - mount option for long lifetime ssd, trim and noatime:
+  `noatime, discard=async, subvolumeid=ID`
   use `btrfs subvolume list /` for **ID** and set this for `/home` partition
 
 - `BTRFS` - subvolume operations, create subvolume for `/home` partition:
@@ -96,7 +95,16 @@
       btrfs subvolume create /sub1
       btrfs subvolume list /
 
-- `BTRFS` - snapshots:  
+- `BTRFS` - create root-level subvolume:
+
+      sudo mkdir /mnt/btrfs/snapshots
+      sudo mount /dev/disk/by-uuid/{your root device uuid} /mnt/btrfs
+      cd /mnt/btrfs
+      sudo btrfs subvolume create snapshots
+      cd /home
+      sudo umount /mnt/btrfs
+
+- `BTRFS` - snapshots:
   Create snapshot for root volume in dir `/snapshot`
 
       sudo btrfs subvolume snapshot / /snapshot/root-{maybe_date}
@@ -121,66 +129,108 @@
 
 - `BTRFS` - fstab example:
 
-      UUID={your uuid} /                       btrfs   rw,noatime,discard=async,ssd,space_cache,subvol=root,compress=zstd:1 0 0
-      UUID={your uuid} /home                   btrfs   rw,noatime,discard=async,ssd,space_cache,subvol=home,compress=zstd:1 0 0
-      UUID={your uuid} /mnt/toplevel/snapshots btrfs   noauto,rw,noatime,discard=async,ssd,space_cache,subvol=snapshots,compress=zstd:1 0 0
-      UUID={your uuid} /var                    btrfs   rw,noatime,discard=async,ssd,space_cache,subvol=var,compress=zstd:1 0 0
+      UUID={your uuid} /                       btrfs   rw,noatime,discard=async,ssd,subvol=root,compress=zstd:1 0 0
+      UUID={your uuid} /home                   btrfs   rw,noatime,discard=async,ssd,subvol=home,compress=zstd:1 0 0
+      UUID={your uuid} /mnt/toplevel/snapshots btrfs   noauto,rw,noatime,discard=async,ssd,subvol=snapshots,compress=zstd:1 0 0
+      UUID={your uuid} /var                    btrfs   rw,noatime,discard=async,ssd,subvol=var,compress=zstd:1 0 0
 
 - `Clamav`:
 
-  - Install clamav in fedora: <https://www.linuxcapable.com/install-clamav-on-fedora-linux/>
+  - Install clamav in fedora (clamav, clamav-freshclam): <https://www.linuxcapable.com/install-clamav-on-fedora-linux/>
   - Config for Russian IPs: <https://redos.red-soft.ru/base/manual/redos-manual/safe-redos/clamav/>
+
+- `KVRT` kaspersky virus removal tool:
+
+  - Need to be downloaded every time: <https://www.kaspersky.com/downloads/free-virus-removal-tool>
 
 ## OS tweaking
 
-### For all
+### Hardware video acceleration
 
 - vaapi (Video Acceleration API): https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
 
-  ### btrfs layots
+### btrfs layots
 
-  - root /
-  - home /home
-  - var /var
-  - snapshots noauto-mount
+- root /
+- home /home
+    - steam /home/steam
+    - games /home/games
+- var /var
+- snapshots *noauto-mount*
+
+### Fedora Silverblue Post Installation Guide
+
+- Link: <https://lurkerlabs.com/fedora-silverblue-ultimate-post-install-guide/>
+
+### Gnome folder sharing aka Public folder
+
+- To find right path for shared folder do `avahi-browse -fart`  
+Then in nautilus `Other location -> Enter server address` fill with `dav://address:port`  
+*In host: share should be enabled and port allowed through firewall*
+
+
+### Check if we're running inside a toolbox and switch home folder
+
+```bash
+TOOLBOX_NAME=""
+if [ -f "/run/.containerenv" ]
+then
+    TOOLBOX_NAME=$(sed -nr 's/^name="(.*)"$/\1/p' /run/.containerenv)
+    HOME="$HOME/.toolbox/homedir/$TOOLBOX_NAME/$USER"
+    mkdir -p "$HOME"
+    bash
+    exit 0
+fi
+```
+
+### Flatpak
+
+- Check size of installed apps, using custom fish function: `flatpsize`
+- Uninstall unused: `flatpak uninstall --unused`
+- Flatpak updated installed: `flatpak update`
+
+### IPsec VPN with strongswan
+
+- Link your system ssl certificates to folder where strongswan looks up it .  
+
+      sudo ln -s /etc/pki/ca-trust/extracted/pem/ /etc/strongswan/ipsec.d/cacerts
+
+*For Silverblue it can't merge `/etc/...cacerts` folder. Instead create link to contents of the folder.*
+
+### Login screen on major monitor
+
+    sudo cp -v ~/.config/monitors.xml /var/lib/gdm/.config/
+    sudo chown gdm:gdm /var/lib/gdm/.config/monitors.xml
+
+### Show system temperature (two ways)
+
+    watch "sensors -A 2>/dev/null"
+    watch "fastfetch --cpu-temp --gpu-temp | grep -E \"CPU|GPU\" | sed 's/:.* -/:/'"
+
+### Show folders size with bash
+
+    find ./ -maxdepth 3 -type d -iname "*" -exec du -sh {} \; | sort -h
+
+### Disable **gfxoff** in amdgpu drivers. If your system kinda suspend and never wake up
+
+    sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfff73fff'
+
+### Install opencl with amdgpu drivers.
+
+Do: `groups`  you should see `video` and `render` as well as your user,  
+if it's not, then copy it and install `rocm` packages:
+
+    sudo cat /lib/group | grep -E "video|render" >> /etc/group
+    sudo rpm-ostree install rocm-opencl rocm-opencl-devel rocm-hip rocm-hip-devel
+
+*rocm-hip and rocm-hip-devel doesn't work for me with blender*
+
+### Smart info about nvme ssd
+
+    sudo nvme smart-log /dev/nvme0n1
+
+
 
 ## Windows 10
 
 - X11-Server `VcXsrv`: <https://sourceforge.net/p/vcxsrv/wiki/Home/>
-
-## Transition from Windows to Fedora
-
-### Before transition I need to resolve some questions
-
-- [x] Hunt Showdown should to be patched to work with proton/wine.
-- [ ] Could I activate windows code on virtual machine repeatedly?
-- [x] Gnome Boxes or VMware? Where it stores virtual disks?  
-       Answer:  
-       VMware, we have more settings for pci passthrough. And don't forgot to set `chattr +c` for images folder  
-       or just check it with `lsattr`, fedora should do it automatically
-- [x] Could I do flat layout of btrfs snapshots as on my arch?  
-       What could be with grub after kernel updates?  
-       Answer:  
-       Yes, I can. If `/boot` and `/root` on the same subvolume it works as on arch.
-- [x] How can I do snapshots before system updating?
-      Should I use shell script or somehow connect GUI updater and timeshift for example?  
-       Answer:  
-       The easiest way, replace pacman command to dnf in existing script update_os.sh
-- [x] Is BTRFS perfomance on HDD good?  
-       Answer:  
-       Good enough. Overall performance closest to ext4. But app start time maybe very poor with write/read opertaions on the background.
-- [ ] Could I minimize applications to gnome tray?
-      Autorun keyboard led managment app for Bloody hardware and minimize it.
-      https://github.com/MartinPL/Tray-Icons-Reloaded
-- [ ] How much space I need during transition process?
-- [ ] XBOX controller with headphones, does it work?
-- [x] OBS and Wayland, does it work?  
-       Answer:  
-       Yes, OBS Studio starts from version 27. It has rpm package in RPM Fusion Free Updates x86_64
-- [x] Tekken 7 should work with proton/wine.  
-       Answer:
-      Maybe doesn't work with XEON proccessors.
-- [x] Witcher 3, Assasins Creed, Wolfenstein should work with proton/wine.
-- [ ] Blizzard Games should work with proton/wine.
-
----

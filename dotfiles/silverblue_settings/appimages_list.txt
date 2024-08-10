@@ -1,0 +1,3 @@
+appimagelauncher-lite-2.2.0-travis995-0f91801-x86_64.AppImage
+doublecmd-qt-latest-x86_64.AppImage
+InobitecDICOMViewer-linux-64-bit-pro-2.14.0.12281.AppImage
