@@ -1,5 +1,5 @@
 function tree
-    if type -q br
+    if command -q broot
         br -H -c :pt $argv
     else
         command tree $argv

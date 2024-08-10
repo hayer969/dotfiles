@@ -1,6 +1,6 @@
 # deep fuzzy cd
 function cdd -d "find folder [where start find: root, current or default-home]"
-    if type -q br
+    if command -q broot
         if test "$argv[-1]" != "."; and test "$argv[-1]" != "/"
             cd ~
         else
