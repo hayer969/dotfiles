@@ -139,6 +139,10 @@
   - Install clamav in fedora (clamav, clamav-freshclam): <https://www.linuxcapable.com/install-clamav-on-fedora-linux/>
   - Config for Russian IPs: <https://redos.red-soft.ru/base/manual/redos-manual/safe-redos/clamav/>
 
+        sudo vi /etc/freshclam.conf
+        # DatabaseMirror database.clamav.net
+        DatabaseMirror https://packages.microsoft.com/clamav/
+
 - `KVRT` kaspersky virus removal tool:
 
   - Need to be downloaded every time: <https://www.kaspersky.com/downloads/free-virus-removal-tool>
