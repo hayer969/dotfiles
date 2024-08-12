@@ -76,3 +76,16 @@ abbr -a -- file 'nautilus (pwd) &; disown'
 abbr -a -- c clear 
 abbr -a -- ls1 'ls -1F'
 abbr -a -- term 'alacritty -e fish&; disown' 
+
+# Check if run inside a container
+set TOOLBOX_NAME ""
+if test -f "/run/.containerenv"
+    set TOOLBOX_NAME $(sed -nr 's/^name="(.*)"$/\1/p' /run/.containerenv)
+    if test "$TOOLBOX_NAME" = "dev"
+        alias alacritty='flatpak-spawn --host alacritty'
+        alias fastfetch='flatpak-spawn --host fastfetch'
+        alias btrfs='flatpak-spawn --host btrfs'
+        alias rpm-ostree='flatpak-spawn --host rpm-ostree'
+        alias firefox='flatpak-spawn --host firefox'
+    end
+end

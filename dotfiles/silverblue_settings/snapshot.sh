@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if command -q bat
+if [ -f "/run/.containerenv" ]
+then
+    function btrfs () {
+        flatpak-spawn --host btrfs $*
+    }
+fi
+
+if command -v bat >/dev/null
 then
     btrfs filesystem usage / | bat -p -r 1:4 -r14: | grep -v '^$'
 else
