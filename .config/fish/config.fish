@@ -86,6 +86,7 @@ if test -f "/run/.containerenv"
         alias fastfetch='flatpak-spawn --host fastfetch'
         alias btrfs='flatpak-spawn --host btrfs'
         alias rpm-ostree='flatpak-spawn --host rpm-ostree'
+        alias flatpak='flatpak-spawn --host flatpak'
         alias firefox='flatpak-spawn --host firefox'
     end
 end
