@@ -216,8 +216,9 @@ fi
     find ./ -maxdepth 3 -type d -iname "*" -exec du -sh {} \; | sort -h
 
 ### Disable **gfxoff** in amdgpu drivers. If your system kinda suspend and never wake up
+See `enum PP_FEATURE_MASK` <https://github.com/torvalds/linux/blob/master/drivers/gpu/drm/amd/include/amd_shared.h#L183>
 
-    sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfff73fff'
+    sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd3fff'
 
 ### Install opencl with amdgpu drivers.
 
