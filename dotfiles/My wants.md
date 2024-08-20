@@ -219,6 +219,7 @@ fi
 See `enum PP_FEATURE_MASK` <https://github.com/torvalds/linux/blob/master/drivers/gpu/drm/amd/include/amd_shared.h#L183>
 
     sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd3fff'
+    sudo rpm-ostree kargs --append='amdgpu.cik_support=1'
 
 ### Install opencl with amdgpu drivers.
 
