@@ -88,5 +88,6 @@ if test -f "/run/.containerenv"
         alias rpm-ostree='flatpak-spawn --host rpm-ostree'
         alias flatpak='flatpak-spawn --host flatpak'
         alias firefox='flatpak-spawn --host firefox'
+        alias btop='flatpak-spawn --host btop'
     end
 end
