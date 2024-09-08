@@ -52,6 +52,7 @@ if command -q fzf
     abbr -a -- gwr git\ worktree\ remove\ \(git\ worktree\ list\ --porcelain\ \|\ grep\ worktree\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f2-\) 
     abbr -a -- gwc git\ worktree\ add\ --guess-remote\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
     abbr -a -- gbc git\ checkout\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
+    abbr -a -- flatrun flatpak\ run\ \$\(flatpak\ list\ --app\ \|\ fzf\ \|\ cut\ -d\\t\ -f2\)
     if command -q bat
         abbr -a -- gaf git\ add\ \(string\ trim\ \(git\ status\ -s\ \|\ fzf\ --preview=\"bat\ --color=always\ \{2..\}\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
         abbr -a -- gad git\ add\ \(string\ trim\ \(git\ status\ -suno\ \|\ fzf\ --preview=\"git\ diff\ \{2..\}\ \|\ bat\ --color=always\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
