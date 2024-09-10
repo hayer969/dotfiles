@@ -40,14 +40,14 @@ keyutils-0:1.6.3-3.fc40.x86_64
 krb5-libs-0:1.21.3-1.fc40.x86_64
 langpacks-en-0:4.0-13.fc40.noarch
 lazygit-0:0.43.1-1.fc40.x86_64
-less-0:643-4.fc40.x86_64
+less-0:643-6.fc40.x86_64
 libcap-0:2.69-8.fc40.x86_64
 lsof-0:4.98.0-4.fc40.x86_64
 man-db-0:2.12.0-6.fc40.x86_64
 man-pages-0:6.06-1.fc40.noarch
-mesa-dri-drivers-0:24.1.6-1.fc40.x86_64
-mesa-va-drivers-0:24.1.6-1.fc40.x86_64
-mesa-vulkan-drivers-0:24.1.6-1.fc40.x86_64
+mesa-dri-drivers-0:24.1.7-1.fc40.x86_64
+mesa-va-drivers-0:24.1.7-1.fc40.x86_64
+mesa-vulkan-drivers-0:24.1.7-1.fc40.x86_64
 mtr-2:0.95-9.fc40.x86_64
 neovim-0:0.10.1-1.fc40.x86_64
 nss-mdns-0:0.15.1-11.fc40.x86_64
@@ -58,7 +58,7 @@ pam-0:1.6.1-3.fc40.x86_64
 pigz-0:2.8-4.fc40.x86_64
 procps-ng-0:4.0.4-3.fc40.x86_64
 psmisc-0:23.6-6.fc40.x86_64
-python3-0:3.12.5-1.fc40.x86_64
+python3-0:3.12.5-2.fc40.x86_64
 python3-pip-0:23.3.2-1.fc40.noarch
 ripgrep-0:14.1.0-3.fc40.x86_64
 rootfiles-0:8.1-36.fc40.noarch
@@ -69,7 +69,7 @@ shadow-utils-2:4.15.1-3.fc40.x86_64
 starship-0:1.20.0-1.fc40.x86_64
 sudo-0:1.9.15-2.p5.fc40.x86_64
 tar-2:1.35-3.fc40.x86_64
-tcpdump-14:4.99.4-7.fc40.x86_64
+tcpdump-14:4.99.5-1.fc40.x86_64
 time-0:1.9-23.fc40.x86_64
 tldr-0:3.3.0-2.fc40.noarch
 traceroute-3:2.1.5-2.fc40.x86_64
@@ -77,7 +77,7 @@ tree-0:2.1.0-5.fc40.x86_64
 tzdata-0:2024a-5.fc40.noarch
 unzip-0:6.0-63.fc40.x86_64
 util-linux-0:2.40.1-1.fc40.x86_64
-vim-minimal-2:9.1.672-1.fc40.x86_64
+vim-minimal-2:9.1.703-1.fc40.x86_64
 vte-profile-0:0.76.3-1.fc40.x86_64
 vulkan-loader-0:1.3.290.0-1.fc40.x86_64
 wget2-wget-0:2.1.0-11.fc40.x86_64

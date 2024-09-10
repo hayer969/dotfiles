@@ -1,10 +1,10 @@
 State: idle
 Deployments:
 ● fedora:fedora/40/x86_64/silverblue
-                  Version: 40.20240828.0 (2024-08-28T00:45:46Z)
-               BaseCommit: 1d44958df5f4a8d660614f8fdbe877c24d82253d67ef2342d9ccfb65440dcbf5
+                  Version: 40.20240909.0 (2024-09-09T00:45:32Z)
+               BaseCommit: 8231a56d46d267e79aa9a4aaa9534265fc22841a38a076ecee848b738bbf5c75
              GPGSignature: Valid signature by 115DF9AEF857853EE8445D0A0727707EA15B79CC
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 6.1.1-19.fc40
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 6.1.2-1.fc40
           LayeredPackages: alacritty btop clamav clamav-freshclam clamtk corectrl fastfetch
                            ffmpeg ffmpegthumbnailer firewall-config fish gnome-tweak-tool
                            gstreamer1-plugin-openh264 gstreamer1-plugins-bad-freeworld
@@ -17,16 +17,17 @@ Deployments:
                            xxd
 
   fedora:fedora/40/x86_64/silverblue
-                  Version: 40.20240828.0 (2024-08-28T00:45:46Z)
-               BaseCommit: 1d44958df5f4a8d660614f8fdbe877c24d82253d67ef2342d9ccfb65440dcbf5
+                  Version: 40.20240906.0 (2024-09-06T00:43:01Z)
+               BaseCommit: c715933ff264af803bcb4f61cf5dd6cce3c786fc228538b09c509b83b706abd8
              GPGSignature: Valid signature by 115DF9AEF857853EE8445D0A0727707EA15B79CC
       RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 6.1.1-19.fc40
-          LayeredPackages: alacritty clamav clamav-freshclam clamtk corectrl fastfetch
+          LayeredPackages: alacritty btop clamav clamav-freshclam clamtk corectrl fastfetch
                            ffmpeg ffmpegthumbnailer firewall-config fish gnome-tweak-tool
                            gstreamer1-plugin-openh264 gstreamer1-plugins-bad-freeworld
                            gstreamer1-plugins-ugly gstreamer1-vaapi libavcodec-freeworld
                            libva-utils NetworkManager-l2tp-gnome
                            NetworkManager-libreswan-gnome NetworkManager-strongswan-gnome
-                           openrgb openssl pcp-pmda-lmsensors rocm-clinfo rocm-opencl
-                           rocm-opencl-devel rocminfo rpmconf rpmfusion-free-release
-                           rpmfusion-nonfree-release steam-devices xxd
+                           nvtop openrgb openssl pcp-pmda-lmsensors rocm-clinfo rocm-opencl
+                           rocm-opencl-devel rocm-smi rocminfo rpmconf
+                           rpmfusion-free-release rpmfusion-nonfree-release steam-devices
+                           xxd
