@@ -84,7 +84,7 @@ function M.config()
 		"pyright",
         "ruff_lsp",
 		"powershell_es",
-		"tsserver",
+		"ts_ls",
 		"yamlls",
 	}
 
