@@ -9,6 +9,7 @@ Sunshine	dev.lizardbyte.app.Sunshine
 Zed	dev.zed.Zed
 Celluloid	io.github.celluloid_player.Celluloid
 Lutris	net.lutris.Lutris
+Cryptomator	org.cryptomator.Cryptomator
 Fedora Media Writer	org.fedoraproject.MediaWriter
 GNU Image Manipulation Program	org.gimp.GIMP
 Calculator	org.gnome.Calculator
