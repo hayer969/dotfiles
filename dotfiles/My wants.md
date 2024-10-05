@@ -31,6 +31,26 @@
 
 - **python** - `virtualenv`: <https://virtualenv.pypa.io/en/latest/>
 
+### Git workflow
+
+- Use fish abbreviations for quick creating/switching branches and worktrees
+
+```fish
+# This is how folders tree looks like
+.
+├── repo  # There is main branch
+├── repo_worktrees/one_branch
+└── repo_worktrees/another_branch
+
+# We are in the folder with branch from which we are creating new one
+# Create new branch
+gb {new_branch_name}
+# Switch to main worktree
+gws
+# Create new worktree from existing branch
+gwc
+```
+
 ---
 
 ## Maintenance
