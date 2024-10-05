@@ -59,8 +59,7 @@ if command -q fzf
         abbr -a -- gad git\ add\ \(string\ trim\ \(git\ status\ -suno\ \|\ fzf\ --preview=\"git\ diff\ \{2..\}\ \|\ bat\ --color=always\"\)\ \|\ cut\ -d\'\ \'\ -f2-\) 
     end
 end
-abbr -a -- gwl 'git worktree list'
-abbr -a -- gwa 'git worktree add'
+abbr -a -- gws cd\ \(git\ worktree\ list\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f1\)
 abbr -a -- gsu 'git status -uno'
 abbr -a -- gp 'git pull --rebase'
 abbr -a -- ga 'git add'
