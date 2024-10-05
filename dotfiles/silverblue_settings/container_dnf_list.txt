@@ -45,6 +45,7 @@ libcap-0:2.69-8.fc40.x86_64
 lsof-0:4.98.0-4.fc40.x86_64
 man-db-0:2.12.0-6.fc40.x86_64
 man-pages-0:6.06-1.fc40.noarch
+mc-1:4.8.31-1.fc40.x86_64
 mesa-dri-drivers-0:24.1.7-1.fc40.x86_64
 mesa-va-drivers-0:24.1.7-1.fc40.x86_64
 mesa-vulkan-drivers-0:24.1.7-1.fc40.x86_64

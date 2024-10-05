@@ -50,7 +50,7 @@ if command -q fzf
     abbr -a -- duf du\ -hsc\ \(ls\ -l\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'\ \'\ -f1\ \|\ rev\) 
     abbr -a -- hsf 'commandline (history | fzf)' 
     abbr -a -- gwr git\ worktree\ remove\ \(git\ worktree\ list\ --porcelain\ \|\ grep\ worktree\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f2-\) 
-    abbr -a -- gwc git\ worktree\ add\ --guess-remote\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
+    abbr -a -- gwc git\ worktree\ add\ --guess-remote\ ../\(basename\ \(pwd\)\)_worktrees/\(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\)
     abbr -a -- gbc git\ checkout\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\) 
     abbr -a -- flatrun flatpak\ run\ \$\(flatpak\ list\ --app\ \|\ fzf\ \|\ cut\ -d\\t\ -f2\)
     if command -q bat
@@ -61,7 +61,7 @@ end
 abbr -a -- gwl 'git worktree list' 
 abbr -a -- gwa 'git worktree add' 
 abbr -a -- gsu 'git status -uno' 
-abbr -a -- gp 'git pull' 
+abbr -a -- gp 'git pull --rebase' 
 abbr -a -- ga 'git add' 
 abbr -a -- gl 'git log --graph --pretty=medium --name-status' 
 abbr -a -- gcom 'git commit -m' 

@@ -8,6 +8,7 @@ Steam	com.valvesoftware.Steam
 Sunshine	dev.lizardbyte.app.Sunshine
 Zed	dev.zed.Zed
 Celluloid	io.github.celluloid_player.Celluloid
+Podman Desktop	io.podman_desktop.PodmanDesktop
 Lutris	net.lutris.Lutris
 Cryptomator	org.cryptomator.Cryptomator
 Fedora Media Writer	org.fedoraproject.MediaWriter
