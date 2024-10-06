@@ -7,4 +7,4 @@ toolbox run --container dev dnf repoquery --userinstalled > ~/dotfiles/silverblu
 flatpak list --app | cut -f1,2 | tee 1>/dev/null ~/dotfiles/silverblue_settings/flatpak_list.txt
 ls -1 ~/.local/share/gnome-shell/extensions/ > ~/dotfiles/silverblue_settings/gnome-extensions_list.txt
 
-echo "Done!!!"
+: =====Done!!!=====
