@@ -91,5 +91,6 @@ if test -f "/run/.containerenv"
         alias flatpak='flatpak-spawn --host flatpak'
         alias firefox='flatpak-spawn --host firefox'
         alias btop='flatpak-spawn --host btop'
+        alias podman='flatpak-spawn --host podman'
     end
 end
