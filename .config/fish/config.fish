@@ -74,7 +74,6 @@ if command -q lazygit
     abbr -a -- lg lazygit
 end
 abbr -a -- fn 'find ./ -iname'
-abbr -a -- file 'nautilus (pwd) &; disown'
 abbr -a -- c clear
 abbr -a -- ls1 'ls -1F'
 abbr -a -- term 'alacritty -e fish&; disown'
@@ -92,5 +91,9 @@ if test -f "/run/.containerenv"
         alias firefox='flatpak-spawn --host firefox'
         alias btop='flatpak-spawn --host btop'
         alias podman='flatpak-spawn --host podman'
+        alias nautilus='flatpak-spawn --host nautilus'
+        alias file='flatpak-spawn --host command nautilus (pwd)'
     end
+else
+    abbr -a -- file 'nautilus (pwd) &; disown'
 end
