@@ -1,4 +1,4 @@
-# System on my Desire PC
+# System on my Desired PC
 
 ## Distro
 
@@ -17,6 +17,7 @@
 - **features** - `fd`: <https://github.com/sharkdp/fd>
 - **features** - `bat`: <https://github.com/sharkdp/bat>
 - **features** - `jq`: <https://github.com/jqlang/jq>
+- **features** - `yq`: <https://github.com/mikefarah/yq>
 - **features** - `yazi`: <https://github.com/sxyazi/yazi>
 - **features** - `tldr`: <https://github.com/tldr-pages/tldr>
 - **features** - `ripgrep`: <https://github.com/BurntSushi/ripgrep>
