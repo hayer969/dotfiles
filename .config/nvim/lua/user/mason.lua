@@ -25,6 +25,7 @@ function M.config()
         "codelldb",
         "debugpy",
         "js-debug-adapter",
+        "markdownlint-cli2",
         "prettier",
         "stylua",
         "shfmt",

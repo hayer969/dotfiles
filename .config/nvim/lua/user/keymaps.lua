@@ -128,6 +128,9 @@ keymap("n", "<Leader>r", "@r", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+-- LSP
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", opts)
