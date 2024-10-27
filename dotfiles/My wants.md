@@ -93,6 +93,7 @@ gwc
   - Blur my Shell: <https://github.com/aunetx/gnome-shell-extension-blur-my-shell>
   - GSConnect: <https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki>
   - Tiling Shell: <https://github.com/domferr/tilingshell>
+  - Battery Health Charging: <https://github.com/maniacx/Battery-Health-Charging>
 
 - `Firefox`:
 
