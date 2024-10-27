@@ -36,21 +36,21 @@
 
 - Use fish abbreviations for quick creating/switching branches and worktrees
 
-```fish
-# This is how folders tree looks like
-.
-├── repo  # There is main branch
-├── repo_worktrees/one_branch
-└── repo_worktrees/another_branch
+  ```fish
+  # This is how folders tree looks like
+  .
+  ├── repo  # There is main branch
+  ├── repo_worktrees/one_branch
+  └── repo_worktrees/another_branch
 
-# We are in the folder with branch from which we are creating new one
-# Create new branch
-gb {new_branch_name}
-# Switch to main worktree
-gws
-# Create new worktree from existing branch
-gwc
-```
+  # We are in the folder with branch from which we are creating new one
+  # Create new branch
+  gb {new_branch_name}
+  # Switch to main worktree
+  gws
+  # Create new worktree from existing branch
+  gwc
+  ```
 
 ---
 
@@ -67,24 +67,32 @@ gwc
 - Restrict log size:
   Add in file `/etc/systemd/journald.conf` next strings:
 
-      [Journal]
-      SystemMaxUse=248M
+  ```bash
+  [Journal]
+  SystemMaxUse=248M
+  ```
 
 - Create shared folders between users:
 
   - Create folder in place where all users can reach it. Usually at `/home`:
 
-        mkdir /home/{name of shared folder}
+    ```bash
+    mkdir /home/{name of shared folder}
+    ```
 
   - Create group and add users:
 
-        sudo groupadd sharedfolders
-        sudo usermod -aG sharedfolders {user name}
+    ```bash
+    sudo groupadd sharedfolders
+    sudo usermod -aG sharedfolders {user name}
+    ```
 
   - Set permissions. All files will be created with particular rules and owned by the group
 
-        sudo chmod g+rwxs {path to folder}
-        setfacl -d -m group:sharedfolders:rwx {path to folder}
+    ```bash
+    sudo chmod g+rwxs {path to folder}
+    setfacl -d -m group:sharedfolders:rwx {path to folder}
+    ```
 
 - `gnome` extensions:
 
@@ -106,7 +114,9 @@ gwc
 
   - SSH Tunneling on client side:
 
-        ssh -L {local_port}:localhost:{port on vnc server} -f -N {user_name}@{IP_address}
+    ```bash
+    ssh -L {local_port}:localhost:{port on vnc server} -f -N {user_name}@{IP_address}
+    ```
 
 - `BTRFS` - mount option for long lifetime ssd, trim and noatime:
   `noatime, discard=async, subvolumeid=ID`
@@ -114,56 +124,77 @@ gwc
 
 - `BTRFS` - subvolume operations, create subvolume for `/home` partition:
 
-      btrfs subvolume create /sub1
-      btrfs subvolume list /
+  ```bash
+  btrfs subvolume create /sub1
+  btrfs subvolume list /
+  ```
 
 - `BTRFS` - create root-level subvolume:
 
-      sudo mkdir /mnt/btrfs/snapshots
-      sudo mount /dev/disk/by-uuid/{your root device uuid} /mnt/btrfs
-      cd /mnt/btrfs
-      sudo btrfs subvolume create snapshots
-      cd /home
-      sudo umount /mnt/btrfs
+  ```bash
+  sudo mkdir /mnt/btrfs/snapshots
+  sudo mount /dev/disk/by-uuid/{your root device uuid} /mnt/btrfs
+  cd /mnt/btrfs
+  sudo btrfs subvolume create snapshots
+  cd /home
+  sudo umount /mnt/btrfs
+  ```
 
 - `BTRFS` - snapshots:
   Create snapshot for root volume in dir `/snapshot`
 
-      sudo btrfs subvolume snapshot / /snapshot/root-{maybe_date}
+  ```bash
+  sudo btrfs subvolume snapshot / /snapshot/root-{maybe_date}
+  ```
 
   Delete snapshot or subvolume:
 
-      sudo btrfs subvolume delete {path to subvolume or snapshot}
+  ```bash
+  sudo btrfs subvolume delete {path to subvolume or snapshot}
+  ```
 
-  Suppose you make a big mess and you want to roll back to a known good state. It’s a good thing you made a snapshot before the mess happened. First unmount the mangled subvolume, delete mangled subvolume, create snapshot from backup one with name mangled subvolume:
+  Suppose you make a big mess and you want to roll back to a known good state.
+  It’s a good thing you made a snapshot before the mess happened.
+  First unmount the mangled subvolume, delete mangled subvolume,
+  create snapshot from backup one with name mangled subvolume:
 
-      sudo btrfs subvolume delete {path to mangled subvolume}
-      sudo btrfs subvolume snapshot {path to backup snapshot} {path to mangled subvolume}
+  ```bash
+  sudo btrfs subvolume delete {path to mangled subvolume}
+  sudo btrfs subvolume snapshot {path to backup snapshot} {path to mangled subvolume}
+  ```
 
   Fedora specific, after rollback root partition it is better to clear gnome-software-center cache:
 
-      sudo pkcon refresh force -c -1
+  ```bash
+  sudo pkcon refresh force -c -1
+  ```
 
 - `BTRFS` - disk usage:
 
-      btrfs filesystem du /{path}
-      btrfs filesystem usage /{path}
+  ```bash
+  btrfs filesystem du /{path}
+  btrfs filesystem usage /{path}
+  ```
 
 - `BTRFS` - fstab example:
 
-      UUID={your uuid} /                       btrfs   rw,noatime,discard=async,ssd,subvol=root,compress=zstd:1 0 0
-      UUID={your uuid} /home                   btrfs   rw,noatime,discard=async,ssd,subvol=home,compress=zstd:1 0 0
-      UUID={your uuid} /mnt/toplevel/snapshots btrfs   noauto,rw,noatime,discard=async,ssd,subvol=snapshots,compress=zstd:1 0 0
-      UUID={your uuid} /var                    btrfs   rw,noatime,discard=async,ssd,subvol=var,compress=zstd:1 0 0
+  ```bash
+  UUID={your uuid} /                       btrfs rw,noatime,discard=async,ssd,subvol=root,compress=zstd:1 0 0
+  UUID={your uuid} /home                   btrfs rw,noatime,discard=async,ssd,subvol=home,compress=zstd:1 0 0
+  UUID={your uuid} /mnt/toplevel/snapshots btrfs noauto,rw,noatime,discard=async,ssd,subvol=snapshots,compress=zstd:1 0 0
+  UUID={your uuid} /var                    btrfs rw,noatime,discard=async,ssd,subvol=var,compress=zstd:1 0 0
+  ```
 
 - `Clamav`:
 
   - Install clamav in fedora (clamav, clamav-freshclam): <https://www.linuxcapable.com/install-clamav-on-fedora-linux/>
   - Config for Russian IPs: <https://redos.red-soft.ru/base/manual/redos-manual/safe-redos/clamav/>
 
-        sudo vi /etc/freshclam.conf
-        # DatabaseMirror database.clamav.net
-        DatabaseMirror https://packages.microsoft.com/clamav/
+    ```bash
+    sudo vi /etc/freshclam.conf
+    # DatabaseMirror database.clamav.net
+    DatabaseMirror https://packages.microsoft.com/clamav/
+    ```
 
 - `KVRT` kaspersky virus removal tool:
 
@@ -173,14 +204,14 @@ gwc
 
 ### Hardware video acceleration
 
-- vaapi (Video Acceleration API): https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
+- vaapi (Video Acceleration API): <https://fedoraproject.org/wiki/Firefox_Hardware_acceleration>
 
 ### btrfs layots
 
 - root /
 - home /home
-    - steam /home/steam
-    - games /home/games
+  - steam /home/steam
+  - games /home/games
 - var /var
 - snapshots *noauto-mount*
 
@@ -193,7 +224,6 @@ gwc
 - To find right path for shared folder do `avahi-browse -fart`  
 Then in nautilus `Other location -> Enter server address` fill with `dav://address:port`  
 *In host: share should be enabled and port allowed through firewall*
-
 
 ### Check if we're running inside a toolbox and switch home folder
 
@@ -219,45 +249,64 @@ fi
 
 - Link your system ssl certificates to folder where strongswan looks up it .  
 
-      sudo ln -s /etc/pki/ca-trust/extracted/pem/ /etc/strongswan/ipsec.d/cacerts
+  ```bash
+  sudo ln -s /etc/pki/ca-trust/extracted/pem/ /etc/strongswan/ipsec.d/cacerts
+  ```
 
 *For Silverblue it can't merge `/etc/...cacerts` folder. Instead create link to contents of the folder.*
 
 ### Login screen on major monitor
 
-    sudo cp -v ~/.config/monitors.xml /var/lib/gdm/.config/
-    sudo chown gdm:gdm /var/lib/gdm/.config/monitors.xml
+  ```bash
+  sudo cp -v ~/.config/monitors.xml /var/lib/gdm/.config/
+  sudo chown gdm:gdm /var/lib/gdm/.config/monitors.xml
+  ```
 
 ### Show system temperature (two ways)
 
-    watch "sensors -A 2>/dev/null"
-    watch "fastfetch --cpu-temp --gpu-temp | grep -E \"CPU|GPU\" | sed 's/:.* -/:/'"
+  ```bash
+  watch "sensors -A 2>/dev/null"
+  watch "fastfetch --cpu-temp --gpu-temp | grep -E \"CPU|GPU\" | sed 's/:.* -/:/'"
+  ```
 
 ### Show folders size with bash
 
-    find ./ -maxdepth 3 -type d -iname "*" -exec du -sh {} \; | sort -h
+  ```bash
+  find ./ -maxdepth 3 -type d -iname "*" -exec du -sh {} \; | sort -h
+  ```
 
 ### Disable **gfxoff** in amdgpu drivers. If your system kinda suspend and never wake up
+
 See `enum PP_FEATURE_MASK` <https://github.com/torvalds/linux/blob/master/drivers/gpu/drm/amd/include/amd_shared.h#L183>
 
-    sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd3fff'
-    sudo rpm-ostree kargs --append='amdgpu.cik_support=1'
+  ```bash
+  sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd3fff'
+  sudo rpm-ostree kargs --append='amdgpu.cik_support=1'
+  ```
 
-### Install opencl with amdgpu drivers.
+Or just edit with text editor:
+
+  ```bash
+  sudo rpm-ostree edit
+  ```
+
+### Install opencl with amdgpu drivers
 
 Do: `groups`  you should see `video` and `render` as well as your user,  
 if it's not, then copy it and install `rocm` packages:
 
-    sudo cat /lib/group | grep -E "video|render" >> /etc/group
-    sudo rpm-ostree install rocm-opencl rocm-opencl-devel rocm-hip rocm-hip-devel
+```bash
+sudo cat /lib/group | grep -E "video|render" >> /etc/group
+sudo rpm-ostree install rocm-opencl rocm-opencl-devel rocm-hip rocm-hip-devel
+```
 
 *rocm-hip and rocm-hip-devel doesn't work for me with blender*
 
 ### Smart info about nvme ssd
 
-    sudo nvme smart-log /dev/nvme0n1
-
-
+```bash
+sudo nvme smart-log /dev/nvme0n1
+```
 
 ## Windows 10
 
