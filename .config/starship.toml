@@ -10,7 +10,13 @@ $git_branch\
 $git_status\
 [ ](bg:bright-green)\
 [](fg:bright-green bg:bright-black)\
-$all\
+$golang\
+$helm\
+$java\
+$docker_context\
+$openstack\
+$kubernetes\
+$all
 """
 
 right_format="""
@@ -122,3 +128,13 @@ style = "fg:black bold bg:bright-yellow"
 # shell = ["C:\\cygwin64\\bin\\fish.exe"]
 # os = "windows"
 # style = "fg:white bold"
+
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+
+[kubernetes]
+format = '\[[$symbol$context( [\($namespace\)](fg:#AF7AC5))]($style)\]'
+disabled = false
+
+[openstack]
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
