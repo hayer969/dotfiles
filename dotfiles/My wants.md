@@ -46,10 +46,10 @@
   # We are in the folder with branch from which we are creating new one
   # Create new branch
   gb {new_branch_name}
-  # Switch to main worktree
+  # Switch to main worktree (same as cd to project root folder)
   gws
-  # Create new worktree from existing branch
-  gwc
+  # Add new worktree from existing branch
+  gwa
   ```
 
 ---
