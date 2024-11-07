@@ -54,6 +54,7 @@ if command -q fzf
     abbr -a -- gbd 'git branch -d (string trim (git branch -a | fzf))'
     abbr -a -- gbrd git\ push\ origin\ -d\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\)
     abbr -a -- gwa 'git worktree add ../(basename (pwd))_worktrees/(set bn (string trim (git branch -a | fzf | string replace "remotes/origin/" "")); echo $bn | string replace -a "/" ".") $bn'
+    abbr -a -- gdf "git difftool -y --tool=nvimdiff -- (git status -suno | fzf | string trim | cut -d' ' -f2)"
     abbr -a -- flatrun flatpak\ run\ \$\(flatpak\ list\ --app\ \|\ fzf\ \|\ cut\ -d\\t\ -f2\)
     if command -q bat
         abbr -a -- gaf git\ add\ \(string\ trim\ \(git\ status\ -s\ \|\ fzf\ --preview=\"bat\ --color=always\ \{2..\}\"\)\ \|\ cut\ -d\'\ \'\ -f2-\)
