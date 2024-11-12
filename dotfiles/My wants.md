@@ -12,6 +12,7 @@
 
 - **shell** - `Fish`: <https://fishshell.com>
 - **terminal** - `Alacritty`: <https://github.com/alacritty/alacritty/blob/master/INSTALL.md>
+- **features** - `zellij` : <https://zellij.dev/>
 - **features** - `starship` : <https://starship.rs/>
 - **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
 - **features** - `fd`: <https://github.com/sharkdp/fd>
@@ -306,6 +307,15 @@ sudo rpm-ostree install rocm-opencl rocm-opencl-devel rocm-hip rocm-hip-devel
 
 ```bash
 sudo nvme smart-log /dev/nvme0n1
+```
+
+### Bash vi mode
+
+```bash
+set -o vi
+bind 'set show-mode-in-prompt on'
+bind '"jk":vi-movement-mode'
+bind '"kj":vi-movement-mode'
 ```
 
 ## Windows 10
