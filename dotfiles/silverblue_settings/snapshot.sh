@@ -23,7 +23,7 @@ set +e
 if [[ $REPLY =~ ^[Yy]$ ]] 
 then
   sudo mount /mnt/snapshots
-  sudo btrfs subvolume snapshot / /mnt/snapshots/root-$(date +%b-%d-%Y)
+  sudo btrfs subvolume snapshot /sysroot /mnt/snapshots/root-$(date +%b-%d-%Y)
   sudo btrfs subvolume snapshot /home /mnt/snapshots/home-$(date +%b-%d-%Y)
   sudo umount /mnt/snapshots
 else
