@@ -77,6 +77,10 @@ abbr -a -- gc 'git checkout'
 if command -q lazygit
     abbr -a -- lg lazygit
 end
+if command -q zellij
+    # abbr -a -- zlw 'zellij --layout ~/.config/zellij/worked-layout.kdl'
+    alias zll="zellij a -f $(zellij ls -n | tail -n 1 | cut -d' ' -f1)"
+end
 abbr -a -- fn 'find ./ -iname'
 abbr -a -- c clear
 abbr -a -- ls1 'ls -1F'

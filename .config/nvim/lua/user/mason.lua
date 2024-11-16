@@ -16,7 +16,7 @@ function M.config()
         "jsonls",
         "lua_ls",
         "pyright",
-        "ruff_lsp",
+        "ruff",
         "powershell_es",
         "ts_ls",
         "yamlls",

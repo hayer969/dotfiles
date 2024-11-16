@@ -33,7 +33,7 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 
-Once done, a timer may be enabled by issuing the following command, replacing $NAMEwith the appropriate variable (e.g., fedora-toolbox-40):
+Once done, a timer may be enabled by issuing the following command, replacing $NAME with the appropriate variable (e.g., fedora-toolbox-40):
 
 systemctl --user enable --now refresh-toolbox@$NAME.timer
 
@@ -66,7 +66,7 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 
-Like before, enable by issuing the following command, again replacing $NAMEwith the appropriate variable (e.g., fedora-toolbox-40):
+Like before, enable by issuing the following command, again replacing $NAME with the appropriate variable (e.g., fedora-toolbox-40):
 
 systemctl --user enable --now update-toolbox@$NAME.timer
 

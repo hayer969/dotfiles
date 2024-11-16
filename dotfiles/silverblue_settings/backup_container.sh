@@ -13,7 +13,7 @@ else
 fi
 
 podman container stop $cname
-id=$(toolbox list | grep dev | cut -d' ' -f1)
+id=$(toolbox list | grep $cname | cut -d' ' -f1)
 podman container commit -p $id $cname-backup
 podman save -o $cname.tar $cname-backup
 podman rmi $cname-backup
