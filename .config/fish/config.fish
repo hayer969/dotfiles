@@ -20,11 +20,12 @@ set -g fish_prompt_pwd_dir_length 0
 set -g fish_color_command 0087ff
 set -g fish_color_autosuggestion 9c9c9c
 
-# "bat" as manpager
+# "bat" as manpager and abbr for bat
 if command -q bat
     set -x BAT_THEME "Coldark-Dark"
     set -x MANROFFOPT "-c"
     set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
     abbr -a -- cat bat
     abbr -a -- baty "bat -lyaml"
 end
@@ -38,36 +39,37 @@ end
 if command -q zoxide
     zoxide init fish | source
 end
+
 #fastfetch
 
 if command -q fzf
     set -x FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
-    abbr -a -- cdhorig cdh 
-    abbr -a -- cdh cd\ \(string\ trim\ \(dirh\ \|\ cut\ -f2-\ -d\'\)\'\ \|\ sort\ -u\ \|\ fzf\)\) 
+    abbr -a -- cdhorig cdh
+    abbr -a -- cdh "cd (string trim (dirh | cut -f2- -d')' | sort -u | fzf))"
     if command -q fd
         abbr -a -- cdf 'cd (fd --type d --no-ignore-vcs --follow --exclude .git ".*" . | fzf)'
         abbr -a -- cdfh 'cd (fd --type d --no-ignore-vcs --follow --exclude .git --hidden ".*" . | fzf)'
     end
-    abbr -a -- duf du\ -hsc\ \(ls\ -l\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'\ \'\ -f1\ \|\ rev\)
+    abbr -a -- duf "du -hsc (ls -l | fzf | rev | cut -d' ' -f1 | rev)"
     abbr -a -- hsf 'commandline (history | fzf)'
-    abbr -a -- gwr git\ worktree\ remove\ \(git\ worktree\ list\ --porcelain\ \|\ grep\ worktree\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f2-\)
+    abbr -a -- gwr "git worktree remove (git worktree list --porcelain | grep worktree | fzf | cut -d' ' -f2-)"
     abbr -a -- gbd 'git branch -d (string trim (git branch -a | fzf))'
-    abbr -a -- gbrd git\ push\ origin\ -d\ \(string\ trim\ \(git\ branch\ -a\ \|\ fzf\ \|\ rev\ \|\ cut\ -d\'/\'\ -f1\ \|\ rev\)\)
+    abbr -a -- gbrd "git push origin -d (string trim (git branch -a | fzf | rev | cut -d'/' -f1 | rev))"
     abbr -a -- gwa 'git worktree add ../(basename (pwd))_worktrees/(set bn (string trim (git branch -a | fzf | string replace "remotes/origin/" "")); echo $bn | string replace -a "/" ".") $bn'
     abbr -a -- gdf "git difftool -y --tool=nvimdiff -- (git status -suno | fzf | string trim | cut -d' ' -f2)"
-    abbr -a -- flatrun flatpak\ run\ \$\(flatpak\ list\ --app\ \|\ fzf\ \|\ cut\ -d\\t\ -f2\)
+    abbr -a -- flatrun 'flatpak run $(flatpak list --app | fzf | cut -d\t -f2)'
     if command -q bat
-        abbr -a -- gaf git\ add\ \(string\ trim\ \(git\ status\ -s\ \|\ fzf\ --preview=\"bat\ --color=always\ \{2..\}\"\)\ \|\ cut\ -d\'\ \'\ -f2-\)
-        abbr -a -- gad git\ add\ \(string\ trim\ \(git\ status\ -suno\ \|\ fzf\ --preview=\"git\ diff\ \{2..\}\ \|\ bat\ --color=always\"\)\ \|\ cut\ -d\'\ \'\ -f2-\)
+        abbr -a -- gaf "git add (string trim (git status -s | fzf --preview=\"bat --color=always {2..}\") | cut -d' ' -f2-)"
+        abbr -a -- gad "git add (string trim (git status -suno | fzf --preview=\"git diff {2..} | bat --color=always\") | cut -d' ' -f2-)"
     end
 end
-abbr -a -- gws cd\ \(git\ worktree\ list\ \|\ fzf\ \|\ cut\ -d\'\ \'\ -f1\)
+abbr -a -- gws "cd (git worktree list | fzf | cut -d' ' -f1)"
 abbr -a -- gsu 'git status -uno'
 abbr -a -- gp 'git pull --rebase'
 abbr -a -- ga 'git add'
 abbr -a -- gau 'git add -u'
 abbr -a -- gl 'git log --graph --pretty=medium --name-status'
-abbr -a -- gcom 'git commit -m'
+abbr -a -- gcom 'git commit -m "'
 abbr -a -- gcoms 'git commit --signoff -m "'
 abbr -a -- gtree 'git ls-tree --name-only -r HEAD'
 abbr -a -- grev 'git rev-list --count HEAD'
