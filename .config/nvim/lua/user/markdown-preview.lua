@@ -14,14 +14,17 @@ function M.config()
 	end
 
 	if file_exists("/run/.containerenv") then
-		vim.cmd([[
-        function OpenMarkdownPreview (url)
-            let cmd = "flatpak-spawn --host firefox --new-window " . shellescape(a:url) . " &"
-            silent call system(cmd)
-          endfunction
-        ]])
-		vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
-	end
+        vim.g.browser_command = "flatpak-spawn --host firefox --new-window"
+    else
+        vim.g.browser_command = "firefox --new-window"
+    end
+    vim.cmd([[
+    function OpenMarkdownPreview (url)
+        let cmd = g:browser_command . " " . shellescape(a:url) . " &"
+        silent call system(cmd)
+      endfunction
+    ]])
+    vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
 end
 
 return M
