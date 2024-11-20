@@ -1,0 +1,22 @@
+layout {
+    default_tab_template {
+            // the default zellij tab-bar and status bar plugins
+            pane size=1 borderless=true {
+                plugin location="zellij:tab-bar"
+            }
+            children
+            pane size=2 borderless=true {
+                plugin location="zellij:status-bar"
+            }
+        }
+    cwd "/home/hayer"
+    tab name="Tab #1" focus=true hide_floating_panes=true {
+        pane size="60%" split_direction="vertical" {
+            pane cwd="/home/hayer/git_projects/virtualization-rnd" focus=true size="50%"
+            pane cwd="/home/hayer/git_projects/virtualization-rnd" size="50%"
+        }
+        pane size="40%" command="k9s" close_on_exit=false
+    }
+    tab
+}
+
