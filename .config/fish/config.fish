@@ -80,8 +80,8 @@ if command -q lazygit
     abbr -a -- lg lazygit
 end
 if command -q zellij
-    abbr -a -- zlw 'zellij --layout (ls ~/.config/zellij/*layout.kdl | fzf)'
-    alias zll="zellij a -f $(zellij ls -n | tail -n 1 | cut -d' ' -f1)"
+    abbr -a -- zlf 'zellij --layout (ls ~/.config/zellij/*layout.kdl | fzf)'
+    abbr -a -- zll "zellij a -f (zellij ls -n | tail -n 1 | cut -d' ' -f1)"
 end
 abbr -a -- fn 'find ./ -iname'
 abbr -a -- c clear
