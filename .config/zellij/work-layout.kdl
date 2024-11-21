@@ -1,18 +1,25 @@
 layout {
     default_tab_template {
-            // the default zellij tab-bar and status bar plugins
-            pane size=1 borderless=true {
-                plugin location="zellij:tab-bar"
-            }
-            children
-            pane size=1 borderless=true {
-                plugin location="zellij:status-bar"
-            }
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
         }
-    tab name="Task" cwd="/home/hayer/git_projects/virtualization/tests/e2e" hide_floating_panes=true {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
         pane size="60%" split_direction="vertical" focus=true
         pane size="40%"
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
     }
+    tab name="Text" cwd="/home/hayer/git_projects/virtualization-rnd"
     tab name="Manual" cwd="/home/hayer/git_projects/virtualization-rnd" hide_floating_panes=true {
         pane size="60%" split_direction="vertical" {
             pane focus=true size="50%"
@@ -20,6 +27,9 @@ layout {
         }
         pane size="40%" command="k9s" close_on_exit=false
     }
-    tab cwd="/home/hayer/git_projects/virtualization-rnd"
+    tab name="Task" cwd="/home/hayer/git_projects/virtualization/tests/e2e" hide_floating_panes=true {
+        pane size="60%" split_direction="vertical" focus=true
+        pane size="40%"
+    }
 }
 
