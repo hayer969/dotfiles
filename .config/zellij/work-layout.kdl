@@ -9,11 +9,14 @@ layout {
                 plugin location="zellij:status-bar"
             }
         }
-    cwd "/home/hayer"
-    tab focus=true hide_floating_panes=true {
+    tab name="Task" cwd="/home/hayer/git_projects/virtualization/tests/e2e" hide_floating_panes=true {
+        pane size="60%" split_direction="vertical" focus=true
+        pane size="40%"
+    }
+    tab name="Manual" cwd="/home/hayer/git_projects/virtualization-rnd" hide_floating_panes=true {
         pane size="60%" split_direction="vertical" {
-            pane cwd="/home/hayer/git_projects/virtualization-rnd" focus=true size="50%"
-            pane cwd="/home/hayer/git_projects/virtualization-rnd" size="50%"
+            pane focus=true size="50%"
+            pane size="50%"
         }
         pane size="40%" command="k9s" close_on_exit=false
     }
