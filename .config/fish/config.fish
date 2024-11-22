@@ -30,7 +30,7 @@ if command -q bat
     abbr -a -- baty "bat -lyaml"
 end
 # Add local/bin to Path, some apps installed there
-set -x PATH "/home/hayer/.local/bin:$PATH"
+set -gx PATH "/home/hayer/.local/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 if command -q starship
