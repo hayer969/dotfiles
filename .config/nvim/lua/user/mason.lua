@@ -13,6 +13,7 @@ function M.config()
         "cssls",
         "clangd",
         "html",
+        "gopls",
         "jsonls",
         "lua_ls",
         "pyright",

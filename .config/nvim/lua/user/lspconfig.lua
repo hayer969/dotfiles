@@ -78,6 +78,7 @@ function M.config()
 		"bashls",
 		"cssls",
 		"clangd",
+        "gopls",
 		"html",
 		"jsonls",
 		"lua_ls",
