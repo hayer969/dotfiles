@@ -16,7 +16,7 @@ function M.config()
             formatting.stylua,
             formatting.shfmt,
             formatting.google_java_format,
-            formatting.yamlfmt,
+            formatting.yamlfmt.with({ extra_args = { "-formatter", "retain_line_breaks_single=true" } }),
         },
     })
 end
