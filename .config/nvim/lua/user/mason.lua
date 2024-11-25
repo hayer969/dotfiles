@@ -30,6 +30,7 @@ function M.config()
         "prettier",
         "stylua",
         "shfmt",
+        "yamlfmt",
     }
 
     require("mason").setup {
