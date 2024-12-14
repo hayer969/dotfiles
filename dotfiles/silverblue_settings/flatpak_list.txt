@@ -42,5 +42,5 @@ KeePassXC	org.keepassxc.KeePassXC
 ONLYOFFICE Desktop Editors	org.onlyoffice.desktopeditors
 qBittorrent	org.qbittorrent.qBittorrent
 Remmina	org.remmina.Remmina
-Telegram Desktop	org.telegram.desktop
+Telegram	org.telegram.desktop
 VLC	org.videolan.VLC

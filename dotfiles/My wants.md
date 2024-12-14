@@ -281,14 +281,14 @@ fi
 See `enum PP_FEATURE_MASK` <https://github.com/torvalds/linux/blob/master/drivers/gpu/drm/amd/include/amd_shared.h#L183>
 
   ```bash
-  sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd3fff'
+  sudo rpm-ostree kargs --append='amdgpu.ppfeaturemask=0xfffd7fff'
   sudo rpm-ostree kargs --append='amdgpu.cik_support=1'
   ```
 
 Or just edit with text editor:
 
   ```bash
-  sudo rpm-ostree edit
+  sudo rpm-ostree kargs --editor
   ```
 
 ### Install opencl with amdgpu drivers
@@ -316,6 +316,47 @@ set -o vi
 bind 'set show-mode-in-prompt on'
 bind '"jk":vi-movement-mode'
 bind '"kj":vi-movement-mode'
+```
+
+### Xbox via dongle
+
+Add firmware, easy way is use toolbox:
+
+- Create container and enter to it
+- Enable corp repo `sentry/xone`
+- Install `lpf-xone-firmware`
+- Build and install firmware
+- Copy firmware to home folder
+- Return to host
+- Copy firmware to `/var/lib/firmware` fodler
+- Add this to firmware path
+- Add corp repo `sentry/xone`
+- Install xone packages
+- Reboot
+
+```bash
+toolbox create xone
+toolbox enter xone
+sudo dnf copr enable sentry/xone
+sudo dnf install lpf-xone-firmware
+lpf approve xone-firmware
+lpf build xone-firmware
+lpf install xone-firmware
+# If previous steps send an error, try to do it through gui:
+lpf update
+# Shoud appear window where you should see xone-firmware
+# And can approve, build and install this
+cp /usr/lib/firmware/xow_dongle.bin ~/Downloads
+exit
+toolbox rm -f xone
+# Now we are in host
+sudo mkdir -p /var/lib/firmware
+sudo cp ~/Downloads/xow_dongle.bin /var/lib/firmware/
+sudo rpm-ostree kargs --append='firmware_class.path=/var/lib/firmware'
+cd /etc/yum.repos.d/
+sudo wget https://copr.fedorainfracloud.org/coprs/sentry/xone/repo/fedora-41/sentry-xone-fedora-41.repo
+sudo rpm-ostree install akmod-xone kmod-xone xone
+systemctl reboot
 ```
 
 ## Windows 10
