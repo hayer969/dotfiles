@@ -26,6 +26,7 @@ spec("user.markdown-lint")
 spec("user.whichkey")
 spec("user.illuminate")
 spec("user.harpoon")
+spec("user.copilot")
 require("user.lazy")
 
 -- My functions:
