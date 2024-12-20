@@ -16,7 +16,7 @@ function M.config()
 	if file_exists("/run/.containerenv") then
         vim.g.browser_command = "flatpak-spawn --host firefox --new-window"
     else
-        vim.g.browser_command = "firefox --new-window"
+        vim.g.browser_command = "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=firefox --file-forwarding org.mozilla.firefox --new-window"
     end
     vim.cmd([[
     function OpenMarkdownPreview (url)

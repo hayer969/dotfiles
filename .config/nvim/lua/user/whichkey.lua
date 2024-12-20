@@ -130,13 +130,6 @@ function M.config()
                 remap = false,
             },
             {
-                "<leader>lcp",
-                "<CMD>Copilot panel<CR>",
-                desc = "Copilot panel",
-                nowait = true,
-                remap = false,
-            },
-            {
                 "<leader>lcs",
                 "<CMD>Copilot status<CR>",
                 desc = "Copilot status",
