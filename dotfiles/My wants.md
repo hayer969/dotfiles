@@ -12,6 +12,7 @@
 
 - **shell** - `Fish`: <https://fishshell.com>
 - **terminal** - `Alacritty`: <https://github.com/alacritty/alacritty/blob/master/INSTALL.md>
+- **terminal** - `Ghostty`: <https://ghostty.org/docs/install/binary>
 - **features** - `zellij` : <https://zellij.dev/>
 - **features** - `starship` : <https://starship.rs/>
 - **features** - `fuzzyfinder`: <https://github.com/junegunn/fzf>
