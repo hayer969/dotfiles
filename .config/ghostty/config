@@ -1,0 +1,19 @@
+font-size = 14
+#font-family = "Hack Nerd Font Mono"
+
+# theme = light:Adwaita,dark:NvimDark
+background-opacity = 0.75
+
+confirm-close-surface = false
+
+# Preserve TERMINFO for sudo
+shell-integration-features = sudo
+
+# Copy Ghostty's terminfo to a remote machine
+# The following one-liner will export the terminfo entry from your host and import it on the remote machine:
+# $: infocmp -x | ssh YOUR-SERVER -- tic -x -
+# The tic command on the server may give the warning "<stdin>", line 2, col 31, terminal 'xterm-ghostty': older tic versions may treat the description field as an alias which can be safely ignored.
+
+# quick-terminal-position = top
+# Keybinds
+# keybind = global:ctrl+grave_accent=toggle_quick_terminal
