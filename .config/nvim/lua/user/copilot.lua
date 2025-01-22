@@ -14,7 +14,7 @@ function M.config()
     suggestion = { enabled = false },
     panel = { enabled = false },
     filetypes = {
-      yaml = true,
+      yaml = false,
     },
   })
 
