@@ -192,6 +192,8 @@ function M.config()
             { "<leader>xse", desc = "en",                                       nowait = true, remap = false },
             { "<leader>xsn", desc = "off",                                      nowait = true, remap = false },
             { "<leader>xsr", desc = "ru",                                       nowait = true, remap = false },
+            { "<leader>k",  group = "Kubernetes",                               nowait = true, remap = false },
+            { "<leader>ka", desc = "Apply current file",                        nowait = true, remap = false },
         },
     })
 
