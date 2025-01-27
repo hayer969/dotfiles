@@ -193,8 +193,11 @@ function M.config()
             { "<leader>xsn", desc = "off",                                      nowait = true, remap = false },
             { "<leader>xsr", desc = "ru",                                       nowait = true, remap = false },
             { "<leader>k",  group = "Kubernetes",                               nowait = true, remap = false },
-            { "<leader>ka", desc = "Apply current file",                        nowait = true, remap = false },
+            { "<leader>kf", desc = "Apply current file",                        nowait = true, remap = false },
             { "<leader>kk", desc = "Apply kustomization",                       nowait = true, remap = false },
+            { "<leader>kd",  group = "Kubernetes delete",                       nowait = true, remap = false },
+            { "<leader>kdf", desc = "Delete current file",                      nowait = true, remap = false },
+            { "<leader>kdk", desc = "Delete kustomization",                     nowait = true, remap = false },
         },
     })
 
