@@ -55,6 +55,7 @@ if command -q fzf
     abbr -a -- gwr "git worktree remove (git worktree list --porcelain | grep worktree | fzf | cut -d' ' -f2-)"
     abbr -a -- gbd 'git branch -d (string trim (git branch -a | fzf))'
     abbr -a -- gbrd "git push origin -d (string trim (git branch -a | fzf | rev | cut -d'/' -f1 | rev))"
+    abbr -a -- gcb 'git checkout $(git branch -a | fzf | string replace "remotes/origin/" "" | string trim)'
     abbr -a -- gwa 'git worktree add ../(basename (pwd))_worktrees/(set bn (string trim (git branch -a | fzf | string replace "remotes/origin/" "")); echo $bn | string replace -a "/" ".") $bn'
     abbr -a -- gdf "git difftool -y --tool=nvimdiff -- (git status -suno | fzf | string trim | cut -d' ' -f2)"
     abbr -a -- flatrun 'flatpak run $(flatpak list --app | fzf | cut -d\t -f2)'
