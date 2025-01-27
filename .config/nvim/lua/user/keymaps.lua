@@ -222,6 +222,7 @@ keymap("n", "<leader>xsn", ":setlocal spell spelllang=<CR>", opts)
 
 -- Kubernetes
 keymap("n", "<leader>ka", ":!d8 k apply -f %<CR>", opts)
+keymap("n", "<leader>kk", ":!d8 k apply -k %:p:h<CR>", opts)
 
 --Open with different codes and other staff
 -- Open with cp1251
