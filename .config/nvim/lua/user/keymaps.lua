@@ -223,8 +223,8 @@ keymap("n", "<leader>xsn", ":setlocal spell spelllang=<CR>", opts)
 -- Kubernetes
 keymap("n", "<leader>kf", ":!d8 k apply -f %<CR>", opts)
 keymap("n", "<leader>kk", ":!d8 k apply -k %:p:h<CR>", opts)
-keymap("n", "<leader>kdf", ":!d8 k delete -f %<CR>", opts)
-keymap("n", "<leader>kdk", ":!d8 k delete -k %:p:h<CR>", opts)
+keymap("n", "<leader>kdf", ":!d8 k delete -f % --ignore-not-found<CR>", opts)
+keymap("n", "<leader>kdk", ":!d8 k delete -k %:p:h --ignore-not-found<CR>", opts)
 
 --Open with different codes and other staff
 -- Open with cp1251
