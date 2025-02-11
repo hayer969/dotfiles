@@ -20,16 +20,30 @@ layout {
         }
     }
     tab name="Text" cwd="/home/hayer/git_projects/virtualization-rnd"
-    tab name="Manual" cwd="/home/hayer/git_projects/virtualization-rnd" hide_floating_panes=true {
-        pane size="60%" split_direction="vertical" {
+    tab name="k9s" cwd="/home/hayer/git_projects/virtualization-rnd/tests/reports" focus=true hide_floating_panes=true {
+        pane size="31%" split_direction="vertical" {
             pane focus=true size="50%"
             pane size="50%"
         }
-        pane size="40%" command="k9s" close_on_exit=false
+        pane size="23%"  close_on_exit=false command="k9s" {
+            args "--crumbsless" "--headless" "-c vm"
+        }
+        pane size="23%"  close_on_exit=false command="k9s" {
+            args "--crumbsless" "--headless" "-c vd"
+        }
+        pane size="23%"  close_on_exit=false command="k9s" {
+            args "--crumbsless" "--headless" "-c po"
+        }
     }
-    tab name="Task" cwd="/home/hayer/git_projects/virtualization/tests/e2e" hide_floating_panes=true {
+    // tab name="Manual" cwd="/home/hayer/git_projects/virtualization-rnd" hide_floating_panes=true {
+    //     pane size="60%" split_direction="vertical" {
+    //         pane focus=true size="50%"
+    //         pane size="50%"
+    //     }
+    //     pane size="40%" command="k9s" close_on_exit=false
+    // }
+    tab name="Task" cwd="/home/hayer/git_projects/virtualization-rnd/tests/reports" hide_floating_panes=true {
         pane size="60%" split_direction="vertical" focus=true
         pane size="40%"
     }
 }
-
