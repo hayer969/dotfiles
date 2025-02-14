@@ -20,7 +20,7 @@ layout {
         }
     }
     tab name="Text" cwd="/home/hayer/git_projects/virtualization-rnd"
-    tab name="k9s" cwd="/home/hayer/git_projects/virtualization-rnd/tests/reports" focus=true hide_floating_panes=true {
+    tab name="K9s" cwd="/home/hayer/git_projects/virtualization-rnd/tests/reports" focus=true hide_floating_panes=true {
         pane size="31%" split_direction="vertical" {
             pane focus=true size="50%"
             pane size="50%"
