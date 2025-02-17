@@ -29,6 +29,8 @@ spec("user.harpoon")
 spec("user.copilot")
 require("user.lazy")
 
+vim.cmd("Copilot disable")
+
 -- My functions:
 -- Delete string duplicates by pattern, can keep first, last or none of duplicates, none by default
 -- Usage:
