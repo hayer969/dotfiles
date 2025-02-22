@@ -20,6 +20,13 @@ set -g fish_prompt_pwd_dir_length 0
 set -g fish_color_command 0087ff
 set -g fish_color_autosuggestion 9c9c9c
 
+# Set the cursor shapes for the different vi modes.
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
+set fish_cursor_visual block blink
+set fish_vi_force_cursor 1
+
 # "bat" as manpager and abbr for bat
 if command -q bat
     set -x BAT_THEME "Coldark-Dark"
