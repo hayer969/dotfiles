@@ -165,11 +165,6 @@ keymap("n", "<leader>gb", "<CMD>Telescope git_branches<CR>", opts)
 keymap("n", "<leader>gc", "<CMD>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>gd", "<CMD>Gitsigns diffthis HEAD<CR>", opts)
 
--- Comment
--- keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
--- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
--- keymap("x", "<leader><leader>/", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
-
 -- DAP
 keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>dB", "<CMD>lua require'dap'.set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", opts)
@@ -223,8 +218,8 @@ keymap("n", "<leader>xsn", ":setlocal spell spelllang=<CR>", opts)
 -- Kubernetes
 keymap("n", "<leader>kf", ":!d8 k apply -f %<CR>", opts)
 keymap("n", "<leader>kk", ":!d8 k apply -k %:p:h<CR>", opts)
-keymap("n", "<leader>kdf", ":!d8 k delete -f % --ignore-not-found<CR>", opts)
-keymap("n", "<leader>kdk", ":!d8 k delete -k %:p:h --ignore-not-found<CR>", opts)
+keymap("n", "<leader>kdf", ":!d8 k delete -f % --ignore-not-found --wait=false<CR>", opts)
+keymap("n", "<leader>kdk", ":!d8 k delete -k %:p:h --ignore-not-found --wait=false<CR>", opts)
 
 --Open with different codes and other staff
 -- Open with cp1251
