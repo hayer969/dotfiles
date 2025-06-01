@@ -31,6 +31,7 @@ function M.config()
         "stylua",
         "shfmt",
         "yamlfmt",
+        "google-java-format",
     }
 
     require("mason").setup {

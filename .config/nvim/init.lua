@@ -27,6 +27,7 @@ spec("user.whichkey")
 spec("user.illuminate")
 spec("user.harpoon")
 spec("user.copilot")
+spec("user.mini-icons")
 require("user.lazy")
 
 vim.cmd("Copilot disable")
