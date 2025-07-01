@@ -2,8 +2,10 @@ function rgf
     if command -q rg; and command -q fzf; and command -q nvim; and command -q bat
         set -l list (
             rg --no-heading \
+               # --color=always \
                --line-number $argv | \
                fzf --delimiter : \
+                   --tac \
                    --preview 'bat \
                               --style=full \
                               --color=always \
@@ -19,7 +21,9 @@ function rgf
         for el in $list
             set --append list2 (echo $el | sed 's/:.*//')
         end
-        nvim $first $list2
+        if test -n $first[1]
+            nvim $first $list2
+        end
     else
         echo "Please install rg, fzf, nvim, bat"
     end
