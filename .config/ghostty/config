@@ -1,5 +1,5 @@
 font-size = 14
-#font-family = "Hack Nerd Font Mono"
+font-family = "Hack Nerd Font Mono"
 
 # theme = light:Adwaita,dark:NvimDark
 background-opacity = 0.75
@@ -17,3 +17,5 @@ shell-integration-features = sudo
 # quick-terminal-position = top
 # Keybinds
 # keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+command = TERM=xterm-256color /usr/bin/fish
