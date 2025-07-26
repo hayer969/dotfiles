@@ -1,21 +1,21 @@
-#set -x PATH $PATH
+#set -gx PATH $PATH
 #For Alacritty title bar working properly
 #set WAYLAND_DISPLAY alacritty
 #For VAAPI support
-set -x LIBVA_DRIVER_NAME radeonsi
+set -gx LIBVA_DRIVER_NAME radeonsi
 
 #For case insensitive search in less
-set -x LESS "-RFi"
+set -gx LESS "-RFi"
 
 #Path to ripgrep configuration file
-set -x RIPGREP_CONFIG_PATH $HOME/.config/ripgreprc
+set -gx RIPGREP_CONFIG_PATH $HOME/.config/ripgreprc
 
 if command -q nvim
-    set -x EDITOR /usr/bin/nvim
+    set -gx EDITOR /usr/bin/nvim
     abbr -a -- vi nvim 
     abbr -a -- vim nvim 
 end
-set -x LANG en_US.UTF-8
+set -gx LANG en_US.UTF-8
 set -g fish_prompt_pwd_dir_length 0
 set -g fish_color_command 0087ff
 set -g fish_color_autosuggestion 9c9c9c
@@ -29,15 +29,18 @@ set fish_vi_force_cursor 1
 
 # "bat" as manpager and abbr for bat
 if command -q bat
-    set -x BAT_THEME "Coldark-Dark"
-    set -x MANROFFOPT "-c"
-    set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -gx BAT_THEME "Coldark-Dark"
+    set -gx MANROFFOPT "-c"
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     abbr -a -- cat bat
     abbr -a -- baty "bat -lyaml"
 end
+
+set -gx GOPATH "$HOME/go"
 # Add local/bin to Path, some apps installed there
 set -gx PATH "/home/hayer/.local/bin:$PATH"
+set -gx PATH "$PATH:$GOPATH/bin"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 if command -q starship
@@ -50,7 +53,7 @@ end
 #fastfetch
 
 if command -q fzf
-    set -x FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
+    set -gx FZF_DEFAULT_OPTS "--multi --preview-window=wrap"
     abbr -a -- cdhorig cdh
     abbr -a -- cdh "cd (string trim (dirh | cut -f2- -d')' | sort -u | fzf))"
     if command -q fd
