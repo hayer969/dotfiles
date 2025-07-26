@@ -1,3 +1,4 @@
+Zen	app.zen_browser.zen
 Dconf Editor	ca.desrt.dconf-editor
 Discord	com.discordapp.Discord
 Flatseal	com.github.tchx84.Flatseal

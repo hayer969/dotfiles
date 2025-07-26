@@ -10,9 +10,9 @@ fi
 
 if command -v bat >/dev/null
 then
-    btrfs filesystem usage / | bat -p -r 1:4 -r14: | grep -v '^$'
+    btrfs filesystem usage /var | bat -p -r 1:4 -r14: | grep -v '^$'
 else
-    btrfs filesystem usage / | sed -n '1,4p;14,20p' | grep -v '^$'
+    btrfs filesystem usage /var | sed -n '1,4p;14,20p' | grep -v '^$'
 fi
 
 echo ""
