@@ -32,6 +32,8 @@ require("user.lazy")
 
 -- vim.cmd("Copilot disable")
 
+-- Capitalize all in Taskfile variables {{.VARIABLE}}
+-- %s/{{\.\zs\(.\{-}\)\ze}/\U\1/g
 -- My functions:
 -- Delete string duplicates by pattern, can keep first, last or none of duplicates, none by default
 -- Usage:
