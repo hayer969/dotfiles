@@ -79,6 +79,7 @@ keymap("v", "<Leader>c", "\"*ygv\"+y:let @/='\\V'.substitute(escape(@*, '/\\'), 
 
 -- Command Mode --
 keymap("c", "q1", "q!<CR>", opts)
+keymap("c", "qf", "cclose<CR>", opts)
 
 -- Terminal Mode --
 -- To map <Esc> to exit terminal-mode:
