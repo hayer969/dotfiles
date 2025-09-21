@@ -48,6 +48,7 @@ function M.config()
     which_key.add({
         {
             mode = { "n" },
+            { "<leader><leader>",   desc = "Open current buffer in right window",           nowait = true, remap = false },
             { "<leader>%",   desc = "Put absolute full path",           nowait = true, remap = false },
             { "<leader>/",   desc = "Fuzzily search in current buffer", nowait = true, remap = false },
             { "<leader>;",   desc = "Clear highlights",                 nowait = true, remap = false },
