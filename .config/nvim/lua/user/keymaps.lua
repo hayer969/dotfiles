@@ -34,9 +34,6 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- Open buffer in new tab
 keymap("n", "<Leader>t", "<CMD>tab split<CR>", opts)
 
--- Open current buffer in right window
-keymap("n", "<Leader><Leader>", '<CMD>exe "normal mO\\<C-w>l`O"<CR>', opts)
-
 -- Change word and find next match
 keymap("n", "<Leader>c", ':let @/="<C-r><C-w>"<CR>gnc', opts)
 
