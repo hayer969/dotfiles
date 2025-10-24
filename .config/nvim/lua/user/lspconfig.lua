@@ -37,16 +37,19 @@ function M.common_capabilities()
 end
 
 function M.config()
-  local lspconfig = require("lspconfig")
-
   local default_diagnostic_config = {
     signs = {
-      active = true,
-      values = {
-        { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "" },
-        -- { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
+      text = {
+        [ vim.diagnostic.severity.ERROR] = "",
+        [ vim.diagnostic.severity.WARN] = "",
+        -- [ vim.diagnostic.severity.HINT] = "",
+        [ vim.diagnostic.severity.INFO] = "",
+      },
+      texthl = {
+        [vim.diagnostic.severity.ERROR] = "Error",
+        [vim.diagnostic.severity.WARN] = "Warn",
+        [vim.diagnostic.severity.INFO] = "Info",
+        [vim.diagnostic.severity.HINT] = "Hint",
       },
     },
     virtual_text = false,
@@ -64,14 +67,6 @@ function M.config()
   }
 
   vim.diagnostic.config(default_diagnostic_config)
-
-  for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
-  end
-
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-  require("lspconfig.ui.windows").default_options.border = "rounded"
 
   local servers = {
     "bashls",
@@ -99,7 +94,8 @@ function M.config()
       opts = vim.tbl_deep_extend("force", settings, opts)
     end
 
-    lspconfig[server].setup(opts)
+    vim.lsp.config(server, opts)
+    vim.lsp.enable(server)
   end
 end
 
