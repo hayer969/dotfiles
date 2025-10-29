@@ -1,5 +1,5 @@
 function ghactionstatus --description 'Check github ci action status for particular pr. By default - build images for deckhouse/virtualization'
-    argparse --min-args=1 'h/help' 'repo=' 'action=+' -- $argv
+    argparse --min-args=1 'h/help' 'v/verbose' 'repo=' 'action=+' -- $argv
     or return
     if not command -q gh
         echo "Error. Please install 'gh' command (github cli)" >&2
@@ -8,6 +8,7 @@ function ghactionstatus --description 'Check github ci action status for particu
     if set -ql _flag_h
         echo "Usage: ghactionstatus [--help] [--repo=owner/repo_name] [--action=action_name] pr_number" >&2
         echo "-h/--help - show this help" >&2
+        echo "-v/--verbose - show pr and changed file names except '.go'" >&2
         echo "--repo= - repository owner and name" >&2
         echo "--action=+ - full action name" >&2
         echo "pr_number - mandatory option, just pr number" >&2
@@ -24,6 +25,11 @@ function ghactionstatus --description 'Check github ci action status for particu
     set --local action_names "Build and Push images" "Validation doc-changes";
     set -ql _flag_action[1]
     and set --local action_names $_flag_action
+
+    if set -ql _flag_verbose
+        gh --repo $owner_repo pr view $pr_number
+        gh --repo $owner_repo pr diff --name-only $pr_number | grep -vE '\.go|\.mod'
+    end
 
     set --local commit "$(gh pr view $pr_number --repo $owner_repo --json commits --jq ".commits[-1].oid")"
     for action in $action_names
