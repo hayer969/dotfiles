@@ -1,50 +1,47 @@
 State: idle
 Deployments:
-  fedora:fedora/42/x86_64/silverblue
-                  Version: 42.20250726.0 (2025-07-26T01:00:55Z)
-               BaseCommit: 9bae10b2d746302c2583aad91ccd65f54dbd2ab959a4d5a19b638f7bd81db441
-             GPGSignature: Valid signature by B0F4950458F69E1150C6C5EDC8AC4916105EF944
-                     Diff: 2 upgraded
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.1-4.fc42
+  fedora:fedora/43/x86_64/silverblue
+                  Version: 43.20251115.0 (2025-11-15T00:26:47Z)
+               BaseCommit: 127feb06ea8428d6167ec7f7683aafb4ce925d78d2965caa81c3396127f18b0f
+             GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
+                     Diff: 76 upgraded
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-2.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
                            gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly
                            gstreamer1-vaapi kmod-xone libavcodec-freeworld libva-utils
                            NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
-                           NetworkManager-strongswan-gnome nvtop openrgb openssl
-                           pcp-pmda-lmsensors rocm-clinfo rocm-hip rocm-smi rpmconf
-                           rpmfusion-free-release rpmfusion-nonfree-release steam-devices
-                           xone xxd
+                           NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
+                           rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
+                           rpmfusion-nonfree-release steam-devices Sunshine xone xxd
 
-● fedora:fedora/42/x86_64/silverblue
-                  Version: 42.20250725.0 (2025-07-25T00:32:05Z)
-               BaseCommit: 8c36256780030cb659c90e798f11311698afb98b398439e7dac4e3a2bda9a161
-             GPGSignature: Valid signature by B0F4950458F69E1150C6C5EDC8AC4916105EF944
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.1-4.fc42
+● fedora:fedora/43/x86_64/silverblue
+                  Version: 43.20251114.0 (2025-11-14T00:54:08Z)
+               BaseCommit: 7bde78fe67ec988c2fe0929310d52414e037de556862a8cb375d561e1d7b5319
+             GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-2.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
                            gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly
                            gstreamer1-vaapi kmod-xone libavcodec-freeworld libva-utils
                            NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
-                           NetworkManager-strongswan-gnome nvtop openrgb openssl
-                           pcp-pmda-lmsensors rocm-clinfo rocm-hip rocm-smi rpmconf
-                           rpmfusion-free-release rpmfusion-nonfree-release steam-devices
-                           xone xxd
+                           NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
+                           rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
+                           rpmfusion-nonfree-release steam-devices Sunshine xone xxd
 
-  fedora:fedora/42/x86_64/silverblue
-                  Version: 42.20250724.0 (2025-07-24T00:44:34Z)
-               BaseCommit: 97d998675ef37e8067b19cfa35fc1dd59700b193b8ff11b3ea2a56f477a6a86a
-             GPGSignature: Valid signature by B0F4950458F69E1150C6C5EDC8AC4916105EF944
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.1-4.fc42
+  fedora:fedora/43/x86_64/silverblue
+                  Version: 43.20251113.0 (2025-11-13T00:27:29Z)
+               BaseCommit: 4941183bc4c1fdd88f3ad68152be2a5d70502de926a70b19d07afbd5a282c0d4
+             GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-2.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
                            gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly
                            gstreamer1-vaapi kmod-xone libavcodec-freeworld libva-utils
                            NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
-                           NetworkManager-strongswan-gnome nvtop openrgb openssl
-                           pcp-pmda-lmsensors rocm-clinfo rocm-hip rocm-smi rpmconf
-                           rpmfusion-free-release rpmfusion-nonfree-release steam-devices
-                           xone xxd
+                           NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
+                           rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
+                           rpmfusion-nonfree-release steam-devices Sunshine xone xxd

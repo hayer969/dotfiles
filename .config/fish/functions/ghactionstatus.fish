@@ -1,5 +1,5 @@
 function ghactionstatus --description 'Check github ci action status for particular pr. By default - build images for deckhouse/virtualization'
-    argparse --min-args=1 'h/help' 'v/verbose' 'repo=' 'action=+' -- $argv
+    argparse 'h/help' 'v/verbose' 'repo=' 'action=+' -- $argv
     or return
     if not command -q gh
         echo "Error. Please install 'gh' command (github cli)" >&2

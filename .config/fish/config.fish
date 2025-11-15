@@ -2,7 +2,7 @@
 #For Alacritty title bar working properly
 #set WAYLAND_DISPLAY alacritty
 #For VAAPI support
-# set -x LIBVA_DRIVER_NAME radeonsi
+set -gx LIBVA_DRIVER_NAME radeonsi
 
 #For case insensitive search in less
 set -gx LESS "-RFi"
@@ -11,7 +11,7 @@ set -gx LESS "-RFi"
 set -gx RIPGREP_CONFIG_PATH $HOME/.config/ripgreprc
 
 if command -q nvim
-    set -x EDITOR /snap/bin/nvim
+    set -gx EDITOR /usr/bin/nvim
     abbr -a -- vi nvim 
     abbr -a -- vim nvim 
 end
@@ -37,10 +37,9 @@ if command -q bat
     abbr -a -- baty "bat -lyaml"
 end
 
-set -gx GOROOT "/usr/local/go"
 set -gx GOPATH "$HOME/go"
 # Add local/bin to Path, some apps installed there
-set -gx PATH "$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:$PATH:$HOME/.krew/bin"
+set -gx PATH "/home/hayer/.local/bin:$GOPATH/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 if command -q starship
@@ -117,102 +116,4 @@ if test -f "/run/.containerenv"
     end
 else
     abbr -a -- file 'nautilus (pwd) &; disown'
-end
-
-abbr -a -- glcopy 'git rev-parse HEAD | xsel -b'
-
-# Ask pass for ssh
-if status --is-interactive
-    set -lx SHELL fish
-    keychain --eval --quiet | source
-end
-
-/usr/bin/keychain --inherit any --confirm $HOME/.ssh/dmitry.prytkov-thinkpad
-
-# set KUBECONFIG environment variable
-set KUBECONF_DIR $HOME/.kubeconfigs
-set CLUSTER_MERGE "$KUBECONF_DIR/cluster-merge"
-set TMP_KUBECONFIG (find $KUBECONF_DIR -name kubeconfig -printf "%p:")
-
-set -gx KUBECONFIG "$CLUSTER_MERGE:$TMP_KUBECONFIG"
-
-# alias d8="trdl exec d8 0 ea -- $argv"
-ln -sf (trdl bin-path d8 0 ea)/d8 $HOME/.local/bin/d8
-ln -sf (trdl bin-path flint 2 stable)/flint $HOME/.local/bin/flint
-source (flint completion --shell=fish | psub)
-source $HOME/.config/fish/completions/d8v.fish
-# Alias for kubectl
-# abbr -a -- ku 'kubectl'
-abbr -a -- ku 'd8 k'
-abbr -a -- dqui 'watch "d8 k -n d8-system exec svc/deckhouse-leader -- deckhouse-controller queue list"'
-abbr -a -- dvirt 'd8 k get internalvirtualizationkubevirts.internal.virtualization.deckhouse.io -n d8-virtualization config -ojsonpath="{.status.conditions[?(@.type==\"Available\")]}{\"\n\"}" -w'
-abbr -a -- ded 'd8 k logs -n d8-virtualization deployments/virtualization-controller | grep -i edition'
-# abbr -a -- dedpr 'd8 k get mpo -oyaml | yq \'.items[] | select(.metadata.labels.module == "virtualization") | .spec.imageTag\''
-abbr -a -- dedpr 'd8 k get mpo virtualization -oyaml | yq \'.spec.imageTag\''
-abbr -a -- dedvc 'watch "d8 k get pods -n d8-virtualization --selector=app=virtualization-controller"'
-abbr -a -- dedup 'helm list -n d8-system | grep virtualization'
-abbr -a -- dead8 'd8 k get pod -A --sort-by="{.metadata.creationTimestamp}" --no-headers | tac | grep -Ev "Running|Completed"'
-abbr -a -- virtlog 'd8 k -n d8-virtualization logs -l app=virtualization-controller | rg "panic|error"'
-abbr -a -- dcklog 'd8 k -n d8-system logs -l app=deckhouse -c deckhouse | jq "select(.level==\"error\")"'
-abbr -a -- kuf 'd8 k apply -f'
-abbr -a -- kuk 'd8 k apply -k'
-alias linstor='kubectl -n d8-sds-replicated-volume exec -ti deploy/linstor-controller -- linstor'
-
-# Tunnel and github ssh key
-if status --is-interactive
-    # ssh-add ~/.ssh/dmitry.prytkov-thinkpad-github
-    set -l tunnel_commands \
-    "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.d8-virt-master-0 -L 127.0.0.1:2000:127.0.0.1:6445" \
-    "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.d8-virt-hypert-test-0 -L 127.0.0.1:2002:127.0.0.1:6445"
-    # "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.virtlab-dl-1 -L 127.0.0.1:2007:127.0.0.1:6445"
-    #"ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.virtlab-delivery-mi-0 -L 127.0.0.1:2003:127.0.0.1:6445" \
-    # "ssh -o ServerAliveInterval=60 -J d.prytkov@dev-rnd.d8-virt-hypert-test-0 -N cloud@10.66.10.106 -i $HOME/kube-manifests/templates/sshkeys/id_ed -L 127.0.0.1:2004:127.0.0.1:6445" \
-    # "ssh -o ServerAliveInterval=60 -J d.prytkov@dev-rnd.d8-virt-hypert-test-0 -N cloud@10.66.10.106 -i $HOME/kube-manifests/templates/sshkeys/id_ed -D 1080"
-    # "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.virtlab-rd-0 -L 127.0.0.1:2005:127.0.0.1:6445"
-    # "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.virtlab-pt-0 -L 127.0.0.1:2006:127.0.0.1:6445" \
-    # "ssh -o ServerAliveInterval=60 -N d.prytkov@dev-rnd.virtlab-da-0 -L 127.0.0.1:2007:127.0.0.1:6445"
-
-    function get_tunnel_pid
-    # Store the tunnel pid in a variable
-        ps aux | grep "[ ]$argv[1]" | awk '{print $2}'
-        # Check the exit statuses if grep return error
-        for s in $pipestatus
-            if test $s -ne 0
-                return $s
-            end
-        end
-    end
-
-    function get_server_name
-    # Get server name for user prompt
-        for word in $(string split ' ' $argv[1])
-            if string match -q '*@*' -- $word
-                echo $word
-                break
-            end
-        end
-    end
-
-    for tc in $tunnel_commands
-        if not string match -qr '^\d+$' -- $(get_tunnel_pid $tc)
-            echo "Set tunnel to $(get_server_name $tc)? (y/n)"
-            read user_input -n 1
-
-            # Convert the input to lowercase before comparison
-            set -l user_input (string lower $user_input)
-
-            if test "$user_input" = "y"
-                # Check if the tunnel_pid is a number (digits only)
-                    eval "nohup $tc &> /dev/null &"
-                    disown %1
-            end
-                # See tunnel-kill abbr below
-                # set -U TUNNEL_PIDS $TUNNEL_PIDS $last_pid
-        end
-    end
-
-    # After kill tunnel you need somehow sync var TUNNEL_PIDS
-    # And you can kill it by different methods
-    # Better don't use this abbr
-    # abbr -a -- tunnel-kill 'kill $TUNNEL_PIDS'
 end

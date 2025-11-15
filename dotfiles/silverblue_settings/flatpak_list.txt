@@ -6,7 +6,6 @@ Extension Manager	com.mattjakeman.ExtensionManager
 Moonlight	com.moonlight_stream.Moonlight
 OBS Studio	com.obsproject.Studio
 Steam	com.valvesoftware.Steam
-Sunshine	dev.lizardbyte.app.Sunshine
 Zed	dev.zed.Zed
 Celluloid	io.github.celluloid_player.Celluloid
 Podman Desktop	io.podman_desktop.PodmanDesktop

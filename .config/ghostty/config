@@ -2,7 +2,7 @@ font-size = 14
 font-family = "Hack Nerd Font Mono"
 
 # theme = light:Adwaita,dark:NvimDark
-background-opacity = 0.75
+background-opacity = 0.85
 
 confirm-close-surface = false
 
