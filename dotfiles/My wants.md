@@ -134,7 +134,7 @@
 - `BTRFS` - create root-level subvolume:
 
   ```bash
-  sudo mkdir /mnt/btrfs/snapshots
+  sudo mkdir /mnt/btrfs
   sudo mount /dev/disk/by-uuid/{your root device uuid} /mnt/btrfs
   cd /mnt/btrfs
   sudo btrfs subvolume create snapshots
