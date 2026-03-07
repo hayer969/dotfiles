@@ -1,10 +1,12 @@
-State: idle
+State: busy
+Transaction: upgrade (check only)
+  Initiator: client(id:gnome-software dbus:1.150 unit:gnome-software.service uid:1000)
 Deployments:
 ● fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20251120.0 (2025-11-20T02:22:07Z)
-               BaseCommit: 8b4ad4e323ff2216d5be1664cc40e7300ab5af030ff11fab567240fb21e89669
+                  Version: 43.20260305.0 (2026-03-05T00:30:13Z)
+               BaseCommit: 7078f60b7f1eab2ae4cfd7b61673d5be12a49f5e5728d908f94314b3910b10af
              GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-2.fc43
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
@@ -13,13 +15,28 @@ Deployments:
                            NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
                            NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
                            rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
-                           rpmfusion-nonfree-release steam-devices Sunshine xone xxd
+                           rpmfusion-nonfree-release smartmontools steam-devices xone xxd
 
   fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20251119.0 (2025-11-19T01:33:26Z)
-               BaseCommit: 551f4b349364db49b620dfc8283f2b31d39885104eaa619008ce90641ed29318
+                  Version: 43.20260303.0 (2026-03-03T00:44:10Z)
+               BaseCommit: 35da54dd3a74f946dc0d931fcf41e29ef571b38f4b8f60a98ab28a07b3fe6e8f
              GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-2.fc43
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
+          LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
+                           corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
+                           ghostty gnome-tweak-tool gstreamer1-plugin-openh264
+                           gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly
+                           gstreamer1-vaapi kmod-xone libavcodec-freeworld libva-utils
+                           NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
+                           NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
+                           rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
+                           rpmfusion-nonfree-release smartmontools steam-devices xone xxd
+
+  fedora:fedora/43/x86_64/silverblue
+                  Version: 43.20260115.0 (2026-01-15T00:55:57Z)
+               BaseCommit: 5b86451811bb683f41abc0ae85b84cab51109c294f797ee9ced00145b64a70bb
+             GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
@@ -29,3 +46,4 @@ Deployments:
                            NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
                            rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
                            rpmfusion-nonfree-release steam-devices Sunshine xone xxd
+                   Pinned: yes
