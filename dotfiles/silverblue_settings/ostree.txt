@@ -1,10 +1,8 @@
-State: busy
-Transaction: upgrade (check only)
-  Initiator: client(id:gnome-software dbus:1.150 unit:gnome-software.service uid:1000)
+State: idle
 Deployments:
 ● fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20260305.0 (2026-03-05T00:30:13Z)
-               BaseCommit: 7078f60b7f1eab2ae4cfd7b61673d5be12a49f5e5728d908f94314b3910b10af
+                  Version: 43.20260307.0 (2026-03-07T00:42:10Z)
+               BaseCommit: 1e0ef476e24db7750b2ea017594b01a63e01c731d58fcd018552d887b70da410
              GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
       RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
@@ -18,8 +16,8 @@ Deployments:
                            rpmfusion-nonfree-release smartmontools steam-devices xone xxd
 
   fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20260303.0 (2026-03-03T00:44:10Z)
-               BaseCommit: 35da54dd3a74f946dc0d931fcf41e29ef571b38f4b8f60a98ab28a07b3fe6e8f
+                  Version: 43.20260305.0 (2026-03-05T00:30:13Z)
+               BaseCommit: 7078f60b7f1eab2ae4cfd7b61673d5be12a49f5e5728d908f94314b3910b10af
              GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
       RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk

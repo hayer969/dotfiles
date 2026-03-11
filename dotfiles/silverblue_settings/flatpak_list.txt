@@ -1,11 +1,13 @@
 Zen	app.zen_browser.zen
 Dconf Editor	ca.desrt.dconf-editor
 Discord	com.discordapp.Discord
+Pinta	com.github.PintaProject.Pinta
 Flatseal	com.github.tchx84.Flatseal
 Extension Manager	com.mattjakeman.ExtensionManager
 Moonlight	com.moonlight_stream.Moonlight
 OBS Studio	com.obsproject.Studio
 Steam	com.valvesoftware.Steam
+Sticky Notes	com.vixalien.sticky
 Zed	dev.zed.Zed
 Celluloid	io.github.celluloid_player.Celluloid
 Podman Desktop	io.podman_desktop.PodmanDesktop
@@ -27,7 +29,6 @@ Image Viewer	org.gnome.Loupe
 Maps	org.gnome.Maps
 Sushi	org.gnome.NautilusPreviewer
 GNOME Network Displays	org.gnome.NetworkDisplays
-Notes	org.gnome.Notes
 Rhythmbox	org.gnome.Rhythmbox3
 Camera	org.gnome.Snapshot
 Text Editor	org.gnome.TextEditor
