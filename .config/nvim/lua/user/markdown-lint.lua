@@ -1,6 +1,7 @@
 local M = {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
+  commit = "a19edd67c66dc7428e9a5ece027f0aae8635f788",
 }
 
 function M.config()

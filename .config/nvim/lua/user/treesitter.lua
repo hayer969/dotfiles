@@ -1,12 +1,13 @@
 local M = {
-	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPost", "BufNewFile" },
-	build = ":TSUpdate",
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    event = { "BufReadPost", "BufNewFile" },
+    build = ":TSUpdate",
+    branch = "main",
 }
 
 function M.config()
-	require("nvim-treesitter.configs").setup({
-		ensure_installed = {
+	require("nvim-treesitter").install({
 			"lua",
 			"markdown",
 			"markdown_inline",
@@ -35,21 +36,7 @@ function M.config()
 			"query",
 			"typescript",
 			"xml",
-		},
-		auto_install = true,
-		highlight = {
-			enable = true,
-			disable = function(lang, bufnr) -- Disable in large buffers
-				return vim.api.nvim_buf_line_count(bufnr) > 50000
-			end,
-		},
-		indent = {
-			enable = true,
-			disable = function(lang, bufnr) -- Disable in large buffers
-				return vim.api.nvim_buf_line_count(bufnr) > 50000
-			end,
-		},
-	})
+		})
 end
 
 return M

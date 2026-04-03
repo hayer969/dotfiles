@@ -32,6 +32,7 @@ function M.config()
         "shfmt",
         "yamlfmt",
         "google-java-format",
+        "tree-sitter-cli",
     }
 
     require("mason").setup {
