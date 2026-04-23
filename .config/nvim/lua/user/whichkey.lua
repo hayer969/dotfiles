@@ -195,6 +195,7 @@ function M.config()
             { "<leader>k",  group = "Kubernetes",                               nowait = true, remap = false },
             { "<leader>kf", desc = "Apply current file",                        nowait = true, remap = false },
             { "<leader>kk", desc = "Apply kustomization",                       nowait = true, remap = false },
+            { "<leader>kc", desc = "Run command in shell",                      nowait = true, remap = false },
             { "<leader>kd",  group = "Kubernetes delete",                       nowait = true, remap = false },
             { "<leader>kdf", desc = "Delete current file",                      nowait = true, remap = false },
             { "<leader>kdk", desc = "Delete kustomization",                     nowait = true, remap = false },
