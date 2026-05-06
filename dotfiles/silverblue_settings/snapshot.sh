@@ -28,6 +28,6 @@ then
   sudo umount /mnt/snapshots
 else
   echo Creating snapshots Cancelled. If space is low, perform:
-  echo sudo btrfs balance start -dusage=50 -musage=50 /
+  echo sudo btrfs balance start -dusage=50 -musage=50 /var
 fi
 set -e
