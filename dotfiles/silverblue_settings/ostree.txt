@@ -1,23 +1,23 @@
 State: idle
 Deployments:
-● fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20260307.0 (2026-03-07T00:42:10Z)
-               BaseCommit: 1e0ef476e24db7750b2ea017594b01a63e01c731d58fcd018552d887b70da410
-             GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
-      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
+● fedora:fedora/44/x86_64/silverblue
+                  Version: 44.20260506.0 (2026-05-06T00:30:28Z)
+               BaseCommit: 3f05d0648f3397eade8e5d2cac943e870b5fe1f24e8f291dc528b521e3534ef6
+             GPGSignature: Valid signature by 36F612DCF27F7D1A48A835E4DBFCF71C6D9F90A6
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libswresample-free libavutil-free libswscale-free libavcodec-free 8.0.1-6.fc44
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk
                            corectrl fastfetch ffmpeg ffmpegthumbnailer firewall-config fish
                            ghostty gnome-tweak-tool gstreamer1-plugin-openh264
                            gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly
-                           gstreamer1-vaapi kmod-xone libavcodec-freeworld libva-utils
+                           kmod-xone libavcodec-freeworld libva-utils
                            NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
                            NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
                            rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
                            rpmfusion-nonfree-release smartmontools steam-devices xone xxd
 
   fedora:fedora/43/x86_64/silverblue
-                  Version: 43.20260305.0 (2026-03-05T00:30:13Z)
-               BaseCommit: 7078f60b7f1eab2ae4cfd7b61673d5be12a49f5e5728d908f94314b3910b10af
+                  Version: 43.20260506.0 (2026-05-06T00:43:25Z)
+               BaseCommit: 5503d7f141495ba4fb27648513d33fee5115f5515f12136c30c0097fe21dd16b
              GPGSignature: Valid signature by C6E7F081CF80E13146676E88829B606631645531
       RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libpostproc-free libswresample-free libavutil-free libavcodec-free libswscale-free 7.1.2-4.fc43
           LayeredPackages: akmod-xone alacritty btop clamav clamav-freshclam clamtk

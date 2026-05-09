@@ -1,5 +1,6 @@
 Zen	app.zen_browser.zen
 Dconf Editor	ca.desrt.dconf-editor
+Delta Chat	chat.delta.desktop
 Discord	com.discordapp.Discord
 Pinta	com.github.PintaProject.Pinta
 Flatseal	com.github.tchx84.Flatseal
@@ -45,3 +46,4 @@ qBittorrent	org.qbittorrent.qBittorrent
 Remmina	org.remmina.Remmina
 Telegram	org.telegram.desktop
 VLC	org.videolan.VLC
+Yandex Browser	ru.yandex.Browser
