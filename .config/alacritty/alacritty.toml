@@ -1,3 +1,7 @@
+[shell]
+program = "/usr/bin/fish"
+args = ["-l"]
+
 [colors.vi_mode_cursor]
 cursor = "#ff00ff"
 
