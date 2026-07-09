@@ -26,13 +26,13 @@ layout {
             pane size="50%"
         }
         pane size="23%"  close_on_exit=false command="k9s" {
-            args "--crumbsless" "--headless" "-c vm"
+            args "--crumbsless" "--headless" "-c vm" "-ntest"
         }
         pane size="23%"  close_on_exit=false command="k9s" {
-            args "--crumbsless" "--headless" "-c vd"
+            args "--crumbsless" "--headless" "-c vd" "-ntest"
         }
         pane size="23%"  close_on_exit=false command="k9s" {
-            args "--crumbsless" "--headless" "-c po"
+            args "--crumbsless" "--headless" "-c po" "-ntest"
         }
     }
     // tab name="Manual" cwd="/home/hayer/git_projects/virtualization-rnd" hide_floating_panes=true {
