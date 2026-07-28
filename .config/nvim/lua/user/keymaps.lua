@@ -49,7 +49,7 @@ keymap("n", "<S-l>", "<CMD>bnext<CR>", opts)
 keymap("n", "<S-h>", "<CMD>bprevious<CR>", opts)
 
 -- Put absolute full path
-keymap("n", "<Leader>%", "<CMD>put=expand('%:p')<CR>", opts)
+keymap("n", "<Leader>%", "<CMD>let @+ = expand('%:p') .. ':' .. line('.') | put =@+<CR>", opts)
 
 -- Insert Mode --
 -- Remap ESC to ii

@@ -7,8 +7,8 @@ function mpo --description 'Patch MPO virtualization imageTag with kubectl'
         set arg $argv[1]
         # Check if the argument is a number (contains only digits)
         if string match -qr '^[0-9]+$' -- $arg
-            # If numeric, prepend "pr" to the argument
-            set tag "pr$arg"
+            # If numeric, prepend "mr" to the argument
+            set tag "mr$arg"
         else
             # If non-numeric, use the argument as is
             set tag $arg
