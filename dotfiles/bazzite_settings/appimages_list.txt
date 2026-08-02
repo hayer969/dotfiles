@@ -1,0 +1,2 @@
+InobitecDICOMViewer-linux-64-bit-pro-2.14.0.12281.AppImage
+pict

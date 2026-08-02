@@ -1,0 +1,5 @@
+blur-my-shell@aunetx
+clipboard-history@alexsaveau.dev
+gsconnect@andyholmes.github.io
+tilingshell@ferrarodomenico.com
+windowsNavigator@gnome-shell-extensions.gcampax.github.com

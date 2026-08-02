@@ -1,0 +1,32 @@
+State: idle
+Deployments:
+● ostree-image-signed:docker://ghcr.io/ublue-os/bazzite-gnome:stable
+                   Digest: sha256:7b031512ef92d8312f9afe9169817073070b92753fb0c59382d4f5d477e476d3
+                  Version: 44.20260802 (2026-08-02T03:58:13Z)
+          LayeredPackages: alacritty clamav clamav-freshclam clamtk ghostty
+                           gnome-tweak-tool NetworkManager-l2tp-gnome
+                           NetworkManager-libreswan-gnome NetworkManager-strongswan-gnome
+                           pcp-pmda-lmsensors toolbox
+
+  ostree-unverified-registry:ghcr.io/ublue-os/bazzite-gnome:stable
+                   Digest: sha256:0f58a91084df3eba813b4fb898bbe0739e4787ee33aaaa7fe005c11d8d478ad9
+                  Version: 44.20260721 (2026-07-21T18:56:07Z)
+          LayeredPackages: alacritty clamav clamav-freshclam clamtk ghostty
+                           gnome-tweak-tool NetworkManager-l2tp-gnome
+                           NetworkManager-libreswan-gnome NetworkManager-strongswan-gnome
+                           pcp-pmda-lmsensors smartmontools
+
+  fedora:fedora/44/x86_64/silverblue
+       OstreeRemoteStatus: Remote "fedora" not found
+                  Version: 44.20260609.0 (2026-06-09T00:30:11Z)
+               BaseCommit: d73e7796d8e168185c680269abe1b20924ae1cfda65e3cb5629a1360748bbf50
+      RemovedBasePackages: libavdevice-free libavfilter-free libavformat-free ffmpeg-free libswresample-free libavutil-free libswscale-free libavcodec-free 8.1.1-1.fc44
+          LayeredPackages: alacritty btop clamav clamav-freshclam clamtk fastfetch ffmpeg
+                           ffmpegthumbnailer firewall-config fish ghostty gnome-tweak-tool
+                           gstreamer1-plugin-openh264 gstreamer1-plugins-bad-freeworld
+                           gstreamer1-plugins-ugly libavcodec-freeworld libva-utils
+                           NetworkManager-l2tp-gnome NetworkManager-libreswan-gnome
+                           NetworkManager-strongswan-gnome nvtop openrgb pcp-pmda-lmsensors
+                           rocm-clinfo rocm-hip rocm-smi rpmconf rpmfusion-free-release
+                           rpmfusion-nonfree-release smartmontools steam-devices xxd
+                   Pinned: yes
