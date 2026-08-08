@@ -17,7 +17,7 @@ After=network-online.target
 [Service]
 Type=oneshot
 Environment=CONTAINER=%i
-ExecStart=/usr/bin/toolbox --container "$CONTAINER" run sudo dnf makecache --quiet
+ExecStart=/usr/bin/distrobox enter "$CONTAINER" -- sudo dnf makecache --quiet
 
 [Install]
 WantedBy=default.target
@@ -50,7 +50,7 @@ Requires=refresh-toolbox@%i.service
 [Service]
 Type=oneshot
 Environment=CONTAINER=%i
-ExecStart=/usr/bin/toolbox --container "$CONTAINER" run sudo dnf upgrade --quiet --refresh -y
+ExecStart=/usr/bin/distrobox enter "$CONTAINER" -- sudo dnf upgrade --quiet --refresh -y
 
 [Install]
 WantedBy=default.target

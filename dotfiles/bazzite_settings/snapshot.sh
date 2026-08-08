@@ -4,7 +4,7 @@ set -euo pipefail
 if [ -f "/run/.containerenv" ]
 then
     function btrfs () {
-        flatpak-spawn --host btrfs $*
+        distrobox-host-exec btrfs $*
     }
 fi
 

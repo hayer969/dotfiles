@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 args = ["-l"]
 
@@ -49,3 +49,5 @@ opacity = 0.75
 [window.padding]
 x = 8
 y = 8
+
+[terminal]

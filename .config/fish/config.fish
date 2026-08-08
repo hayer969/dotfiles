@@ -97,6 +97,7 @@ abbr -a -- fn 'find ./ -iname'
 abbr -a -- c clear
 abbr -a -- ls1 'ls -1F'
 abbr -a -- term 'alacritty -e fish&; disown'
+abbr -a -- lsblks 'lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINTS,FSSIZE,FSUSED,FSUSE%'
 
 # Check if run inside a container
 set TOOLBOX_NAME ""
